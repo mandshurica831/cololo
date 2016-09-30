@@ -7,14 +7,14 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 
+var setUser = require('./modules/setUser');
+
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var boards = require('./routes/boards');
 var register = require('./routes/register');
 var login = require('./routes/login');
 var logout = require('./routes/logout');
-
-var setUser = require('./setUser');
 
 var app = express();
 

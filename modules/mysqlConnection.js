@@ -1,5 +1,11 @@
 var mysql = require('mysql');
 
+  /*
+  *
+  * DBに接続する
+  *
+  */
+
 var connection;
 
   /* local

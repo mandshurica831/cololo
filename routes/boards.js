@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var moment = require('moment');
-var connection = require('../mysqlConnection');
+var connection = require('../modules/mysqlConnection');
 
 router.get('/:board_id', function(req, res, next) {
   var boardId = req.params.board_id;

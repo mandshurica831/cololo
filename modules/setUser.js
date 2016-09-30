@@ -1,5 +1,11 @@
 var connection = require('./mysqlConnection');
 
+  /*
+  *
+  * ユーザー情報を取得する
+  *
+  */
+
 module.exports = function(req, res, next) {
   var userId = req.session.user_id;
   if (userId) {

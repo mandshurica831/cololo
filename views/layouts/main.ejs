@@ -8,6 +8,13 @@
 <link rel='stylesheet' href='/stylesheets/style.css'>
 </head>
 <body>
+  
+<%// ====================
+//  ヘッダー
+// ====================%>
+<header>
+
+  <h1>cololo story</h1>
 
   <% if (typeof user !== 'undefined') { %>
       <p class="login-user">
@@ -22,9 +29,31 @@
       </p>
   <% } %>
 
-  <div class="wrapper">
-    <%- body %>
-  </div>
+</header>
+
+
+
+<%// ====================
+//  ボディ
+// ====================%>
+<div id="container">
+
+  <%- body %>
+
+</div>
+
+
+
+<%// ====================
+//  フッター
+// ==================== %>
+<footer>
+
+  <p id="copy_right"> © 2016 Saple.</p>
+
+</footer>
+
+
 
 </body>
 </html>

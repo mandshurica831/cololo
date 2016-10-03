@@ -219,42 +219,45 @@ $W:200; $H:24; $Wn:3; $Hn:2;
 body {
   font-family: Titillium Web , 'Noto Sans JP' , "Meiryo UI" , "メイリオ" , Meiryo , Avenir , "Open Sans" , "Helvetica Neue" , Helvetica , Verdana , Arial , 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro',  sans-serif; }
 
-html, body {
-  height: 100%;
-  width: 100%; }
-
 h1 {
   font-size: 3em;
   font-weight: 200; }
 
 #contents {
-  margin: 10px auto;
-  width: 800px;
   position: relative; }
 
-#main_cvs {
-  width: 800px;
-  height: 600px;
-  margin: 0 auto;
-  background: #fafafa; }
-
-header h1 {
-  text-align: center;
-  padding: 5px; }
-header .states-line {
-  width: 800px;
-  margin: 15px auto;
-  text-align: right;
-  border-bottom: 1px solid #eee;
-  padding: 10px 0;
-  margin-top: -3em; }
-  header .states-line .user_name {
-    margin: 5px; }
-  header .states-line .btn-normal {
-    padding: 0 10px;
-    margin: 3px;
-    font-size: 0.8em;
-    line-height: 2.5em; }
+header {
+  margin-top: 20px; }
+  header h1 {
+    text-align: center;
+    padding: 5px; }
+  header .states-line {
+    text-align: right;
+    padding: 5px 10px;
+    background: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 0;
+    margin-top: -35px;
+    width: 100%;
+    transition: margin-top ease-in 300ms;
+    -moz-transition: margin-top ease-in 300ms;
+    -webkit-transition: margin-top ease-in 300ms;
+    -ms-transition: margin-top ease-in 300ms;
+    -o-transition: margin-top ease-in 300ms; }
+    header .states-line:hover {
+      margin-top: 0px;
+      transition: margin-top ease-out 300ms;
+      -moz-transition: margin-top ease-out 300ms;
+      -webkit-transition: margin-top ease-out 300ms;
+      -ms-transition: margin-top ease-out 300ms;
+      -o-transition: margin-top ease-out 300ms; }
+    header .states-line .user_name {
+      margin: 5px; }
+    header .states-line .btn-normal {
+      padding: 0 10px;
+      margin: 3px;
+      font-size: 0.8em;
+      line-height: 2.5em; }
 
 footer {
   color: #ccc;
@@ -263,9 +266,23 @@ footer {
   padding: 5px;
   text-align: center;
   bottom: 0;
-  margin: 20px auto 0;
-  width: 800px;
-  border-top: 1px solid #eee; }
+  border-top: 1px solid #eee;
+  margin-top: 50px; }
+  footer a {
+    color: inherit;
+    transition: color ease-in 300ms, background ease-in 300ms;
+    -moz-transition: color ease-in 300ms, background ease-in 300ms;
+    -webkit-transition: color ease-in 300ms, background ease-in 300ms;
+    -ms-transition: color ease-in 300ms, background ease-in 300ms;
+    -o-transition: color ease-in 300ms, background ease-in 300ms; }
+    footer a:hover {
+      color: #11a4c4;
+      background: rgba(17, 164, 196, 0.2);
+      transition: color ease-out 300ms, background ease-out 1000ms;
+      -moz-transition: color ease-out 300ms, background ease-out 1000ms;
+      -webkit-transition: color ease-out 300ms, background ease-out 1000ms;
+      -ms-transition: color ease-out 300ms, background ease-out 1000ms;
+      -o-transition: color ease-out 300ms, background ease-out 1000ms; }
 
 /*****************************************
   Partial
@@ -275,15 +292,14 @@ footer {
 ======================================*/
 .btn-normal {
   display: inline-block;
-  color: #000;
+  color: #fff;
   border-radius: 5px;
   padding: 5px;
   text-align: center;
   position: relative;
   top: 0;
-  font-weight: 300;
   background: #fff;
-  box-shadow: 0px 2px 0 rgba(255, 255, 255, 0.7), 0 0 0 1px #777, 0 2px 0 1px #777, inset 0 0 0 rgba(0, 0, 0, 0.1);
+  letter-spacing: 0.05em;
   border-radius: 5px;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -294,17 +310,57 @@ footer {
   -webkit-transition: top ease-in 100ms, box-shadow ease-in 100ms, color ease-in 100ms, background-color ease-in 100ms;
   -ms-transition: top ease-in 100ms, box-shadow ease-in 100ms, color ease-in 100ms, background-color ease-in 100ms;
   -o-transition: top ease-in 100ms, box-shadow ease-in 100ms, color ease-in 100ms, background-color ease-in 100ms; }
+  .btn-normal.blue {
+    background: #11a4c4;
+    box-shadow: 0px 2px 0 rgba(0, 0, 0, 0.2), 0px 2px 0 #11a4c4, 0 0 0 1px #333, 0 2px 0 1px #333, inset 0 0 0 rgba(0, 0, 0, 0.1);
+    text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.2); }
+  .btn-normal.green {
+    background: #54cc14;
+    box-shadow: 0px 2px 0 rgba(0, 0, 0, 0.2), 0px 2px 0 #54cc14, 0 0 0 1px #333, 0 2px 0 1px #333, inset 0 0 0 rgba(0, 0, 0, 0.1);
+    text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.2); }
+  .btn-normal.yellow {
+    background: #f2cb00;
+    box-shadow: 0px 2px 0 rgba(0, 0, 0, 0.2), 0px 2px 0 #f2cb00, 0 0 0 1px #333, 0 2px 0 1px #333, inset 0 0 0 rgba(0, 0, 0, 0.1);
+    text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.2); }
+  .btn-normal.orange {
+    background: #f57214;
+    box-shadow: 0px 2px 0 rgba(0, 0, 0, 0.2), 0px 2px 0 #f57214, 0 0 0 1px #333, 0 2px 0 1px #333, inset 0 0 0 rgba(0, 0, 0, 0.1);
+    text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.2); }
+  .btn-normal.red {
+    background: #ff4747;
+    box-shadow: 0px 2px 0 rgba(0, 0, 0, 0.2), 0px 2px 0 #ff4747, 0 0 0 1px #333, 0 2px 0 1px #333, inset 0 0 0 rgba(0, 0, 0, 0.1);
+    text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.2); }
+  .btn-normal.purple {
+    background: #a73db6;
+    box-shadow: 0px 2px 0 rgba(0, 0, 0, 0.2), 0px 2px 0 #a73db6, 0 0 0 1px #333, 0 2px 0 1px #333, inset 0 0 0 rgba(0, 0, 0, 0.1);
+    text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.2); }
   .btn-normal:hover, .btn-normal:active {
     over-flow: hidden;
-    box-shadow: 0px 0px 0 rgba(255, 255, 255, 0.7), 0 0 0 1px #54cc14, 0 0 0 1px #54cc14, inset 0px 1px 0px rgba(0, 0, 0, 0.1);
     top: 2px;
-    background: #58dd12;
     color: #fff;
-    transition: top ease-out 100ms, box-shadow ease-out 100ms, color ease-out 300ms, background-color ease-out 100ms;
-    -moz-transition: top ease-out 100ms, box-shadow ease-out 100ms, color ease-out 300ms, background-color ease-out 100ms;
-    -webkit-transition: top ease-out 100ms, box-shadow ease-out 100ms, color ease-out 300ms, background-color ease-out 100ms;
-    -ms-transition: top ease-out 100ms, box-shadow ease-out 100ms, color ease-out 300ms, background-color ease-out 100ms;
-    -o-transition: top ease-out 100ms, box-shadow ease-out 100ms, color ease-out 300ms, background-color ease-out 100ms; }
+    transition: top ease-out 100ms, box-shadow ease-out 100ms, color ease-out 100ms, background-color ease-out 100ms;
+    -moz-transition: top ease-out 100ms, box-shadow ease-out 100ms, color ease-out 100ms, background-color ease-out 100ms;
+    -webkit-transition: top ease-out 100ms, box-shadow ease-out 100ms, color ease-out 100ms, background-color ease-out 100ms;
+    -ms-transition: top ease-out 100ms, box-shadow ease-out 100ms, color ease-out 100ms, background-color ease-out 100ms;
+    -o-transition: top ease-out 100ms, box-shadow ease-out 100ms, color ease-out 100ms, background-color ease-out 100ms; }
+    .btn-normal:hover.blue, .btn-normal:active.blue {
+      box-shadow: 0 0 0 rgba(0, 0, 0, 0.2), 0 0 0 #11a4c4, 0 0 0 1px #333, 0 0 0 1px #333, inset 0px 1px 0px rgba(0, 0, 0, 0.1);
+      background: #11a4c4; }
+    .btn-normal:hover.green, .btn-normal:active.green {
+      box-shadow: 0 0 0 rgba(0, 0, 0, 0.2), 0 0 0 #54cc14, 0 0 0 1px #333, 0 0 0 1px #333, inset 0px 1px 0px rgba(0, 0, 0, 0.1);
+      background: #54cc14; }
+    .btn-normal:hover.yellow, .btn-normal:active.yellow {
+      box-shadow: 0 0 0 rgba(0, 0, 0, 0.2), 0 0 0 #f2cb00, 0 0 0 1px #333, 0 0 0 1px #333, inset 0px 1px 0px rgba(0, 0, 0, 0.1);
+      background: #f2cb00; }
+    .btn-normal:hover.orange, .btn-normal:active.orange {
+      box-shadow: 0 0 0 rgba(0, 0, 0, 0.2), 0 0 0 #f57214, 0 0 0 1px #333, 0 0 0 1px #333, inset 0px 1px 0px rgba(0, 0, 0, 0.1);
+      background: #f57214; }
+    .btn-normal:hover.red, .btn-normal:active.red {
+      box-shadow: 0 0 0 rgba(0, 0, 0, 0.2), 0 0 0 #ff4747, 0 0 0 1px #333, 0 0 0 1px #333, inset 0px 1px 0px rgba(0, 0, 0, 0.1);
+      background: #ff4747; }
+    .btn-normal:hover.purple, .btn-normal:active.purple {
+      box-shadow: 0 0 0 rgba(0, 0, 0, 0.2), 0 0 0 #a73db6, 0 0 0 1px #333, 0 0 0 1px #333, inset 0px 1px 0px rgba(0, 0, 0, 0.1);
+      background: #a73db6; }
 .btn-solid {
   color: #000;
   display: inline-block;

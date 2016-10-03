@@ -1,0 +1,61 @@
+@charset "utf-8";
+/*****************************************
+  Partial
+*****************************************/
+
+/* ======================================
++ btn
+======================================*/
+.btn{
+
+  &-normal{
+    display:inline-block;
+    color:#000;
+    border-radius:5px;
+    padding:5px;
+    text-align:center;
+    position: relative;
+    top:0;
+    font-weight:300;
+    background: #fff;
+    box-shadow: 0px 2px 0 rgba(255,255,255,0.7)
+    , 0 0 0 1px #777
+    , 0 2px 0 1px #777
+    ,inset 0 0 0 rgba(0,0,0,.1);
+    @include set-prefix(border-radius,5px);
+    @include set-prefix(transition,top ease-in 100ms,box-shadow ease-in 100ms,color ease-in 100ms,background-color ease-in 100ms);
+
+    &:hover, &:active {
+      over-flow: hidden;
+      box-shadow: 0px 0px 0 rgba(255,255,255,0.7)
+      , 0 0 0 1px #54cc14
+      , 0 0 0 1px #54cc14
+      ,inset 0px 1px 0px rgba(0,0,0,.1);
+      top:2px;
+      background:#58dd12;
+      color:#fff;
+      @include set-prefix(transition,top ease-out 100ms,box-shadow ease-out 100ms,color ease-out 300ms,background-color ease-out 100ms);
+    }
+  }
+
+  &-solid{
+    color:#000;
+    display:inline-block;
+    background:#fff;
+    border:1px solid #333;
+    position:relative;
+    letter-spacing:0.05em;
+    text-align:center;
+    font-size:12px;
+    font-weight:bold;
+    padding:5px;
+    margin:0;
+    box-shadow:2px 2px 0 #000;
+    @include set-prefix(transition,box-shadow ease-in 100ms,margin ease-in 100ms);
+    &:hover{
+      box-shadow:none;
+      margin:2px -2px -2px 2px;
+      @include set-prefix(transition,box-shadow ease-in 100ms,margin ease-in 100ms);
+    }
+  }
+}

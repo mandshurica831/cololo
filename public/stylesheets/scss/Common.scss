@@ -1,0 +1,73 @@
+@charset "utf-8";
+/* ======================================
+  Common
+======================================*/
+
+//import
+@import 'http://fonts.googleapis.com/earlyaccess/notosansjp.css';
+@import 'https://fonts.googleapis.com/css?family=Titillium+Web:200,200i,300,300i,400i,600,600i,700,700i,900';
+
+//body
+body{
+  font-family: Titillium Web , 'Noto Sans JP' , "Meiryo UI" , "メイリオ" , Meiryo , Avenir , "Open Sans" , "Helvetica Neue" , Helvetica , Verdana , Arial , 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro',  sans-serif;
+}
+
+html,body{
+  height:100%;
+  width:100%;
+}
+
+h1{
+  font-size:3em;
+  font-weight:200;
+}
+
+#container{
+
+}
+#contents{
+  margin:10px auto;
+  width:800px;
+  position:relative;
+}
+#main_cvs{
+  width:800px;
+  height:600px;
+  margin:0 auto;
+  background:#fafafa;
+}
+
+header{
+  h1{
+    text-align:center;
+    padding:5px;
+  }
+  .states-line{
+    width:800px;
+    margin:15px auto;
+    text-align: right;
+    border-bottom: 1px solid #eee;
+    padding: 10px 0;
+    margin-top:-3em;
+    .user_name{
+      margin:5px;
+    }
+    .btn-normal{
+      padding: 0 10px;
+      margin:3px;
+      font-size:0.8em;
+      line-height:2.5em;
+    }
+  }
+}
+footer{
+  color:#ccc;
+  font-weight:100;
+  font-size:0.9em;
+  padding:5px;
+  text-align:center;
+  bottom: 0;
+  margin:20px auto 0;
+  width:800px;
+  border-top: 1px solid #eee;
+}

@@ -8,24 +8,26 @@
 <link rel='stylesheet' href='/stylesheets/style.css'>
 </head>
 <body>
-  
-<%// ====================
+<div id="container">
+
+<%
+// =======================
 //  ヘッダー
-// ====================%>
+//========================
+%>
 <header>
 
-  <h1>cololo story</h1>
+  <h1>cololo</h1>
 
   <% if (typeof user !== 'undefined') { %>
-      <p class="login-user">
-        <%= user.user_name %>さんとしてログインしています
-        <a href="/logout" class="btn">ログアウト</a>
+      <p class="states-line">
+        <p class="user_name"><%= user.user_name %>さん</p>
+        <a href="/logout" class="btn-normal logout">ログアウト</a>
       </p>
   <% }else{ %>
-      <p class="login-user">
-        ゲストさん
-        <a href="/register" class="btn">会員登録</a>
-        <a href="/login" class="btn">ログイン</a>
+      <p class="states-line">
+        <a href="/login" class="btn-normal login">ログイン</a>
+        <a href="/register" class="btn-normal create">新規登録</a>
       </p>
   <% } %>
 
@@ -33,10 +35,13 @@
 
 
 
-<%// ====================
+
+<%
+// =======================
 //  ボディ
-// ====================%>
-<div id="container">
+//========================
+%>
+<div id="contents">
 
   <%- body %>
 
@@ -44,16 +49,18 @@
 
 
 
-<%// ====================
+<%
+// =======================
 //  フッター
-// ==================== %>
+//========================
+%>
 <footer>
 
-  <p id="copy_right"> © 2016 Saple.</p>
+  <p id="copy_right"> © 2016 Kojocho.</p>
 
 </footer>
 
 
-
+</div><%// container %>
 </body>
 </html>

@@ -10,6 +10,7 @@ var session = require('express-session');
 var setUser = require('./modules/setUser');
 
 var routes = require('./routes/index');
+var info = require('./routes/info');
 var users = require('./routes/users');
 var boards = require('./routes/boards');
 var register = require('./routes/register');
@@ -38,6 +39,7 @@ app.use(session({
 
 app.use('/', setUser, routes);
 app.use('/', routes);
+app.use('/info', info);
 app.use('/users', users);
 app.use('/boards', setUser, boards);
 app.use('/register', register);

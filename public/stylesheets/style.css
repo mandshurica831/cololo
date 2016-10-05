@@ -12,7 +12,6 @@ $W:200; $H:24; $Wn:3; $Hn:2;
 */
 /*! sanitize.css v3.0.0 | CC0 1.0 Public Domain | github.com/10up/sanitize.css */
 /** Normalization*/
-@import "http://fonts.googleapis.com/earlyaccess/notosansjp.css";
 @import "https://fonts.googleapis.com/css?family=Titillium+Web:200,200i,300,300i,400i,600,600i,700,700i,900";
 audio:not([controls]) {
   display: none;
@@ -217,14 +216,75 @@ textarea {
   Common
 ======================================*/
 body {
-  font-family: Titillium Web , 'Noto Sans JP' , "Meiryo UI" , "メイリオ" , Meiryo , Avenir , "Open Sans" , "Helvetica Neue" , Helvetica , Verdana , Arial , 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro',  sans-serif; }
+  font-family: Titillium Web , "Meiryo UI" , "メイリオ" , Meiryo , Avenir , "Open Sans" , "Helvetica Neue" , Helvetica , Verdana , Arial , 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro',  sans-serif; }
+
+body {
+  font-size: 15px; }
+
+#contents {
+  position: relative;
+  width: 800px;
+  margin: 0 auto; }
 
 h1 {
   font-size: 3em;
-  font-weight: 200; }
+  font-weight: 400;
+  font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+  -ms-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased; }
+  h1 a {
+    color: inherit; }
+    h1 a span {
+      transition: color ease-in 300ms;
+      -moz-transition: color ease-in 300ms;
+      -webkit-transition: color ease-in 300ms;
+      -ms-transition: color ease-in 300ms;
+      -o-transition: color ease-in 300ms; }
+    h1 a:hover .B {
+      color: #11a4c4; }
+    h1 a:hover .G {
+      color: #54cc14; }
+    h1 a:hover .Y {
+      color: #f2cb00; }
+    h1 a:hover .O {
+      color: #f57214; }
+    h1 a:hover .R {
+      color: #ff4747; }
+    h1 a:hover .P {
+      color: #a73db6; }
+    h1 a:hover span {
+      transition: color ease-out 300ms;
+      -moz-transition: color ease-out 300ms;
+      -webkit-transition: color ease-out 300ms;
+      -ms-transition: color ease-out 300ms;
+      -o-transition: color ease-out 300ms; }
 
-#contents {
-  position: relative; }
+h2 {
+  font-size: 20px;
+  font-weight: 300;
+  margin: 50px 0 20px;
+  padding: 5px 0;
+  border-bottom: 1px dotted #333;
+  font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+  -ms-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased; }
+  h2:before {
+    font: normal normal normal 14px/1 FontAwesome;
+    content: "\f138";
+    font-size: 22px;
+    margin-right: 10px; }
+
+p {
+  font-weight: 350;
+  font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+  -ms-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased; }
 
 header {
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.03);
@@ -265,7 +325,7 @@ header {
 footer {
   color: #ccc;
   background: rgba(0, 0, 0, 0.5);
-  font-weight: 100;
+  font-weight: 700;
   padding: 5px;
   text-align: center;
   bottom: 0;
@@ -410,7 +470,7 @@ footer {
     margin: 0 5px; }
 #contents .text {
   text-align: center;
-  font-size: 13px;
+  font-size: 14px;
   margin: 60px 0; }
   #contents .text p {
     margin: 15px 0; }

@@ -9,25 +9,25 @@
       あなただけのオリジナルキャラクターを<br>
       あなた好みに育てて冒険しましょう！
     </p>
-    <p>
-      <small>
-        「cololo」は個人運営のため、<br>
-        基本ゆるゆる対応ですが多めに見て下さいね。<!-- あんまり調子に乗ってるとアカウントBANするぜ-->
-      </small>
-    </p>
   </div>
 
   <div class="top">
     <% if (typeof user !== 'undefined') { %>
-        <p class="true">
+        <div class="true">
           <a class="btn-normal red " href="/user">GAME START</a>
-        </p>
+        </div>
     <% }else{ %>
-        <p class="false">
+        <div class="false">
           <a class="btn-normal blue" href="/login">ログイン</a>
           <a class="btn-normal yellow" href="/register">新規登録</a>
-        </p>
+        </div>
     <% } %>
+  </div>
+
+  <div class="text">
+    <small>
+      ※「cololo」は個人運営なので、基本ゆるゆる対応です。ご了承下さい。<!-- あんまり調子に乗ってるとアカウントBANするぜ-->
+    </small>
   </div>
 
   <!-- 最近のぼやき:いわゆるフレンドは「メイト」とかにしよう… -->

@@ -4,27 +4,62 @@
 ======================================*/
 
 //import
-@import 'http://fonts.googleapis.com/earlyaccess/notosansjp.css';
 @import 'https://fonts.googleapis.com/css?family=Titillium+Web:200,200i,300,300i,400i,600,600i,700,700i,900';
 
 //body
 body{
-  font-family: Titillium Web , 'Noto Sans JP' , "Meiryo UI" , "メイリオ" , Meiryo , Avenir , "Open Sans" , "Helvetica Neue" , Helvetica , Verdana , Arial , 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro',  sans-serif;
+  font-family: Titillium Web , "Meiryo UI" , "メイリオ" , Meiryo , Avenir , "Open Sans" , "Helvetica Neue" , Helvetica , Verdana , Arial , 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro',  sans-serif;
+}
+  //@import 'http://fonts.googleapis.com/earlyaccess/notosansjp.css';
+  //'Noto Sans JP' はTitillium Webと相性が悪いのでやめにした
+body{
+  font-size:15px;
 }
 
-html,body{
-}
-
-h1{
-  font-size:3em;
-  font-weight:200;
-}
 
 #container{
 
 }
 #contents{
   position:relative;
+  width:800px;
+  margin:0 auto;
+}
+h1{
+  font-size:3em;
+  font-weight:400;
+  @include set-prefix(font-smoothing,antialiased);
+  a{
+    color:inherit;
+    span{@include set-prefix(transition,color ease-in 300ms);}
+    &:hover{
+      .B{color:$blue;}
+      .G{color:$green;}
+      .Y{color:$yellow;}
+      .O{color:$orange;}
+      .R{color:$red;}
+      .P{color:$purple;}
+      span{@include set-prefix(transition,color ease-out 300ms);}
+    }
+  }
+}
+h2{
+  font-size:20px;
+  font-weight:300;
+  margin:50px 0 20px;
+  padding:5px 0;
+  border-bottom:1px dotted #333;
+  @include set-prefix(font-smoothing,antialiased);
+  &:before{
+    font: normal normal normal 14px/1 FontAwesome;
+    content: "\f138";
+    font-size:22px;
+    margin-right:10px;
+  }
+}
+p{
+  font-weight:350;
+  @include set-prefix(font-smoothing,antialiased);
 }
 
 header{
@@ -63,7 +98,7 @@ header{
 footer{
   color:#ccc;
   background:rgba(0,0,0,.5);
-  font-weight:100;
+  font-weight:700;
   padding:5px;
   text-align:center;
   bottom: 0;

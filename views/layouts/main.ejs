@@ -22,12 +22,11 @@
   <% if (typeof user !== 'undefined') { %>
       <p class="states-line">
         <p class="user_name"><%= user.user_name %>さん</p>
-        <a href="/logout" class="btn-normal logout">ログアウト</a>
+        <a href="/logout" class="btn-normal blue logout">ログアウト</a>
       </p>
   <% }else{ %>
       <p class="states-line">
-        <a href="/login" class="btn-normal blue login">ログイン</a>
-        <a href="/register" class="btn-normal yellow create">新規登録</a>
+        ログインしてください
       </p>
   <% } %>
 
@@ -56,7 +55,7 @@
 %>
 <footer>
 
-  <p id="copy_right"> © 2016 <a href="">MUSHIPAN-FACTORY.</a></p>
+  <small><p id="copy_right"> © 2016 <a href="">MUSHIPAN-FACTORY.</a></p></small>
 
 </footer>
 

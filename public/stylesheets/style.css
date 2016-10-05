@@ -1,4 +1,15 @@
 @charset "UTF-8";
+/*
+記法：
+$W:200; $H:24; $Wn:3; $Hn:2;
+@include bgimg($W,$H,$Wn,$Hn,image_path("xxxxx.png"),auto);
+@include bgps(class1,$W*0,$H*0);
+@include bgps(class2,$W*0,$H*-1);
+@include bgps(class3,$W*1,$H*0);
+@include bgps(class4,$W*1,$H*-1);
+@include bgps(class5,$W*2,$H*0);
+@include bgps(class6,$W*2,$H*-1);
+*/
 /*! sanitize.css v3.0.0 | CC0 1.0 Public Domain | github.com/10up/sanitize.css */
 /** Normalization*/
 @import "http://fonts.googleapis.com/earlyaccess/notosansjp.css";
@@ -202,17 +213,6 @@ textarea {
   clip: auto; }
 
 /*# sourceMappingURL=sanitize.css.map */
-/*
-記法：
-$W:200; $H:24; $Wn:3; $Hn:2;
-@include bgimg($W,$H,$Wn,$Hn,image_path("xxxxx.png"),auto);
-@include bgps(class1,$W*0,$H*0);
-@include bgps(class2,$W*0,$H*-1);
-@include bgps(class3,$W*1,$H*0);
-@include bgps(class4,$W*1,$H*-1);
-@include bgps(class5,$W*2,$H*0);
-@include bgps(class6,$W*2,$H*-1);
-*/
 /* ======================================
   Common
 ======================================*/
@@ -227,10 +227,11 @@ h1 {
   position: relative; }
 
 header {
-  margin-top: 20px; }
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.03);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08); }
   header h1 {
     text-align: center;
-    padding: 5px; }
+    padding: 10px; }
   header .states-line {
     text-align: right;
     padding: 5px 10px;
@@ -238,6 +239,8 @@ header {
     position: absolute;
     top: 0;
     margin-top: -35px;
+    font-weight: 100;
+    color: #fff;
     width: 100%;
     transition: margin-top ease-in 300ms;
     -moz-transition: margin-top ease-in 300ms;
@@ -261,28 +264,28 @@ header {
 
 footer {
   color: #ccc;
+  background: rgba(0, 0, 0, 0.5);
   font-weight: 100;
-  font-size: 0.9em;
   padding: 5px;
   text-align: center;
   bottom: 0;
+  line-height: 2em;
   border-top: 1px solid #eee;
   margin-top: 50px; }
   footer a {
     color: inherit;
-    transition: color ease-in 300ms, background ease-in 300ms;
-    -moz-transition: color ease-in 300ms, background ease-in 300ms;
-    -webkit-transition: color ease-in 300ms, background ease-in 300ms;
-    -ms-transition: color ease-in 300ms, background ease-in 300ms;
-    -o-transition: color ease-in 300ms, background ease-in 300ms; }
+    transition: color ease-in 300ms;
+    -moz-transition: color ease-in 300ms;
+    -webkit-transition: color ease-in 300ms;
+    -ms-transition: color ease-in 300ms;
+    -o-transition: color ease-in 300ms; }
     footer a:hover {
-      color: #11a4c4;
-      background: rgba(17, 164, 196, 0.2);
-      transition: color ease-out 300ms, background ease-out 1000ms;
-      -moz-transition: color ease-out 300ms, background ease-out 1000ms;
-      -webkit-transition: color ease-out 300ms, background ease-out 1000ms;
-      -ms-transition: color ease-out 300ms, background ease-out 1000ms;
-      -o-transition: color ease-out 300ms, background ease-out 1000ms; }
+      color: #f2cb00;
+      transition: color ease-out 300ms;
+      -moz-transition: color ease-out 300ms;
+      -webkit-transition: color ease-out 300ms;
+      -ms-transition: color ease-out 300ms;
+      -o-transition: color ease-out 300ms; }
 
 /*****************************************
   Partial
@@ -312,28 +315,28 @@ footer {
   -o-transition: top ease-in 100ms, box-shadow ease-in 100ms, color ease-in 100ms, background-color ease-in 100ms; }
   .btn-normal.blue {
     background: #11a4c4;
-    box-shadow: 0px 2px 0 rgba(0, 0, 0, 0.2), 0px 2px 0 #11a4c4, 0 0 0 1px #333, 0 2px 0 1px #333, inset 0 0 0 rgba(0, 0, 0, 0.1);
-    text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.2); }
+    box-shadow: 0px 2px 0 rgba(50, 20, 0, 0.2), 0px 2px 0 #11a4c4, 0 0 0 1px #333, 0 2px 0 1px #333, inset 0 0 0 rgba(0, 0, 0, 0.1), 0 0 0 2px #fff, 0 2px 0 2px #fff;
+    text-shadow: -1px -1px 1px rgba(50, 20, 0, 0.3), 0px 0px 3px rgba(50, 20, 0, 0.3); }
   .btn-normal.green {
     background: #54cc14;
-    box-shadow: 0px 2px 0 rgba(0, 0, 0, 0.2), 0px 2px 0 #54cc14, 0 0 0 1px #333, 0 2px 0 1px #333, inset 0 0 0 rgba(0, 0, 0, 0.1);
-    text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.2); }
+    box-shadow: 0px 2px 0 rgba(50, 20, 0, 0.2), 0px 2px 0 #54cc14, 0 0 0 1px #333, 0 2px 0 1px #333, inset 0 0 0 rgba(0, 0, 0, 0.1), 0 0 0 2px #fff, 0 2px 0 2px #fff;
+    text-shadow: -1px -1px 1px rgba(50, 20, 0, 0.3), 0px 0px 3px rgba(50, 20, 0, 0.3); }
   .btn-normal.yellow {
     background: #f2cb00;
-    box-shadow: 0px 2px 0 rgba(0, 0, 0, 0.2), 0px 2px 0 #f2cb00, 0 0 0 1px #333, 0 2px 0 1px #333, inset 0 0 0 rgba(0, 0, 0, 0.1);
-    text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.2); }
+    box-shadow: 0px 2px 0 rgba(50, 20, 0, 0.2), 0px 2px 0 #f2cb00, 0 0 0 1px #333, 0 2px 0 1px #333, inset 0 0 0 rgba(0, 0, 0, 0.1), 0 0 0 2px #fff, 0 2px 0 2px #fff;
+    text-shadow: -1px -1px 1px rgba(50, 20, 0, 0.3), 0px 0px 3px rgba(50, 20, 0, 0.3); }
   .btn-normal.orange {
     background: #f57214;
-    box-shadow: 0px 2px 0 rgba(0, 0, 0, 0.2), 0px 2px 0 #f57214, 0 0 0 1px #333, 0 2px 0 1px #333, inset 0 0 0 rgba(0, 0, 0, 0.1);
-    text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.2); }
+    box-shadow: 0px 2px 0 rgba(50, 20, 0, 0.2), 0px 2px 0 #f57214, 0 0 0 1px #333, 0 2px 0 1px #333, inset 0 0 0 rgba(0, 0, 0, 0.1), 0 0 0 2px #fff, 0 2px 0 2px #fff;
+    text-shadow: -1px -1px 1px rgba(50, 20, 0, 0.3), 0px 0px 3px rgba(50, 20, 0, 0.3); }
   .btn-normal.red {
     background: #ff4747;
-    box-shadow: 0px 2px 0 rgba(0, 0, 0, 0.2), 0px 2px 0 #ff4747, 0 0 0 1px #333, 0 2px 0 1px #333, inset 0 0 0 rgba(0, 0, 0, 0.1);
-    text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.2); }
+    box-shadow: 0px 2px 0 rgba(50, 20, 0, 0.2), 0px 2px 0 #ff4747, 0 0 0 1px #333, 0 2px 0 1px #333, inset 0 0 0 rgba(0, 0, 0, 0.1), 0 0 0 2px #fff, 0 2px 0 2px #fff;
+    text-shadow: -1px -1px 1px rgba(50, 20, 0, 0.3), 0px 0px 3px rgba(50, 20, 0, 0.3); }
   .btn-normal.purple {
     background: #a73db6;
-    box-shadow: 0px 2px 0 rgba(0, 0, 0, 0.2), 0px 2px 0 #a73db6, 0 0 0 1px #333, 0 2px 0 1px #333, inset 0 0 0 rgba(0, 0, 0, 0.1);
-    text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.2); }
+    box-shadow: 0px 2px 0 rgba(50, 20, 0, 0.2), 0px 2px 0 #a73db6, 0 0 0 1px #333, 0 2px 0 1px #333, inset 0 0 0 rgba(0, 0, 0, 0.1), 0 0 0 2px #fff, 0 2px 0 2px #fff;
+    text-shadow: -1px -1px 1px rgba(50, 20, 0, 0.3), 0px 0px 3px rgba(50, 20, 0, 0.3); }
   .btn-normal:hover, .btn-normal:active {
     over-flow: hidden;
     top: 2px;
@@ -344,22 +347,22 @@ footer {
     -ms-transition: top ease-out 100ms, box-shadow ease-out 100ms, color ease-out 100ms, background-color ease-out 100ms;
     -o-transition: top ease-out 100ms, box-shadow ease-out 100ms, color ease-out 100ms, background-color ease-out 100ms; }
     .btn-normal:hover.blue, .btn-normal:active.blue {
-      box-shadow: 0 0 0 rgba(0, 0, 0, 0.2), 0 0 0 #11a4c4, 0 0 0 1px #333, 0 0 0 1px #333, inset 0px 1px 0px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 0 0 rgba(50, 20, 0, 0.2), 0 0 0 #11a4c4, 0 0 0 1px #333, 0 0 0 1px #333, inset 0px 1px 0px rgba(0, 0, 0, 0.1), 0 0 0 2px #fff, 0 0 0 2px #fff;
       background: #11a4c4; }
     .btn-normal:hover.green, .btn-normal:active.green {
-      box-shadow: 0 0 0 rgba(0, 0, 0, 0.2), 0 0 0 #54cc14, 0 0 0 1px #333, 0 0 0 1px #333, inset 0px 1px 0px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 0 0 rgba(50, 20, 0, 0.2), 0 0 0 #54cc14, 0 0 0 1px #333, 0 0 0 1px #333, inset 0px 1px 0px rgba(0, 0, 0, 0.1), 0 0 0 2px #fff, 0 0 0 2px #fff;
       background: #54cc14; }
     .btn-normal:hover.yellow, .btn-normal:active.yellow {
-      box-shadow: 0 0 0 rgba(0, 0, 0, 0.2), 0 0 0 #f2cb00, 0 0 0 1px #333, 0 0 0 1px #333, inset 0px 1px 0px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 0 0 rgba(50, 20, 0, 0.2), 0 0 0 #f2cb00, 0 0 0 1px #333, 0 0 0 1px #333, inset 0px 1px 0px rgba(0, 0, 0, 0.1), 0 0 0 2px #fff, 0 0 0 2px #fff;
       background: #f2cb00; }
     .btn-normal:hover.orange, .btn-normal:active.orange {
-      box-shadow: 0 0 0 rgba(0, 0, 0, 0.2), 0 0 0 #f57214, 0 0 0 1px #333, 0 0 0 1px #333, inset 0px 1px 0px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 0 0 rgba(50, 20, 0, 0.2), 0 0 0 #f57214, 0 0 0 1px #333, 0 0 0 1px #333, inset 0px 1px 0px rgba(0, 0, 0, 0.1), 0 0 0 2px #fff, 0 0 0 2px #fff;
       background: #f57214; }
     .btn-normal:hover.red, .btn-normal:active.red {
-      box-shadow: 0 0 0 rgba(0, 0, 0, 0.2), 0 0 0 #ff4747, 0 0 0 1px #333, 0 0 0 1px #333, inset 0px 1px 0px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 0 0 rgba(50, 20, 0, 0.2), 0 0 0 #ff4747, 0 0 0 1px #333, 0 0 0 1px #333, inset 0px 1px 0px rgba(0, 0, 0, 0.1), 0 0 0 2px #fff, 0 0 0 2px #fff;
       background: #ff4747; }
     .btn-normal:hover.purple, .btn-normal:active.purple {
-      box-shadow: 0 0 0 rgba(0, 0, 0, 0.2), 0 0 0 #a73db6, 0 0 0 1px #333, 0 0 0 1px #333, inset 0px 1px 0px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 0 0 rgba(50, 20, 0, 0.2), 0 0 0 #a73db6, 0 0 0 1px #333, 0 0 0 1px #333, inset 0px 1px 0px rgba(0, 0, 0, 0.1), 0 0 0 2px #fff, 0 0 0 2px #fff;
       background: #a73db6; }
 .btn-solid {
   color: #000;
@@ -391,5 +394,27 @@ footer {
 /* ======================================
   General
 ======================================*/
+/*****************************************
+  Partial
+*****************************************/
+#contents .top {
+  text-align: center;
+  margin: 60px 0; }
+  #contents .top .true .btn-normal {
+    border-radius: 2px;
+    padding: 5px 20px;
+    font-size: 20px; }
+  #contents .top .false .btn-normal {
+    font-size: 14px;
+    padding: 5px 10px;
+    margin: 0 5px; }
+#contents .text {
+  text-align: center;
+  font-size: 13px;
+  margin: 60px 0; }
+  #contents .text p {
+    margin: 15px 0; }
+  #contents .text small {
+    color: #777; }
 
 /*# sourceMappingURL=style.css.map */

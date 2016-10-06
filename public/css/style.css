@@ -227,6 +227,21 @@ body {
   max-width: 800px;
   margin: 0 auto; }
 
+.contents a {
+  color: #11a4c4;
+  transition: color ease-in 100ms;
+  -moz-transition: color ease-in 100ms;
+  -webkit-transition: color ease-in 100ms;
+  -ms-transition: color ease-in 100ms;
+  -o-transition: color ease-in 100ms; }
+  .contents a:hover {
+    color: #f2cb00;
+    transition: color ease-out 100ms;
+    -moz-transition: color ease-out 100ms;
+    -webkit-transition: color ease-out 100ms;
+    -ms-transition: color ease-out 100ms;
+    -o-transition: color ease-out 100ms; }
+
 h1 {
   font-size: 3em;
   font-weight: 400;
@@ -354,7 +369,7 @@ footer {
 /* ======================================
 + btn
 ======================================*/
-.btn-normal {
+.btn-normal, a.btn-normal {
   display: inline-block;
   color: #fff;
   border-radius: 5px;
@@ -369,63 +384,63 @@ footer {
   -webkit-border-radius: 5px;
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
-  transition: top ease-in 100ms, box-shadow ease-in 100ms, color ease-in 100ms, background-color ease-in 100ms;
-  -moz-transition: top ease-in 100ms, box-shadow ease-in 100ms, color ease-in 100ms, background-color ease-in 100ms;
-  -webkit-transition: top ease-in 100ms, box-shadow ease-in 100ms, color ease-in 100ms, background-color ease-in 100ms;
-  -ms-transition: top ease-in 100ms, box-shadow ease-in 100ms, color ease-in 100ms, background-color ease-in 100ms;
-  -o-transition: top ease-in 100ms, box-shadow ease-in 100ms, color ease-in 100ms, background-color ease-in 100ms; }
-  .btn-normal.blue {
+  transition: top ease-in 150ms, box-shadow ease-in 150ms, color ease-in 150ms, background-color ease-in 150ms;
+  -moz-transition: top ease-in 150ms, box-shadow ease-in 150ms, color ease-in 150ms, background-color ease-in 150ms;
+  -webkit-transition: top ease-in 150ms, box-shadow ease-in 150ms, color ease-in 150ms, background-color ease-in 150ms;
+  -ms-transition: top ease-in 150ms, box-shadow ease-in 150ms, color ease-in 150ms, background-color ease-in 150ms;
+  -o-transition: top ease-in 150ms, box-shadow ease-in 150ms, color ease-in 150ms, background-color ease-in 150ms; }
+  .btn-normal.blue, a.btn-normal.blue {
     background: #11a4c4;
     box-shadow: 0px 2px 0 rgba(50, 20, 0, 0.2), 0px 2px 0 #11a4c4, 0 0 0 1px #333, 0 2px 0 1px #333, inset 0 0 0 rgba(0, 0, 0, 0.1), 0 0 0 2px #fff, 0 2px 0 2px #fff;
     text-shadow: -1px -1px 1px rgba(50, 20, 0, 0.3), 0px 0px 3px rgba(50, 20, 0, 0.3); }
-  .btn-normal.green {
+  .btn-normal.green, a.btn-normal.green {
     background: #54cc14;
     box-shadow: 0px 2px 0 rgba(50, 20, 0, 0.2), 0px 2px 0 #54cc14, 0 0 0 1px #333, 0 2px 0 1px #333, inset 0 0 0 rgba(0, 0, 0, 0.1), 0 0 0 2px #fff, 0 2px 0 2px #fff;
     text-shadow: -1px -1px 1px rgba(50, 20, 0, 0.3), 0px 0px 3px rgba(50, 20, 0, 0.3); }
-  .btn-normal.yellow {
+  .btn-normal.yellow, a.btn-normal.yellow {
     background: #f2cb00;
     box-shadow: 0px 2px 0 rgba(50, 20, 0, 0.2), 0px 2px 0 #f2cb00, 0 0 0 1px #333, 0 2px 0 1px #333, inset 0 0 0 rgba(0, 0, 0, 0.1), 0 0 0 2px #fff, 0 2px 0 2px #fff;
     text-shadow: -1px -1px 1px rgba(50, 20, 0, 0.3), 0px 0px 3px rgba(50, 20, 0, 0.3); }
-  .btn-normal.orange {
+  .btn-normal.orange, a.btn-normal.orange {
     background: #f57214;
     box-shadow: 0px 2px 0 rgba(50, 20, 0, 0.2), 0px 2px 0 #f57214, 0 0 0 1px #333, 0 2px 0 1px #333, inset 0 0 0 rgba(0, 0, 0, 0.1), 0 0 0 2px #fff, 0 2px 0 2px #fff;
     text-shadow: -1px -1px 1px rgba(50, 20, 0, 0.3), 0px 0px 3px rgba(50, 20, 0, 0.3); }
-  .btn-normal.red {
+  .btn-normal.red, a.btn-normal.red {
     background: #ff4747;
     box-shadow: 0px 2px 0 rgba(50, 20, 0, 0.2), 0px 2px 0 #ff4747, 0 0 0 1px #333, 0 2px 0 1px #333, inset 0 0 0 rgba(0, 0, 0, 0.1), 0 0 0 2px #fff, 0 2px 0 2px #fff;
     text-shadow: -1px -1px 1px rgba(50, 20, 0, 0.3), 0px 0px 3px rgba(50, 20, 0, 0.3); }
-  .btn-normal.purple {
+  .btn-normal.purple, a.btn-normal.purple {
     background: #a73db6;
     box-shadow: 0px 2px 0 rgba(50, 20, 0, 0.2), 0px 2px 0 #a73db6, 0 0 0 1px #333, 0 2px 0 1px #333, inset 0 0 0 rgba(0, 0, 0, 0.1), 0 0 0 2px #fff, 0 2px 0 2px #fff;
     text-shadow: -1px -1px 1px rgba(50, 20, 0, 0.3), 0px 0px 3px rgba(50, 20, 0, 0.3); }
-  .btn-normal:hover, .btn-normal:active {
+  .btn-normal:hover, .btn-normal:active, a.btn-normal:hover, a.btn-normal:active {
     over-flow: hidden;
     top: 2px;
     color: #fff;
-    transition: top ease-out 100ms, box-shadow ease-out 100ms, color ease-out 100ms, background-color ease-out 100ms;
-    -moz-transition: top ease-out 100ms, box-shadow ease-out 100ms, color ease-out 100ms, background-color ease-out 100ms;
-    -webkit-transition: top ease-out 100ms, box-shadow ease-out 100ms, color ease-out 100ms, background-color ease-out 100ms;
-    -ms-transition: top ease-out 100ms, box-shadow ease-out 100ms, color ease-out 100ms, background-color ease-out 100ms;
-    -o-transition: top ease-out 100ms, box-shadow ease-out 100ms, color ease-out 100ms, background-color ease-out 100ms; }
-    .btn-normal:hover.blue, .btn-normal:active.blue {
+    transition: top ease-out 150ms, box-shadow ease-out 150ms, color ease-out 150ms, background-color ease-out 150ms;
+    -moz-transition: top ease-out 150ms, box-shadow ease-out 150ms, color ease-out 150ms, background-color ease-out 150ms;
+    -webkit-transition: top ease-out 150ms, box-shadow ease-out 150ms, color ease-out 150ms, background-color ease-out 150ms;
+    -ms-transition: top ease-out 150ms, box-shadow ease-out 150ms, color ease-out 150ms, background-color ease-out 150ms;
+    -o-transition: top ease-out 150ms, box-shadow ease-out 150ms, color ease-out 150ms, background-color ease-out 150ms; }
+    .btn-normal:hover.blue, .btn-normal:active.blue, a.btn-normal:hover.blue, a.btn-normal:active.blue {
       box-shadow: 0 0 0 rgba(50, 20, 0, 0.2), 0 0 0 #11a4c4, 0 0 0 1px #333, 0 0 0 1px #333, inset 0px 1px 0px rgba(0, 0, 0, 0.1), 0 0 0 2px #fff, 0 0 0 2px #fff;
       background: #11a4c4; }
-    .btn-normal:hover.green, .btn-normal:active.green {
+    .btn-normal:hover.green, .btn-normal:active.green, a.btn-normal:hover.green, a.btn-normal:active.green {
       box-shadow: 0 0 0 rgba(50, 20, 0, 0.2), 0 0 0 #54cc14, 0 0 0 1px #333, 0 0 0 1px #333, inset 0px 1px 0px rgba(0, 0, 0, 0.1), 0 0 0 2px #fff, 0 0 0 2px #fff;
       background: #54cc14; }
-    .btn-normal:hover.yellow, .btn-normal:active.yellow {
+    .btn-normal:hover.yellow, .btn-normal:active.yellow, a.btn-normal:hover.yellow, a.btn-normal:active.yellow {
       box-shadow: 0 0 0 rgba(50, 20, 0, 0.2), 0 0 0 #f2cb00, 0 0 0 1px #333, 0 0 0 1px #333, inset 0px 1px 0px rgba(0, 0, 0, 0.1), 0 0 0 2px #fff, 0 0 0 2px #fff;
       background: #f2cb00; }
-    .btn-normal:hover.orange, .btn-normal:active.orange {
+    .btn-normal:hover.orange, .btn-normal:active.orange, a.btn-normal:hover.orange, a.btn-normal:active.orange {
       box-shadow: 0 0 0 rgba(50, 20, 0, 0.2), 0 0 0 #f57214, 0 0 0 1px #333, 0 0 0 1px #333, inset 0px 1px 0px rgba(0, 0, 0, 0.1), 0 0 0 2px #fff, 0 0 0 2px #fff;
       background: #f57214; }
-    .btn-normal:hover.red, .btn-normal:active.red {
+    .btn-normal:hover.red, .btn-normal:active.red, a.btn-normal:hover.red, a.btn-normal:active.red {
       box-shadow: 0 0 0 rgba(50, 20, 0, 0.2), 0 0 0 #ff4747, 0 0 0 1px #333, 0 0 0 1px #333, inset 0px 1px 0px rgba(0, 0, 0, 0.1), 0 0 0 2px #fff, 0 0 0 2px #fff;
       background: #ff4747; }
-    .btn-normal:hover.purple, .btn-normal:active.purple {
+    .btn-normal:hover.purple, .btn-normal:active.purple, a.btn-normal:hover.purple, a.btn-normal:active.purple {
       box-shadow: 0 0 0 rgba(50, 20, 0, 0.2), 0 0 0 #a73db6, 0 0 0 1px #333, 0 0 0 1px #333, inset 0px 1px 0px rgba(0, 0, 0, 0.1), 0 0 0 2px #fff, 0 0 0 2px #fff;
       background: #a73db6; }
-.btn-solid {
+.btn-solid, a.btn-solid {
   color: #000;
   display: inline-block;
   background: #fff;
@@ -443,7 +458,7 @@ footer {
   -webkit-transition: box-shadow ease-in 100ms, margin ease-in 100ms;
   -ms-transition: box-shadow ease-in 100ms, margin ease-in 100ms;
   -o-transition: box-shadow ease-in 100ms, margin ease-in 100ms; }
-  .btn-solid:hover {
+  .btn-solid:hover, a.btn-solid:hover {
     box-shadow: none;
     margin: 2px -2px -2px 2px;
     transition: box-shadow ease-in 100ms, margin ease-in 100ms;

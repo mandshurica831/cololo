@@ -6,7 +6,7 @@
 /* ======================================
 + btn
 ======================================*/
-.btn{
+.btn,a.btn{
 
   &-normal{
     display:inline-block;
@@ -19,7 +19,7 @@
     background: #fff;
     letter-spacing:0.05em;
     @include set-prefix(border-radius,5px);
-    @include set-prefix(transition,top ease-in 100ms,box-shadow ease-in 100ms,color ease-in 100ms,background-color ease-in 100ms);
+    @include set-prefix(transition,top ease-in 150ms,box-shadow ease-in 150ms,color ease-in 150ms,background-color ease-in 150ms);
 
     @each $key in $colors_name {
       $i: index($colors_name, $key);
@@ -37,7 +37,7 @@
       over-flow: hidden;
       top:2px;
       color:#fff;
-      @include set-prefix(transition,top ease-out 100ms,box-shadow ease-out 100ms,color ease-out 100ms,background-color ease-out 100ms);
+      @include set-prefix(transition,top ease-out 150ms,box-shadow ease-out 150ms,color ease-out 150ms,background-color ease-out 150ms);
 
       @each $key in $colors_name {
         $i: index($colors_name, $key);

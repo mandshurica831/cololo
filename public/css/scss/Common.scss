@@ -25,6 +25,14 @@ body{
   max-width:800px;
   margin:0 auto;
 }
+.contents  a{
+  color:$blue;
+  @include set-prefix(transition,color ease-in 100ms);
+  &:hover{
+    color:$yellow;
+    @include set-prefix(transition,color ease-out 100ms);
+  }
+}
 h1{
   font-size:3em;
   font-weight:400;

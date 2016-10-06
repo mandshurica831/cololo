@@ -14,15 +14,15 @@ body{
   //'Noto Sans JP' はTitillium Webと相性が悪いのでやめにした
 body{
   font-size:15px;
+  word-break: break-all;
 }
-
 
 #container{
 
 }
 #contents{
   position:relative;
-  width:800px;
+  max-width:800px;
   margin:0 auto;
 }
 h1{

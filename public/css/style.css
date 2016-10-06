@@ -219,11 +219,12 @@ body {
   font-family: Titillium Web , "Meiryo UI" , "メイリオ" , Meiryo , Avenir , "Open Sans" , "Helvetica Neue" , Helvetica , Verdana , Arial , 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro',  sans-serif; }
 
 body {
-  font-size: 15px; }
+  font-size: 15px;
+  word-break: break-all; }
 
 #contents {
   position: relative;
-  width: 800px;
+  max-width: 800px;
   margin: 0 auto; }
 
 h1 {
@@ -455,7 +456,7 @@ footer {
   General
 ======================================*/
 /*****************************************
-  Partial
+  index
 *****************************************/
 #contents .top {
   text-align: center;
@@ -476,5 +477,11 @@ footer {
     margin: 15px 0; }
   #contents .text small {
     color: #777; }
+
+/*****************************************
+  info
+*****************************************/
+.contents.info {
+  padding: 0 20px; }
 
 /*# sourceMappingURL=style.css.map */

@@ -219,7 +219,8 @@ body {
   font-family: Titillium Web , "Meiryo UI" , "メイリオ" , Meiryo , Avenir , "Open Sans" , "Helvetica Neue" , Helvetica , Verdana , Arial , 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro',  sans-serif; }
 
 body {
-  font-size: 15px; }
+  font-size: 15px;
+  overflow: hidden; }
 
 #contents {
   position: relative;
@@ -262,6 +263,32 @@ h1 {
       -o-transition: color ease-out 300ms; }
 
 h2 {
+  font-size: 30px;
+  margin: 40px 0 0;
+  color: #fff;
+  padding: 5px 100px 5px 0;
+  line-height: 1.3em;
+  font-weight: 400;
+  display: inline-block;
+  position: relative; }
+  h2:before {
+    content: "";
+    height: 100%;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: -1;
+    width: 200%;
+    left: -50%;
+    transform: skewX(10deg);
+    -moz-transform: skewX(10deg);
+    -webkit-transform: skewX(10deg);
+    -ms-transform: skewX(10deg);
+    -o-transform: skewX(10deg);
+    top: 0;
+    display: block;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3); }
+
+h3 {
   font-size: 20px;
   font-weight: 300;
   margin: 50px 0 20px;
@@ -272,11 +299,12 @@ h2 {
   -webkit-font-smoothing: antialiased;
   -ms-font-smoothing: antialiased;
   -o-font-smoothing: antialiased; }
-  h2:before {
+  h3:before {
     font: normal normal normal 14px/1 FontAwesome;
     content: "\f138";
     font-size: 22px;
-    margin-right: 10px; }
+    margin-right: 10px;
+    color: rgba(0, 0, 0, 0.9); }
 
 p {
   font-weight: 350;
@@ -323,9 +351,8 @@ header {
       line-height: 2.5em; }
 
 footer {
-  color: #ccc;
-  background: rgba(0, 0, 0, 0.5);
-  font-weight: 700;
+  color: #555;
+  font-weight: 400;
   padding: 5px;
   text-align: center;
   bottom: 0;

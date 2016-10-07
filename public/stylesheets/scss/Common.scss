@@ -14,6 +14,7 @@ body{
   //'Noto Sans JP' はTitillium Webと相性が悪いのでやめにした
 body{
   font-size:15px;
+  overflow: hidden;
 }
 
 
@@ -44,6 +45,29 @@ h1{
   }
 }
 h2{
+  font-size:30px;
+  margin: 40px 0 0;
+  color:#fff;
+  padding:5px 100px 5px 0;
+  line-height:1.3em;
+  font-weight:400;
+  display:inline-block;
+  position:relative;
+  &:before{
+    content:"";
+    height:100%;
+    position: absolute;
+    background:rgba(0,0,0,.9);
+    z-index:-1;
+    width:200%;
+    left:-50%;
+    @include set-prefix(transform,skewX(10deg));
+    top:0;
+    display: block;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  }
+}
+h3{
   font-size:20px;
   font-weight:300;
   margin:50px 0 20px;
@@ -55,6 +79,7 @@ h2{
     content: "\f138";
     font-size:22px;
     margin-right:10px;
+    color:rgba(0,0,0,.9);
   }
 }
 p{
@@ -96,9 +121,8 @@ header{
   }
 }
 footer{
-  color:#ccc;
-  background:rgba(0,0,0,.5);
-  font-weight:700;
+  color:#555;
+  font-weight:400;
   padding:5px;
   text-align:center;
   bottom: 0;

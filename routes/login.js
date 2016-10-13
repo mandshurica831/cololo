@@ -13,9 +13,9 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/', function(req, res, next) {
-  var email = req.body.email;
+  var user_id = req.body.user_id;
   var password = req.body.password;
-  var query = 'SELECT user_id FROM users WHERE email = "' + email + '" AND password = "' + password + '" LIMIT 1';
+  var query = 'SELECT user_id FROM users WHERE user_id = "' + user_id + '" AND password = "' + password + '" LIMIT 1';
   connection.query(query, function(err, rows) {
     var userId = rows.length? rows[0].user_id: false;
     if (userId) {
@@ -24,7 +24,7 @@ router.post('/', function(req, res, next) {
     } else {
       res.render('login', {
         title: 'ログイン',
-        noUser: 'メールアドレスとパスワードが一致するユーザーはいません'
+        noUser: 'ユーザーIDかパスワードが間違っています'
       });
     }
   });

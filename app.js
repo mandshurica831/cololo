@@ -9,14 +9,6 @@ var session = require('express-session');
 
 var setUser = require('./modules/setUser');
 
-var routes = require('./routes/index');
-var info = require('./routes/info');
-var users = require('./routes/users');
-var boards = require('./routes/boards');
-var register = require('./routes/register');
-var login = require('./routes/login');
-var logout = require('./routes/logout');
-
 var app = express();
 
 // view engine setup
@@ -37,14 +29,30 @@ app.use(session({
   saveUninitialized: true
 }));
 
+
+
+//=======================
+// routes
+//=======================
+var routes = require('./routes/index');
+var info = require('./routes/info');
+var _users = require('./routes/_users');
+var user_create = require('./routes/user_create');
+var boards = require('./routes/boards');
+var register = require('./routes/register');
+var login = require('./routes/login');
+var logout = require('./routes/logout');
+//--------------------------
 app.use('/', setUser, routes);
 app.use('/', routes);
 app.use('/info', info);
-app.use('/users', users);
+app.use('/users', _users);
+app.use('/user/create', user_create);
 app.use('/boards', setUser, boards);
 app.use('/register', register);
 app.use('/login', login);
 app.use('/logout', logout);
+
 
 
 // catch 404 and forward to error handler

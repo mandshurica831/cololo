@@ -159,6 +159,7 @@ footer{
       color:$blue;
       @include set-prefix(transition,color ease-in 100ms);
       &:hover{
+        cursor:pointer;
         color:$yellow;
         @include set-prefix(transition,color ease-out 100ms);
       }
@@ -167,11 +168,12 @@ footer{
     h2{
       z-index: 1;
       position:relative;
-      font-size:30px;
+      font-size:26px;
+      letter-spacing: 0.05em;
       margin: 20px 0;
       color:#fff;
       padding:5px 100px 5px 0;
-      line-height:1.3em;
+      line-height:1.4em;
       font-weight:400;
       display:inline-block;
       &:before{
@@ -181,7 +183,7 @@ footer{
         background:rgba(0,0,0,.9);
         z-index:-1;
         width:200%;
-        left:-50%;
+        left:-15%;
         @include set-prefix(transform,skewX(10deg));
         top:0;
         display: block;
@@ -203,6 +205,36 @@ footer{
         margin-right:10px;
         color:rgba(0,0,0,.9);
       }
+    }
+
+    form{
+      input{
+        border-radius:3px;
+        margin:5px;
+        outline: 0px;
+
+        border:1px solid #dadada;
+        box-shadow: none;
+        @include set-prefix(transition,border-color ease-out 100ms,box-shadow ease-out 100ms);
+
+        &:focus{
+          border-color:$yellow;
+          box-shadow: 0 0 3px $yellow;
+          @include set-prefix(transition,border-color ease-in 100ms,box-shadow ease-in 100ms);
+        }
+      }
+      button{
+        padding:5px 10px;
+      }
+
+      .item{
+        margin:10px 0;
+        span{
+          display:inline-block;
+          width:100px;
+        }
+      }
+
     }
 
 }

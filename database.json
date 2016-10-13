@@ -1,0 +1,10 @@
+{
+    "development": {
+    "host": "localhost",
+    "user": { "ENV" : "root" },
+    "password" : { "ENV" : "root" },
+    "database": "cololo_develop",
+    "driver": "mysql",
+    "multipleStatements": true
+  }
+}

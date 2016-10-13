@@ -1,100 +1,41 @@
 @charset "utf-8";
-/* ======================================
+/*****************************************
   Common
-======================================*/
+*****************************************/
 
+
+
+
+/* ======================================
++ body
+======================================*/
 //import
 @import 'https://fonts.googleapis.com/css?family=Titillium+Web:200,200i,300,300i,400i,600,600i,700,700i,900';
-
-//body
+//@import 'http://fonts.googleapis.com/earlyaccess/notosansjp.css';
+//'Noto Sans JP' はTitillium Webと相性が悪いのでやめにした
 body{
   font-family: Titillium Web , "Meiryo UI" , "メイリオ" , Meiryo , Avenir , "Open Sans" , "Helvetica Neue" , Helvetica , Verdana , Arial , 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro',  sans-serif;
 }
-  //@import 'http://fonts.googleapis.com/earlyaccess/notosansjp.css';
-  //'Noto Sans JP' はTitillium Webと相性が悪いのでやめにした
 body{
   font-size:15px;
   overflow: hidden;
   word-break: break-all;
 }
 
+/* ======================================
++ #container
+----------------------------------------
+> 全てのページでbodyの直下にある要素。
+======================================*/
 #container{
 
 }
-#contents{
-  position:relative;
-  max-width:800px;
-  margin:0 auto;
-}
-.contents  a{
-  color:$blue;
-  @include set-prefix(transition,color ease-in 100ms);
-  &:hover{
-    color:$yellow;
-    @include set-prefix(transition,color ease-out 100ms);
-  }
-}
-h1{
-  font-size:3em;
-  font-weight:400;
-  @include set-prefix(font-smoothing,antialiased);
-  a{
-    color:inherit;
-    span{@include set-prefix(transition,color ease-in 300ms);}
-    &:hover{
-      .B{color:$blue;}
-      .G{color:$green;}
-      .Y{color:$yellow;}
-      .O{color:$orange;}
-      .R{color:$red;}
-      .P{color:$purple;}
-      span{@include set-prefix(transition,color ease-out 300ms);}
-    }
-  }
-}
-h2{
-  font-size:30px;
-  margin: 40px 0 0;
-  color:#fff;
-  padding:5px 100px 5px 0;
-  line-height:1.3em;
-  font-weight:400;
-  display:inline-block;
-  position:relative;
-  &:before{
-    content:"";
-    height:100%;
-    position: absolute;
-    background:rgba(0,0,0,.9);
-    z-index:-1;
-    width:200%;
-    left:-50%;
-    @include set-prefix(transform,skewX(10deg));
-    top:0;
-    display: block;
-    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
-  }
-}
-h3{
-  font-size:20px;
-  font-weight:300;
-  margin:50px 0 20px;
-  padding:5px 0;
-  border-bottom:1px dotted #333;
-  @include set-prefix(font-smoothing,antialiased);
-  &:before{
-    font: normal normal normal 14px/1 FontAwesome;
-    content: "\f138";
-    font-size:22px;
-    margin-right:10px;
-    color:rgba(0,0,0,.9);
-  }
-}
-p{
-  font-weight:350;
-  @include set-prefix(font-smoothing,antialiased);
-}
 
+/* ======================================
++ header / footer
+----------------------------------------
+> ヘッダーとフッター。
+======================================*/
 header{
   box-shadow: 0 3px 3px rgba(0,0,0,.03);
   border-bottom:1px solid rgba(0,0,0,.08);
@@ -128,6 +69,9 @@ header{
     }
   }
 }
+
+/* ====================================== */
+
 footer{
   color:#555;
   font-weight:400;
@@ -136,7 +80,7 @@ footer{
   bottom: 0;
   line-height:2em;
   border-top: 1px solid #eee;
-  margin-top: 50px;
+  margin: 150px 0 50px;
 
   a{
     color:inherit;
@@ -146,4 +90,110 @@ footer{
       @include set-prefix(transition,color ease-out 300ms);
     }
   }
+}
+
+/* ======================================
++ #contents
+----------------------------------------
+> ヘッダー・フッター以外の、中身を包括する要素。
+======================================*/
+#contents{
+  position:relative;
+  max-width:800px;
+  margin:0 auto;
+}
+
+
+
+/* ======================================
++ .views
+----------------------------------------
+> viewsのファイル単体を包括している要素。
+> ファイル名classと同じ要素に付与される。
+======================================*/
+.views{
+
+
+    a{
+      color:$blue;
+      @include set-prefix(transition,color ease-in 100ms);
+      &:hover{
+        color:$yellow;
+        @include set-prefix(transition,color ease-out 100ms);
+      }
+    }
+    section.text p{
+      padding: 10px 0;
+      &:last-child{
+        padding-bottom:20px;
+      }
+    }
+
+
+}
+
+
+/* ======================================
++ ほか
+======================================*/
+h1{
+  font-size:3em;
+  font-weight:400;
+  margin-top: 40px;
+  @include set-prefix(font-smoothing,antialiased);
+  a{
+    color:inherit;
+    span{@include set-prefix(transition,color ease-in 300ms);}
+    &:hover{
+      .B{color:$blue;}
+      .G{color:$green;}
+      .Y{color:$yellow;}
+      .O{color:$orange;}
+      .R{color:$red;}
+      .P{color:$purple;}
+      span{@include set-prefix(transition,color ease-out 300ms);}
+    }
+  }
+}
+h2{
+  font-size:30px;
+  margin: 80px 0 20px;
+  color:#fff;
+  padding:5px 100px 5px 0;
+  line-height:1.3em;
+  font-weight:400;
+  display:inline-block;
+  position:relative;
+  &:before{
+    content:"";
+    height:100%;
+    position: absolute;
+    background:rgba(0,0,0,.9);
+    z-index:-1;
+    width:200%;
+    left:-50%;
+    @include set-prefix(transform,skewX(10deg));
+    top:0;
+    display: block;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  }
+}
+h3{
+  font-size:20px;
+  font-weight:300;
+  margin: 80px 0 10px;
+  padding:5px 0;
+  border-bottom:1px dotted #333;
+  @include set-prefix(font-smoothing,antialiased);
+  &:before{
+    font: normal normal normal 14px/1 FontAwesome;
+    content: "\f138";
+    font-size:22px;
+    margin-right:10px;
+    color:rgba(0,0,0,.9);
+  }
+}
+p{
+  font-weight:350;
+  @include set-prefix(font-smoothing,antialiased);
 }

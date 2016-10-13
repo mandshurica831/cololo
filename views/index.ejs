@@ -1,35 +1,38 @@
 <% layout('layouts/main') %>
-<div class="contents index">
+<article class="views index">
 
-  <div class="text">
-    <p>
-      「cololo」はブラウザでプレイできる、<br>
-      オンラインRPGゲームです。<br>
-    </p>
-    <p>
-      あなただけのオリジナルキャラクターを<br>
-      あなた好みに育てて冒険しましょう！
-    </p>
-  </div>
 
-  <div class="top">
-    <% if (typeof user !== 'undefined') { %>
-        <div class="true">
-          <a class="btn-normal red " href="/user">GAME START</a>
-        </div>
-    <% }else{ %>
-        <div class="false">
-          <a class="btn-normal blue" href="/login">ログイン</a>
-          <a class="btn-normal yellow" href="/register">新規登録</a>
-        </div>
-    <% } %>
-  </div>
+  <section class="text">
+  <p>
+    「cololo」はブラウザでプレイできる、<br>
+    オンラインRPGゲームです。
+  </p>
+  <p>
+    あなただけのオリジナルキャラクターを<br>
+    あなた好みに育てて冒険しましょう！
+  </p>
+  </section>
 
-  <div class="text">
-    <small>
-      ※「cololo」は個人運営なので、基本ゆるゆる対応です。ご了承下さい。<!-- あんまり調子に乗ってるとアカウントBANするぜ-->
-    </small>
-  </div>
+  <section class="top">
+  <% if (typeof user !== 'undefined') { %>
+      <div class="true">
+        <a class="btn-normal red " href="/user">GAME START</a>
+      </div>
+  <% }else{ %>
+      <div class="false">
+        <a class="btn-normal blue" href="/login">ログイン</a>
+        <a class="btn-normal yellow" href="/register">新規登録</a>
+      </div>
+  <% } %>
+  </section>
 
-  <!-- 最近のぼやき:いわゆるフレンドは「メイト」とかにしよう… -->
-</div>
+  <section class="text">
+  <small>
+    ※「cololo」は個人運営なので、基本ゆるゆる対応です。ご了承下さい。
+    <!-- 個人運営だから、あんまり怒らせると独裁的にBANするぜ！-->
+  </small>
+  </section>
+
+
+</article>
+<!-- 最近のぼやき:いわゆるフレンドは「メイト」とかにしよう… -->

@@ -212,8 +212,11 @@ textarea {
   clip: auto; }
 
 /*# sourceMappingURL=sanitize.css.map */
-/* ======================================
+/*****************************************
   Common
+*****************************************/
+/* ======================================
++ body
 ======================================*/
 body {
   font-family: Titillium Web , "Meiryo UI" , "メイリオ" , Meiryo , Avenir , "Open Sans" , "Helvetica Neue" , Helvetica , Verdana , Arial , 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro',  sans-serif; }
@@ -223,113 +226,16 @@ body {
   overflow: hidden;
   word-break: break-all; }
 
-#contents {
-  position: relative;
-  max-width: 800px;
-  margin: 0 auto; }
-
-.contents a {
-  color: #11a4c4;
-  transition: color ease-in 100ms;
-  -moz-transition: color ease-in 100ms;
-  -webkit-transition: color ease-in 100ms;
-  -ms-transition: color ease-in 100ms;
-  -o-transition: color ease-in 100ms; }
-  .contents a:hover {
-    color: #f2cb00;
-    transition: color ease-out 100ms;
-    -moz-transition: color ease-out 100ms;
-    -webkit-transition: color ease-out 100ms;
-    -ms-transition: color ease-out 100ms;
-    -o-transition: color ease-out 100ms; }
-
-h1 {
-  font-size: 3em;
-  font-weight: 400;
-  font-smoothing: antialiased;
-  -moz-font-smoothing: antialiased;
-  -webkit-font-smoothing: antialiased;
-  -ms-font-smoothing: antialiased;
-  -o-font-smoothing: antialiased; }
-  h1 a {
-    color: inherit; }
-    h1 a span {
-      transition: color ease-in 300ms;
-      -moz-transition: color ease-in 300ms;
-      -webkit-transition: color ease-in 300ms;
-      -ms-transition: color ease-in 300ms;
-      -o-transition: color ease-in 300ms; }
-    h1 a:hover .B {
-      color: #11a4c4; }
-    h1 a:hover .G {
-      color: #54cc14; }
-    h1 a:hover .Y {
-      color: #f2cb00; }
-    h1 a:hover .O {
-      color: #f57214; }
-    h1 a:hover .R {
-      color: #ff4747; }
-    h1 a:hover .P {
-      color: #a73db6; }
-    h1 a:hover span {
-      transition: color ease-out 300ms;
-      -moz-transition: color ease-out 300ms;
-      -webkit-transition: color ease-out 300ms;
-      -ms-transition: color ease-out 300ms;
-      -o-transition: color ease-out 300ms; }
-
-h2 {
-  font-size: 30px;
-  margin: 40px 0 0;
-  color: #fff;
-  padding: 5px 100px 5px 0;
-  line-height: 1.3em;
-  font-weight: 400;
-  display: inline-block;
-  position: relative; }
-  h2:before {
-    content: "";
-    height: 100%;
-    position: absolute;
-    background: rgba(0, 0, 0, 0.9);
-    z-index: -1;
-    width: 200%;
-    left: -50%;
-    transform: skewX(10deg);
-    -moz-transform: skewX(10deg);
-    -webkit-transform: skewX(10deg);
-    -ms-transform: skewX(10deg);
-    -o-transform: skewX(10deg);
-    top: 0;
-    display: block;
-    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3); }
-
-h3 {
-  font-size: 20px;
-  font-weight: 300;
-  margin: 50px 0 20px;
-  padding: 5px 0;
-  border-bottom: 1px dotted #333;
-  font-smoothing: antialiased;
-  -moz-font-smoothing: antialiased;
-  -webkit-font-smoothing: antialiased;
-  -ms-font-smoothing: antialiased;
-  -o-font-smoothing: antialiased; }
-  h3:before {
-    font: normal normal normal 14px/1 FontAwesome;
-    content: "\f138";
-    font-size: 22px;
-    margin-right: 10px;
-    color: rgba(0, 0, 0, 0.9); }
-
-p {
-  font-weight: 350;
-  font-smoothing: antialiased;
-  -moz-font-smoothing: antialiased;
-  -webkit-font-smoothing: antialiased;
-  -ms-font-smoothing: antialiased;
-  -o-font-smoothing: antialiased; }
-
+/* ======================================
++ #container
+----------------------------------------
+> 全てのページでbodyの直下にある要素。
+======================================*/
+/* ======================================
++ header / footer
+----------------------------------------
+> ヘッダーとフッター。
+======================================*/
 header {
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.03);
   border-bottom: 1px solid rgba(0, 0, 0, 0.08); }
@@ -366,6 +272,7 @@ header {
       font-size: 0.8em;
       line-height: 2.5em; }
 
+/* ====================================== */
 footer {
   color: #555;
   font-weight: 400;
@@ -374,7 +281,7 @@ footer {
   bottom: 0;
   line-height: 2em;
   border-top: 1px solid #eee;
-  margin-top: 50px; }
+  margin: 150px 0 50px; }
   footer a {
     color: inherit;
     transition: color ease-in 300ms;
@@ -389,6 +296,132 @@ footer {
       -webkit-transition: color ease-out 300ms;
       -ms-transition: color ease-out 300ms;
       -o-transition: color ease-out 300ms; }
+
+/* ======================================
++ #contents
+----------------------------------------
+> ヘッダー・フッター以外の、中身を包括する要素。
+======================================*/
+#contents {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto; }
+
+/* ======================================
++ .views
+----------------------------------------
+> viewsのファイル単体を包括している要素。
+> ファイル名classと同じ要素に付与される。
+======================================*/
+.views a {
+  color: #11a4c4;
+  transition: color ease-in 100ms;
+  -moz-transition: color ease-in 100ms;
+  -webkit-transition: color ease-in 100ms;
+  -ms-transition: color ease-in 100ms;
+  -o-transition: color ease-in 100ms; }
+  .views a:hover {
+    color: #f2cb00;
+    transition: color ease-out 100ms;
+    -moz-transition: color ease-out 100ms;
+    -webkit-transition: color ease-out 100ms;
+    -ms-transition: color ease-out 100ms;
+    -o-transition: color ease-out 100ms; }
+.views section.text p {
+  padding: 10px 0; }
+  .views section.text p:last-child {
+    padding-bottom: 20px; }
+
+/* ======================================
++ ほか
+======================================*/
+h1 {
+  font-size: 3em;
+  font-weight: 400;
+  margin-top: 40px;
+  font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+  -ms-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased; }
+  h1 a {
+    color: inherit; }
+    h1 a span {
+      transition: color ease-in 300ms;
+      -moz-transition: color ease-in 300ms;
+      -webkit-transition: color ease-in 300ms;
+      -ms-transition: color ease-in 300ms;
+      -o-transition: color ease-in 300ms; }
+    h1 a:hover .B {
+      color: #11a4c4; }
+    h1 a:hover .G {
+      color: #54cc14; }
+    h1 a:hover .Y {
+      color: #f2cb00; }
+    h1 a:hover .O {
+      color: #f57214; }
+    h1 a:hover .R {
+      color: #ff4747; }
+    h1 a:hover .P {
+      color: #a73db6; }
+    h1 a:hover span {
+      transition: color ease-out 300ms;
+      -moz-transition: color ease-out 300ms;
+      -webkit-transition: color ease-out 300ms;
+      -ms-transition: color ease-out 300ms;
+      -o-transition: color ease-out 300ms; }
+
+h2 {
+  font-size: 30px;
+  margin: 80px 0 20px;
+  color: #fff;
+  padding: 5px 100px 5px 0;
+  line-height: 1.3em;
+  font-weight: 400;
+  display: inline-block;
+  position: relative; }
+  h2:before {
+    content: "";
+    height: 100%;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: -1;
+    width: 200%;
+    left: -50%;
+    transform: skewX(10deg);
+    -moz-transform: skewX(10deg);
+    -webkit-transform: skewX(10deg);
+    -ms-transform: skewX(10deg);
+    -o-transform: skewX(10deg);
+    top: 0;
+    display: block;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3); }
+
+h3 {
+  font-size: 20px;
+  font-weight: 300;
+  margin: 80px 0 10px;
+  padding: 5px 0;
+  border-bottom: 1px dotted #333;
+  font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+  -ms-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased; }
+  h3:before {
+    font: normal normal normal 14px/1 FontAwesome;
+    content: "\f138";
+    font-size: 22px;
+    margin-right: 10px;
+    color: rgba(0, 0, 0, 0.9); }
+
+p {
+  font-weight: 350;
+  font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+  -ms-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased; }
 
 /*****************************************
   Partial
@@ -494,36 +527,36 @@ footer {
     -ms-transition: box-shadow ease-in 100ms, margin ease-in 100ms;
     -o-transition: box-shadow ease-in 100ms, margin ease-in 100ms; }
 
-/* ======================================
+/*****************************************
   General
-======================================*/
+*****************************************/
 /*****************************************
   index
 *****************************************/
-#contents .top {
+.views.index .top {
   text-align: center;
   margin: 60px 0; }
-  #contents .top .true .btn-normal {
+  .views.index .top .true .btn-normal {
     border-radius: 2px;
     padding: 5px 20px;
     font-size: 20px; }
-  #contents .top .false .btn-normal {
+  .views.index .top .false .btn-normal {
     font-size: 14px;
     padding: 5px 10px;
     margin: 0 5px; }
-#contents .text {
+.views.index .text {
   text-align: center;
   font-size: 14px;
   margin: 60px 0; }
-  #contents .text p {
+  .views.index .text p {
     margin: 15px 0; }
-  #contents .text small {
+  .views.index .text small {
     color: #777; }
 
 /*****************************************
   info
 *****************************************/
-.contents.info {
+.views.info {
   padding: 0 20px; }
 
 /*# sourceMappingURL=style.css.map */

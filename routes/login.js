@@ -1,10 +1,10 @@
 var express = require('express');
 var router = express.Router();
-var connection = require('../modules/mysqlConnection');
+var connection = require('app/mysql/conect');
 
 router.get('/', function(req, res, next) {
   if (req.session.user_id) {
-    res.redirect('/');
+    res.send('すでにログイン済み');
   } else {
     res.render('login', {
       title: 'ログイン'
@@ -20,7 +20,7 @@ router.post('/', function(req, res, next) {
     var userId = rows.length? rows[0].user_id: false;
     if (userId) {
       req.session.user_id = userId;
-      res.redirect('/');
+      res.redirect('/mypage');
     } else {
       res.render('login', {
         title: 'ログイン',

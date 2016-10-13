@@ -1,9 +1,18 @@
 var express = require('express');
 var router = express.Router();
 
+
+
 router.get('/', function(req, res, next) {
-  req.session.destroy();
-  res.redirect('/login');
+
+  if (req.session.user_id) {
+    req.session.destroy();
+    res.render('logout', {
+      title: 'ログアウト'
+    });
+  } else {
+    res.send('ログインしてないのにログアウトしようとしないでください');
+  }
 });
 
 module.exports = router;

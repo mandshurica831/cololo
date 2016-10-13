@@ -248,7 +248,7 @@ header {
     background: rgba(0, 0, 0, 0.7);
     position: absolute;
     top: 0;
-    margin-top: -35px;
+    margin-top: -45px;
     font-weight: 100;
     color: #fff;
     width: 100%;
@@ -265,7 +265,7 @@ header {
       -ms-transition: margin-top ease-out 300ms;
       -o-transition: margin-top ease-out 300ms; }
     header .states-line .user_name {
-      margin: 5px; }
+      margin: 10px 0 0; }
     header .states-line .btn-normal {
       padding: 0 10px;
       margin: 3px;

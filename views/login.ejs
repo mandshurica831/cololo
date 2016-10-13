@@ -4,7 +4,7 @@
   <h3>ログイン</h3>
 
   <section>
-    <form action="/user_create" method="post" class="user_create-form">
+    <form action="/login" method="post" class="user_create-form">
       <div class="item">
         <span class="label">ユーザーID</span>
         <input type="text" name="user_id" class="input" required>
@@ -17,13 +17,13 @@
         <button type="submit" class="submit btn-normal green">ログイン</button>
       </div>
     </form>
+    <% if (typeof noUser !== 'undefined') { %>
+      <p class="error"><%= noUser %></p>
+    <% } %>
   </section>
 
   <section class="text t_right">
-    <a href="/user/create">新規会員登録ページはこちら</a>
-    <% if (typeof noUser !== 'undefined') { %>
-        <p class="error"><%= noUser %></p>
-    <% } %>
+    <a href="/user_createcreate">新規会員登録ページはこちら</a>
   </section>
 
 </article>

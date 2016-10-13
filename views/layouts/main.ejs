@@ -23,8 +23,8 @@
 
   <% if (typeof user !== 'undefined') { %>
       <div class="states-line">
-        <div class="user_name"><%= user.user_name %>さん</div>
         <a href="/logout" class="btn-normal blue logout">ログアウト</a>
+        <div class="user_name"><%= user %>さん</div>
       </div>
   <% }else{ %>
       <div class="states-line">

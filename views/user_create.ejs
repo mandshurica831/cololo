@@ -4,7 +4,7 @@
   <h3>新規会員登録</h3>
 
   <section>
-    <form action="/user/create" method="post" class="user_create-form">
+    <form action="/user_createcreate" method="post" class="user_create-form">
       <div class="item">
         <span class="label">ユーザーID</span>
         <input type="text" name="user_id" class="input" required>
@@ -21,13 +21,15 @@
         <button type="submit" class="submit btn-normal green">新規会員登録</button>
       </div>
     </form>
+
+    <% //エラーメッセージ %>
+    <% if (typeof ErrorMessage !== 'undefined') { %>
+        <p class="error"><%= ErrorMessage %></p>
+    <% } %>
   </section>
 
   <section class="text t_right">
     <a href="/login">ログインページはこちら</a>
-    <% if (typeof emailExists !== 'undefined') { %>
-        <p class="error"><%= emailExists %></p>
-    <% } %>
   </section>
 
 </article>

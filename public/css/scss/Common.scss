@@ -37,12 +37,10 @@ body{
 > ヘッダーとフッター。
 ======================================*/
 header{
+
+  padding-top: 40px;
   box-shadow: 0 3px 3px rgba(0,0,0,.03);
   border-bottom:1px solid rgba(0,0,0,.08);
-  h1{
-    text-align:center;
-    padding:10px;
-  }
   .states-line{
     text-align: right;
     padding: 5px 10px;
@@ -68,6 +66,29 @@ header{
       line-height:2.5em;
     }
   }
+
+  /* タイトル
+  ================ */
+  h1{
+    text-align:center;
+    padding:10px;
+    font-size:3em;
+    font-weight:400;
+    @include set-prefix(font-smoothing,antialiased);
+    a{
+      color:inherit;
+      span{@include set-prefix(transition,color ease-in 300ms);}
+      &:hover{
+        .B{color:$blue;}
+        .G{color:$green;}
+        .Y{color:$yellow;}
+        .O{color:$orange;}
+        .R{color:$red;}
+        .P{color:$purple;}
+        span{@include set-prefix(transition,color ease-out 300ms);}
+      }
+    }
+  }
 }
 
 /* ====================================== */
@@ -75,12 +96,11 @@ header{
 footer{
   color:#555;
   font-weight:400;
-  padding:5px;
   text-align:center;
   bottom: 0;
   line-height:2em;
   border-top: 1px solid #eee;
-  margin: 150px 0 50px;
+  padding:5px 5px 50px;
 
   a{
     color:inherit;
@@ -98,12 +118,10 @@ footer{
 > ヘッダー・フッター以外の、中身を包括する要素。
 ======================================*/
 #contents{
+
   position:relative;
-  max-width:800px;
-  margin:0 auto;
+
 }
-
-
 
 /* ======================================
 + .views
@@ -113,6 +131,29 @@ footer{
 ======================================*/
 .views{
 
+    padding:60px 20px 150px;
+    max-width: 800px;
+    margin: 0 auto;
+
+
+    section{
+
+        padding:0 20px;
+        margin-top: 60px;
+
+        &.text{
+          p{
+            margin: 10px 0;
+            &:last-child{ padding-bottom:20px; }
+          }
+        }
+
+    }
+
+    p{
+      font-weight:350;
+      @include set-prefix(font-smoothing,antialiased);
+    }
 
     a{
       color:$blue;
@@ -122,78 +163,46 @@ footer{
         @include set-prefix(transition,color ease-out 100ms);
       }
     }
-    section.text p{
-      padding: 10px 0;
-      &:last-child{
-        padding-bottom:20px;
+
+    h2{
+      z-index: 1;
+      position:relative;
+      font-size:30px;
+      margin: 20px 0;
+      color:#fff;
+      padding:5px 100px 5px 0;
+      line-height:1.3em;
+      font-weight:400;
+      display:inline-block;
+      &:before{
+        content:"";
+        height:100%;
+        position: absolute;
+        background:rgba(0,0,0,.9);
+        z-index:-1;
+        width:200%;
+        left:-50%;
+        @include set-prefix(transform,skewX(10deg));
+        top:0;
+        display: block;
+        box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
       }
     }
 
-
-}
-
-
-/* ======================================
-+ ほか
-======================================*/
-h1{
-  font-size:3em;
-  font-weight:400;
-  margin-top: 40px;
-  @include set-prefix(font-smoothing,antialiased);
-  a{
-    color:inherit;
-    span{@include set-prefix(transition,color ease-in 300ms);}
-    &:hover{
-      .B{color:$blue;}
-      .G{color:$green;}
-      .Y{color:$yellow;}
-      .O{color:$orange;}
-      .R{color:$red;}
-      .P{color:$purple;}
-      span{@include set-prefix(transition,color ease-out 300ms);}
+    h3{
+      font-size:20px;
+      font-weight:300;
+      margin: 10px 0;
+      padding:5px 0;
+      border-bottom:1px dotted #333;
+      @include set-prefix(font-smoothing,antialiased);
+      &:before{
+        font: normal normal normal 14px/1 FontAwesome;
+        content: "\f138";
+        font-size:22px;
+        margin-right:10px;
+        color:rgba(0,0,0,.9);
+      }
     }
-  }
-}
-h2{
-  font-size:30px;
-  margin: 80px 0 20px;
-  color:#fff;
-  padding:5px 100px 5px 0;
-  line-height:1.3em;
-  font-weight:400;
-  display:inline-block;
-  position:relative;
-  &:before{
-    content:"";
-    height:100%;
-    position: absolute;
-    background:rgba(0,0,0,.9);
-    z-index:-1;
-    width:200%;
-    left:-50%;
-    @include set-prefix(transform,skewX(10deg));
-    top:0;
-    display: block;
-    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
-  }
-}
-h3{
-  font-size:20px;
-  font-weight:300;
-  margin: 80px 0 10px;
-  padding:5px 0;
-  border-bottom:1px dotted #333;
-  @include set-prefix(font-smoothing,antialiased);
-  &:before{
-    font: normal normal normal 14px/1 FontAwesome;
-    content: "\f138";
-    font-size:22px;
-    margin-right:10px;
-    color:rgba(0,0,0,.9);
-  }
-}
-p{
-  font-weight:350;
-  @include set-prefix(font-smoothing,antialiased);
+
 }

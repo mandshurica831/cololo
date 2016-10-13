@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.6.24, for osx10.10 (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.9, for osx10.11 (x86_64)
 --
 -- Host: localhost    Database: cololo_develop
 -- ------------------------------------------------------
--- Server version	5.6.24
+-- Server version	5.7.9
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -23,28 +23,17 @@ DROP TABLE IF EXISTS `users`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `users` (
-  `spid` int(11) NOT NULL,
+  `spid` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` varchar(12) NOT NULL,
   `password` varchar(12) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `player_name` varchar(12) NOT NULL,
-  `description` text,
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL,
   PRIMARY KEY (`spid`),
   KEY `index_user_num` (`email`),
   KEY `index_user_id` (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `users`
---
-
-LOCK TABLES `users` WRITE;
-/*!40000 ALTER TABLE `users` DISABLE KEYS */;
-/*!40000 ALTER TABLE `users` ENABLE KEYS */;
-UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -55,4 +44,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-10-13 20:02:20
+-- Dump completed on 2016-10-14  1:06:23

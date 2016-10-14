@@ -4,7 +4,12 @@
   <h3>ログイン</h3>
 
   <section>
-    <form action="/login" method="post" class="user_create-form">
+    <form action="/login" method="post" class="form-normal user_create-form">
+      <% //エラーメッセージ %>
+      <% if (typeof noUser !== 'undefined') { %>
+          <p class="error"><%= noUser %></p>
+      <% } %>
+
       <div class="item">
         <span class="label">ユーザーID</span>
         <input type="text" name="user_id" class="input" required>
@@ -13,13 +18,11 @@
         <span class="label">パスワード</span>
         <input type="password" name="password" class="input" required>
       </div>
+
       <div class="t_right">
         <button type="submit" class="submit btn-normal green">ログイン</button>
       </div>
     </form>
-    <% if (typeof noUser !== 'undefined') { %>
-      <p class="error"><%= noUser %></p>
-    <% } %>
   </section>
 
   <section class="text t_right">

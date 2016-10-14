@@ -25,6 +25,12 @@ router.post('/', function(req, res, next) {
   var createdAt = moment().format('YYYY-MM-DD HH:mm:ss');
   var updatedAt = moment().format('YYYY-MM-DD HH:mm:ss');
 
+  //入力内容チェック
+  if (0 === userId.length || 12 < userId.length) {
+    alert("ユーザーIDの文字数は1〜20字にしてください");
+    return false;
+  };
+
   var emailExistsQuery = 'SELECT * FROM users WHERE email = "' + email + '" LIMIT 1';
   var userIdExistsQuery = 'SELECT * FROM users WHERE user_id = "' + userId + '" LIMIT 1';
 
@@ -52,7 +58,11 @@ router.post('/', function(req, res, next) {
             //登録
             connection.query(registerQuery, function(err, rows) {
               console.log(err,rows);
-              res.redirect('/login');
+              res.render('_template/message',{
+                title: ' - 登録完了',
+                message:"登録が完了しました！",
+                link:{to:"login",text:'ログインページへ'},
+              });
             });
           }
         });

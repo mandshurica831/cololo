@@ -143,7 +143,7 @@ footer{
 ======================================*/
 .views{
 
-    padding:60px 20px 150px;
+    padding:60px 20px 100px;
     max-width: 800px;
     margin: 0 auto;
 
@@ -249,7 +249,9 @@ footer{
         margin:10px 0;
         span{
           display:inline-block;
-          width:100px;
+        }
+        small{
+          color:#aaa;
         }
       }
 

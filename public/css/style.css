@@ -357,7 +357,7 @@ footer {
 > ファイル名classと同じ要素に付与される。
 ======================================*/
 .views {
-  padding: 60px 20px 150px;
+  padding: 60px 20px 100px;
   max-width: 800px;
   margin: 0 auto; }
   .views section {
@@ -462,8 +462,9 @@ footer {
   .views form .item {
     margin: 10px 0; }
     .views form .item span {
-      display: inline-block;
-      width: 100px; }
+      display: inline-block; }
+    .views form .item small {
+      color: #aaa; }
 
 /*****************************************
   Partial
@@ -577,6 +578,24 @@ footer {
     -ms-transition: box-shadow ease-in 100ms, margin ease-in 100ms;
     -o-transition: box-shadow ease-in 100ms, margin ease-in 100ms; }
 
+/* ======================================
++ .form
+======================================*/
+.form-normal .item span {
+  width: 180px;
+  padding: 10px;
+  margin-right: 1em;
+  background: #fafafa; }
+.form-normal .item small {
+  padding-left: 10px; }
+  .form-normal .item small:before {
+    content: "※"; }
+.form-normal .item input {
+  width: 160px; }
+.form-normal .error {
+  color: red;
+  margin: 20px 0; }
+
 /*****************************************
   General
 *****************************************/
@@ -588,6 +607,12 @@ footer {
 
 .t_center {
   text-align: center; }
+
+.tbl {
+  display: table; }
+
+.tcl {
+  display: table-cell; }
 
 /*****************************************
   index
@@ -617,5 +642,7 @@ footer {
 /*****************************************
   user__create
 *****************************************/
+.views.user_create input[type=email] {
+  width: 300px; }
 
 /*# sourceMappingURL=style.css.map */

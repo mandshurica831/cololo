@@ -20,7 +20,6 @@ router.post('/', function(req, res, next) {
 
   //入力値を拾う
   var userId = req.body.user_id;
-  var email = req.body.email;
   var password = req.body.password;
   var createdAt = moment().format('YYYY-MM-DD HH:mm:ss');
   var updatedAt = moment().format('YYYY-MM-DD HH:mm:ss');
@@ -31,44 +30,31 @@ router.post('/', function(req, res, next) {
     return false;
   };
 
-  var emailExistsQuery = 'SELECT * FROM users WHERE email = "' + email + '" LIMIT 1';
   var userIdExistsQuery = 'SELECT * FROM users WHERE user_id = "' + userId + '" LIMIT 1';
 
-  var registerQuery = 'INSERT INTO users (user_id, email, password, created_at, updated_at) VALUES ("' + userId + '", "' + email + '", "' + password + '", "' + createdAt + '", "' + updatedAt + '")';
+  var registerQuery = 'INSERT INTO users (user_id, password, created_at, updated_at) VALUES ("' + userId + '", "' + password + '", "' + createdAt + '", "' + updatedAt + '")';
   console.log(registerQuery);
 
-  //emailすでに登録されてないかチェック
-  connection.query(emailExistsQuery, function(err, email) {
-    var emailExists = email.length === 1;
-    if (emailExists) {
+  //user_idすでに登録されてないかチェック
+  connection.query(userIdExistsQuery, function(err, user_id) {
+    var userIdExists = user_id.length === 1;
+    if (userIdExists) {
       res.render('user_create/index', {
         title: 'cololo',
-        ErrorMessage: '既に登録されているメールアドレスです'
+        ErrorMessage: 'そのユーザーIDは既に使用されています。'
       });
     } else {
-        //user_idすでに登録されてないかチェック
-        connection.query(userIdExistsQuery, function(err, user_id) {
-          var userIdExists = user_id.length === 1;
-          if (userIdExists) {
-            res.render('user_create/index', {
-              title: 'cololo',
-              ErrorMessage: 'そのユーザーIDは既に使用されています。'
-            });
-          } else {
-            //登録
-            connection.query(registerQuery, function(err, rows) {
-              console.log(err,rows);
-              res.render('_template/message',{
-                title: ' - 登録完了',
-                message:"登録が完了しました！",
-                link:{to:"login",text:'ログインページへ'},
-              });
-            });
-          }
+      //登録
+      connection.query(registerQuery, function(err, rows) {
+        console.log(err,rows);
+        res.render('_template/message',{
+          title: ' - 登録完了',
+          message:"登録が完了しました！",
+          link:{to:"login",text:'ログインページへ'},
         });
+      });
     }
   });
-
 
 });
 

@@ -44,7 +44,7 @@ var mypage = require('./routes/mypage');
 app.use('/', getUser, routes);
 app.use('/', routes);
 app.use('/info', info);
-app.use('/user_createcreate', user_create);
+app.use('/user_create', user_create);
 app.use('/login', login);
 app.use('/logout', _logout);
 app.use('/mypage', mypage);

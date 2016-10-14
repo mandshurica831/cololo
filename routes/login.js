@@ -7,7 +7,7 @@ router.get('/', function(req, res, next) {
     res.send('すでにログイン済み');
   } else {
     res.render('login', {
-      title: 'ログイン'
+      title: ' − ログイン'
     });
   }
 });

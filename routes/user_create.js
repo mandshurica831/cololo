@@ -6,7 +6,7 @@ var connection = require('app/mysql/conect');
 /* GET users listing. */
 router.get('/', function(req, res, next) {
   res.render('user_create', {
-    title: 'cololo',
+    title: ' - 新規登録',
   });
 });
 

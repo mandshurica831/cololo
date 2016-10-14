@@ -6,7 +6,7 @@ var connection = require('app/mysql/conect');
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('mypage/index', {
-    title: 'cololo',
+    title: ' - マイページ',
     user: req.session.user_id
   });
 });

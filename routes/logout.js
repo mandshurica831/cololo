@@ -8,10 +8,10 @@ router.get('/', function(req, res, next) {
   if (req.session.user_id) {
     req.session.destroy();
     res.render('logout', {
-      title: 'ログアウト'
+      title: ' - ログアウト'
     });
   } else {
-    res.send('ログインしてないのにログアウトしようとしないでください');
+    res.send('ログインしてないのにログアウトしようとしないでね！');
   }
 });
 

@@ -7,11 +7,16 @@ router.get('/', function(req, res, next) {
 
   if (req.session.user_id) {
     req.session.destroy();
-    res.render('logout', {
-      title: ' - ログアウト'
+    res.render('_template/message', {
+      title: ' - ログアウト',
+      message: 'ログアウトしました',
+      link: {to:"login",text:"ログインページへ"},
     });
   } else {
-    res.send('ログインしてないのにログアウトしようとしないでね！');
+    //res.send('ログインしてないよ！');
+    res.render('login', {
+      title: ' - ログイン'
+    });
   }
 });
 

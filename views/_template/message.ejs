@@ -1,0 +1,14 @@
+<% layout('/_layouts/main') %>
+<article class="views message t_center">
+
+  <section class="message_box">
+    <%= message %>
+  </section>
+
+  <%if(link){%>
+  <section class="text">
+    <a href="<%= link.to %>"><%= link.text %></a>
+  </section>
+  <%}%>
+
+</article>

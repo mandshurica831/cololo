@@ -3,15 +3,8 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('info', {
+  res.render('info/index', {
     title: ' - info',
-    user: req.session.user_id
-  });
-});
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('mypage/index', {
-    title: ' - マイページ',
     user: req.session.user_id
   });
 });

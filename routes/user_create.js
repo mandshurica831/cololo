@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var moment = require('moment');
-var connection = require('app/mysql/conect');
+var connection = require('app/mysql/pool');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {

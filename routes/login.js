@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var connection = require('app/mysql/conect');
+var connection = require('app/mysql/pool');
 
 router.get('/', function(req, res, next) {
   if (req.session.user_id) {

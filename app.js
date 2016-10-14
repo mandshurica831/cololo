@@ -7,7 +7,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 
-var get_user = require('./_get_user');
+//var get_user = require('app/mysql/get_user');
 
 var app = express();
 
@@ -30,6 +30,13 @@ app.use(session({
 }));
 
 
+// debug
+//=======================
+app.use(function(req,res,next){
+  res.locals.nande = "nande";
+  next();
+});
+var debug_logs_set = require('./_debug_logs_set');
 
 //=======================
 // routes
@@ -41,7 +48,7 @@ var login = require('./routes/login');
 var mypage = require('./routes/mypage');
 var info = require('./routes/info');
 //--------------------------
-app.use('/', get_user, routes);
+app.use('/', debug_logs_set, routes);
 app.use('/logout', _logout);
 app.use('/user_create', user_create);
 app.use('/login', login);

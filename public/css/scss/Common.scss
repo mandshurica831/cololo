@@ -50,11 +50,13 @@ header{
     font-weight:100;
     color:#222;
     width: 100%;
-    margin-top:-45px;
-    @include set-prefix(transition,margin-top ease-in 300ms);
-    &:hover{
-      margin-top:0px;
-      @include set-prefix(transition,margin-top ease-out 300ms);
+    &.login{
+      margin-top:-45px;
+      @include set-prefix(transition,margin-top ease-in 300ms);
+      &:hover{
+        margin-top:0px;
+        @include set-prefix(transition,margin-top ease-out 300ms);
+      }
     }
     .btns_area{
       padding: 5px;

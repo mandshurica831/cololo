@@ -5,7 +5,6 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
   res.render('mypage/index', {
     title: ' - マイページ',
-    user: req.session.user_id
   });
 });
 

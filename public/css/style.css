@@ -250,20 +250,21 @@ header {
     top: 0;
     font-weight: 100;
     color: #222;
-    width: 100%;
-    margin-top: -45px;
-    transition: margin-top ease-in 300ms;
-    -moz-transition: margin-top ease-in 300ms;
-    -webkit-transition: margin-top ease-in 300ms;
-    -ms-transition: margin-top ease-in 300ms;
-    -o-transition: margin-top ease-in 300ms; }
-    header .states-line:hover {
-      margin-top: 0px;
-      transition: margin-top ease-out 300ms;
-      -moz-transition: margin-top ease-out 300ms;
-      -webkit-transition: margin-top ease-out 300ms;
-      -ms-transition: margin-top ease-out 300ms;
-      -o-transition: margin-top ease-out 300ms; }
+    width: 100%; }
+    header .states-line.login {
+      margin-top: -45px;
+      transition: margin-top ease-in 300ms;
+      -moz-transition: margin-top ease-in 300ms;
+      -webkit-transition: margin-top ease-in 300ms;
+      -ms-transition: margin-top ease-in 300ms;
+      -o-transition: margin-top ease-in 300ms; }
+      header .states-line.login:hover {
+        margin-top: 0px;
+        transition: margin-top ease-out 300ms;
+        -moz-transition: margin-top ease-out 300ms;
+        -webkit-transition: margin-top ease-out 300ms;
+        -ms-transition: margin-top ease-out 300ms;
+        -o-transition: margin-top ease-out 300ms; }
     header .states-line .btns_area {
       padding: 5px;
       height: 45px;

@@ -5,13 +5,11 @@ var connection = require('app/mysql/conect');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-
   if (req.session.user_id) {
     res.redirect('mypage');
   } else {
     res.render('index', {
       title: '',
-      user: req.session.user_id
     });
   }
 });

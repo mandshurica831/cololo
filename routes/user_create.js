@@ -10,7 +10,6 @@ router.get('/', function(req, res, next) {
   } else {
     res.render('user_create/index', {
       title: ' - 新規登録',
-      user: req.session.user_id
     });
   }
 });

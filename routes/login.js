@@ -7,7 +7,7 @@ router.get('/', function(req, res, next) {
     res.send('…！？　すでにログイン済みのお前が、一体なぜここへ…！？');
   } else {
     res.render('login/index', {
-      title: ' − ログイン'
+      title: ' − ログイン',
     });
   }
 });

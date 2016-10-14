@@ -9,6 +9,23 @@
 <link rel="stylesheet" href="/css/font-awesome.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
 <script type="text/javascript" src="/js/common.js"></script>
+                                                                    <script type='text/javascript'>
+                                                                    <% PageJSName = "xxx" %>
+                                                                    var <%= PageJSName%> = function(){
+                                                                      console.log("xxx",this);
+                                                                    }
+                                                                    </script>
+<script type='text/javascript'>
+<%// クラスがなかった場合も動くように %>
+$(function(){
+  if(window.hasOwnProperty("<%= PageJSName %>")){
+    <%= PageJSName %> = new <%= PageJSName %>();
+  }else{
+    GL.hide_loading();
+  }
+});
+//var log = new Log(環境変数);<%// log関数 productionでは出力しない %>
+</script>
 </head>
 <body>
 <div id="container">
@@ -20,19 +37,20 @@
 %>
 <header>
 
-
   <% if (typeof user !== 'undefined') { %>
-      <div class="states-line">
+      <div class="states-line login">
         <div class="btns_area">
           <div class="item"><a href="/logout" class="btn-normal blue logout">ログアウト</a></div>
         </div>
         <div class="user_data_area">
-          <%= user %>さん
+          <%= user.user_id %>さん
         </div>
       </div>
   <% }else{ %>
       <div class="states-line">
-        ログインしてください
+        <div class="user_data_area">
+          <a href="/login">ログイン</a>
+        </div>
       </div>
   <% } %>
 

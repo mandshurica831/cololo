@@ -5,9 +5,14 @@ var connection = require('app/mysql/conect');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  res.render('user_create', {
-    title: ' - 新規登録',
-  });
+  if (req.session.user_id) {
+    res.send('直接叩くのやめろってばあ');
+  } else {
+    res.render('user_create/index', {
+      title: ' - 新規登録',
+      user: req.session.user_id
+    });
+  }
 });
 
 
@@ -30,7 +35,7 @@ router.post('/', function(req, res, next) {
   connection.query(emailExistsQuery, function(err, email) {
     var emailExists = email.length === 1;
     if (emailExists) {
-      res.render('user_create', {
+      res.render('user_create/index', {
         title: 'cololo',
         ErrorMessage: '既に登録されているメールアドレスです'
       });
@@ -39,7 +44,7 @@ router.post('/', function(req, res, next) {
         connection.query(userIdExistsQuery, function(err, user_id) {
           var userIdExists = user_id.length === 1;
           if (userIdExists) {
-            res.render('user_create', {
+            res.render('user_create/index', {
               title: 'cololo',
               ErrorMessage: 'そのユーザーIDは既に使用されています。'
             });

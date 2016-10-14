@@ -1,7 +1,5 @@
 var express = require('express');
 var router = express.Router();
-var moment = require('moment');
-var connection = require('app/mysql/conect');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {

@@ -43,27 +43,39 @@ header{
   border-bottom:1px solid rgba(0,0,0,.08);
   .states-line{
     text-align: right;
-    padding: 5px 10px;
-    background:rgba(0,0,0,.7);
+    background: #fafafa;
+    box-shadow: 0 0 5px rgba(0,0,0,.2);
     position:absolute;
     top:0;
-    margin-top:-45px;
     font-weight:100;
-    color:#fff;
-    width:100%;
+    color:#222;
+    width: 100%;
+    margin-top:-45px;
     @include set-prefix(transition,margin-top ease-in 300ms);
     &:hover{
       margin-top:0px;
       @include set-prefix(transition,margin-top ease-out 300ms);
     }
-    .user_name{
-      margin: 10px 0 0;
+    .btns_area{
+      padding: 5px;
+      height:45px;
+      box-sizing:border-box;
+      display:table;
+      width:100%;
+      .item{
+        display:table-cell;
+        vertical-align:middle;
+        padding: 0 1px;
+      }
+    }
+    .user_data_area{
+      margin: 5px 10px;
     }
     .btn-normal{
       padding: 0 10px;
       margin:3px;
       font-size:0.8em;
-      line-height:2.5em;
+      line-height: 2em;
     }
   }
 

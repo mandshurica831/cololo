@@ -4,7 +4,7 @@ var connection = require('app/mysql/conect');
 
 router.get('/', function(req, res, next) {
   if (req.session.user_id) {
-    res.send('すでにログイン済み');
+    res.send('…！？　すでにログイン済みのお前が、一体なぜここへ…！？');
   } else {
     res.render('login', {
       title: ' − ログイン'

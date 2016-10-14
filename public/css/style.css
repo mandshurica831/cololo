@@ -244,14 +244,14 @@ header {
   ================ */ }
   header .states-line {
     text-align: right;
-    padding: 5px 10px;
-    background: rgba(0, 0, 0, 0.7);
+    background: #fafafa;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
     position: absolute;
     top: 0;
-    margin-top: -45px;
     font-weight: 100;
-    color: #fff;
+    color: #222;
     width: 100%;
+    margin-top: -45px;
     transition: margin-top ease-in 300ms;
     -moz-transition: margin-top ease-in 300ms;
     -webkit-transition: margin-top ease-in 300ms;
@@ -264,13 +264,23 @@ header {
       -webkit-transition: margin-top ease-out 300ms;
       -ms-transition: margin-top ease-out 300ms;
       -o-transition: margin-top ease-out 300ms; }
-    header .states-line .user_name {
-      margin: 10px 0 0; }
+    header .states-line .btns_area {
+      padding: 5px;
+      height: 45px;
+      box-sizing: border-box;
+      display: table;
+      width: 100%; }
+      header .states-line .btns_area .item {
+        display: table-cell;
+        vertical-align: middle;
+        padding: 0 1px; }
+    header .states-line .user_data_area {
+      margin: 5px 10px; }
     header .states-line .btn-normal {
       padding: 0 10px;
       margin: 3px;
       font-size: 0.8em;
-      line-height: 2.5em; }
+      line-height: 2em; }
   header h1 {
     text-align: center;
     padding: 10px;

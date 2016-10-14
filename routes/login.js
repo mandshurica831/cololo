@@ -6,7 +6,7 @@ router.get('/', function(req, res, next) {
   if (req.session.user_id) {
     res.send('…！？　すでにログイン済みのお前が、一体なぜここへ…！？');
   } else {
-    res.render('login', {
+    res.render('login/index', {
       title: ' − ログイン'
     });
   }
@@ -22,7 +22,7 @@ router.post('/', function(req, res, next) {
       req.session.user_id = userId;
       res.redirect('/mypage');
     } else {
-      res.render('login', {
+      res.render('login/index', {
         title: 'ログイン',
         noUser: 'ユーザーIDかパスワードが間違っています'
       });

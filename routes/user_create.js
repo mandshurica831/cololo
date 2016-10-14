@@ -49,8 +49,8 @@ router.post('/', function(req, res, next) {
         console.log(err,rows);
         res.render('_template/message',{
           title: ' - 登録完了',
-          message:"登録が完了しました！",
-          link:{to:"login",text:'ログインページへ'},
+          message:'登録が完了しました！',
+          link:{to:'login/index',text:'ログインページへ'},
         });
       });
     }

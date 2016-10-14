@@ -10,11 +10,11 @@ router.get('/', function(req, res, next) {
     res.render('_template/message', {
       title: ' - ログアウト',
       message: 'ログアウトしました',
-      link: {to:"login",text:"ログインページへ"},
+      link: {to:'login/index',text:'ログインページへ'},
     });
   } else {
     //res.send('ログインしてないよ！');
-    res.render('login', {
+    res.render('login/index', {
       title: ' - ログイン'
     });
   }

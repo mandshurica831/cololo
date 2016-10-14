@@ -35,19 +35,18 @@ app.use(session({
 // routes
 //=======================
 var routes = require('./routes/index');
-var info = require('./routes/info');
+var _logout = require('./routes/logout');
 var user_create = require('./routes/user_create');
 var login = require('./routes/login');
-var _logout = require('./routes/logout');
 var mypage = require('./routes/mypage');
+var info = require('./routes/info');
 //--------------------------
 app.use('/', getUser, routes);
-app.use('/', routes);
-app.use('/info', info);
+app.use('/logout', _logout);
 app.use('/user_create', user_create);
 app.use('/login', login);
-app.use('/logout', _logout);
 app.use('/mypage', mypage);
+app.use('/info', info);
 
 
 

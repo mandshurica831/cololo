@@ -45,12 +45,18 @@ router.post('/', function(req, res, next) {
     } else {
       //登録
       connection.query(registerQuery, function(err, rows) {
-        console.log(err,rows);
-        res.render('_template/message',{
-          title: ' - 登録完了',
-          message:'登録が完了しました！',
-          link:{to:'login/index',text:'ログインページへ'},
-        });
+        if(!err){
+          res.render('_template/message',{
+            title: ' - 登録完了',
+            message:'登録が完了しました！',
+            link:{to:'/login',text:'ログインページへ'},
+          });
+        }else{
+          res.render('_template/message',{
+            title: ' - エラー',
+            message:err,
+          });
+        }
       });
     }
   });

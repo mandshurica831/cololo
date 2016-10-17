@@ -15,8 +15,9 @@ router.get('/', function(req, res, next) {
 router.post('/', function(req, res, next) {
   var user_id = req.body.user_id;
   var password = req.body.password;
-  var query = 'SELECT user_id FROM users WHERE user_id = "' + user_id + '" AND password = "' + password + '" LIMIT 1';
-  connection.query(query, function(err, rows) {
+  var sql = 'SELECT user_id FROM users WHERE user_id = "' + user_id + '" AND password = "' + password + '" LIMIT 1';
+  connection.query(sql, function(err, rows) {
+    id(err) console.log('ERROR >>>>> ',err);
     var userId = rows.length? rows[0].user_id: false;
     if (userId) {
       req.session.user_id = userId;

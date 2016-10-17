@@ -29,6 +29,10 @@ $(function(){
 </head>
 <body>
 <div id="container">
+<%
+  var login = false;
+  if (typeof user !== 'undefined') login=true;
+%>
 
 <%
 // =======================
@@ -36,7 +40,7 @@ $(function(){
 //========================
 %>
 <header>
-  <% if (typeof user !== 'undefined') { %>
+  <% if (login) { %>
       <div class="states-line login">
         <div class="btns_area">
           <div class="item"><a href="/logout" class="btn-normal blue logout">ログアウト</a></div>
@@ -53,7 +57,11 @@ $(function(){
       </div>
   <% } %>
 
-  <h1><a href="/"><span class="B">c</span><span class="G">o</span><span class="Y">l</span><span class="O">o</span><span class="R">l</span><span class="P">o</span></a></h1>
+  <%
+    var link = "/"
+    if(login) link = "/mypage"
+  %>
+  <h1><a href="<%= link %>"><span class="B">c</span><span class="G">o</span><span class="Y">l</span><span class="O">o</span><span class="R">l</span><span class="P">o</span></a></h1>
 
 </header>
 

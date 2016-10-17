@@ -6,20 +6,13 @@ var app = express();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  if (req.session.user_id) {
-    var query = 'SHOW TABLES';
-    connection.query(query, function(err, rows) {
-      if(!err){
-        res.render('index', {
-          title: '',
-        });
-      }
-    });
-  } else {
-    res.render('index', {
-      title: '',
-    });
-  }
+connection.query("",function(){
+
+      res.render('index', {
+        title: '',
+      });
+
+});
 });
 
 router.post('/', function(req, res, next) {

@@ -18,6 +18,7 @@ router.post('/', function(req, res, next) {
   var sql = 'SELECT user_id FROM users WHERE user_id = "' + user_id + '" AND password = "' + password + '" LIMIT 1';
   connection.query(sql, function(err, rows) {
     if(err) console.log('ERROR >>>>> ',err);
+    if(!err) console.log(rows);
     var userId = rows.length? rows[0].user_id: false;
     if (userId) {
       req.session.user_id = userId;

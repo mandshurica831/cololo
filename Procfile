@@ -1,1 +1,1 @@
-web: node bin/www
+web: NODE_PATH=lib node ./bin/www

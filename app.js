@@ -8,8 +8,8 @@ var bodyParser = require('body-parser');
 var session = require('express-session');
 
 // my_apps
-var debug_logs_set = require('./_debug_logs_set');
-var get_user = require('app/mysql/get_user');
+var debug_logs_set = require('_debug_logs_set');
+var get_user = require('mysql/get_user');
 
 
 var app = express();

@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var moment = require('moment');
-var connection = require('app/mysql/pool');
+var connection = require('mysql/pool');
 var app = express();
 
 /* GET home page. */

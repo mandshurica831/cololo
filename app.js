@@ -7,7 +7,10 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 
-//var get_user = require('app/mysql/get_user');
+// my_apps
+var debug_logs_set = require('./_debug_logs_set');
+var get_user = require('app/mysql/get_user');
+
 
 var app = express();
 
@@ -29,16 +32,13 @@ app.use(session({
   saveUninitialized: true
 }));
 
-
 // debug
 //=======================
 app.use(function(req,res,next){
   res.locals.nande = "nande";
   next();
 });
-var debug_logs_set = require('./_debug_logs_set');
 
-//=======================
 // routes
 //=======================
 var routes = require('./routes/index');
@@ -47,8 +47,8 @@ var user_create = require('./routes/user_create');
 var login = require('./routes/login');
 var mypage = require('./routes/mypage');
 var info = require('./routes/info');
-//--------------------------
-app.use('/', debug_logs_set, routes);
+//=======================
+app.use('/', get_user, debug_logs_set, routes);
 app.use('/logout', _logout);
 app.use('/user_create', user_create);
 app.use('/login', login);

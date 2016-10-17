@@ -1,10 +1,16 @@
 var express = require('express');
 var router = express.Router();
+var connection = require('app/mysql/pool')
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('mypage/index', {
-    title: ' - マイページ',
+  var query = 'SHOW TABLES';
+  connection.query(query, function(err, rows) {
+    if(!err){
+      res.render('mypage/index', {
+        title: ' - マイページ',
+      });
+    }
   });
 });
 

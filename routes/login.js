@@ -4,7 +4,7 @@ var connection = require('app/mysql/pool');
 
 router.get('/', function(req, res, next) {
   if (req.session.user_id) {
-    res.send('…！？　すでにログイン済みのお前が、一体なぜここへ…！？');
+    res.redirect('/');
   } else {
     res.render('login/index', {
       title: ' − ログイン',

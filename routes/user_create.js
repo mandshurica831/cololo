@@ -6,7 +6,7 @@ var connection = require('app/mysql/pool');
 /* GET users listing. */
 router.get('/', function(req, res, next) {
   if (req.session.user_id) {
-    res.send('直接叩くのやめろってばあ');
+    res.redirect('/');
   } else {
     res.render('user_create/index', {
       title: ' - 新規登録',

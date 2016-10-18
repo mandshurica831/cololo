@@ -34,8 +34,8 @@ app.use(session({
 
 // debug
 //=======================
-app.use(function(req, res, next){
-  res.locals.nande = "nande";
+app.use(function(req, res, next) {
+  res.locals.nande = 'nande';
   next();
 });
 

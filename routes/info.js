@@ -1,16 +1,14 @@
-var express = require('express');
-var router = express.Router();
-var connection = require('mysql/pool');
+const express = require('express');
+const connection = require('mysql/pool');
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-connection.query("",function(){
+const router = express.Router();
 
-  res.render('info/index', {
-    title: ' - info',
+router.get('/', (req, res) => {
+  connection.query('', () => {
+    res.render('info/index', {
+      title: ' - info',
+    });
   });
-
-});
 });
 
 module.exports = router;

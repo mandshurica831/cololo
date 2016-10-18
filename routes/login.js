@@ -1,8 +1,9 @@
-var express = require('express');
-var router = express.Router();
-var connection = require('mysql/pool');
+const express = require('express');
+const connection = require('mysql/pool');
 
-router.get('/', function(req, res, next) {
+const router = express.Router();
+
+router.get('/', (req, res) => {
   if (req.session.user_id) {
     res.redirect('/');
   } else {
@@ -12,19 +13,21 @@ router.get('/', function(req, res, next) {
   }
 });
 
-router.post('/', function(req, res, next) {
-  var user_id = req.body.user_id;
-  var password = req.body.password;
-  var sql = 'SELECT user_id FROM users WHERE user_id = "' + user_id + '" AND password = "' + password + '" LIMIT 1';
+router.post('/', (req, res) => {
+  // 入力値（定数）
+  const userId = req.body.user_id;
+  const password = req.body.password;
+  const sql = `SELECT user_id FROM users WHERE user_id = "${userId}" AND password = "${password}" LIMIT 1`;
   console.log(sql);
-  connection.query(sql, function(err, rows) {
-    if(err) console.log('ERROR >>>>> ',err);
-    if(!err) console.log(rows);
-    var userId = rows.length? rows[0].user_id: false;
-    if (userId) {
-      req.session.user_id = userId;
+
+  connection.query(sql, (err, rows) => {
+    const uid = rows.length ? rows[0].user_id : false;
+    if (uid) {
+      console.log(rows);
+      req.session.user_id = uid;
       res.redirect('/mypage');
     } else {
+      console.log('ERROR >>>>> ', err);
       res.render('login/index', {
         title: 'ログイン',
         noUser: 'ユーザーIDかパスワードが間違っています'

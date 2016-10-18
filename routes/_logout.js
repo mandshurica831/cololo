@@ -1,19 +1,16 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
 
+const router = express.Router();
 
-
-router.get('/', function(req, res, next) {
-
+router.get('/', (req, res) => {
   if (req.session.user_id) {
     req.session.destroy();
     res.render('_template/message', {
       title: ' - ログアウト',
       message: 'ログアウトしました',
-      link: {to:'login',text:'ログインページへ'},
+      link: { to: 'login', text: 'ログインページへ' },
     });
   } else {
-    //res.send('ログインしてないよ！');
     res.render('login/index', {
       title: ' - ログイン'
     });

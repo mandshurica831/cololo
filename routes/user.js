@@ -1,10 +1,10 @@
-var express = require('express');
-var router = express.Router();
-var connection = require('mysql/pool');
-var moment = require('moment');
+const express = require('express');
+const connection = require('mysql/pool');
+const moment = require('moment');
 
-/* GET users listing. */
-router.get('/create', function(req, res, next) {
+const router = express.Router();
+
+router.get('/create', (req, res) => {
   if (req.session.user_id) {
     res.redirect('/');
   } else {
@@ -15,52 +15,61 @@ router.get('/create', function(req, res, next) {
 });
 
 
-router.post('/', function(req, res, next) {
+router.post('/', (req, res) => {
+  // 定数
+  let str;
 
-  //入力値を拾う
-  var userId = req.body.user_id;
-  var password = req.body.password;
-  var createdAt = moment().format('YYYY-MM-DD HH:mm:ss');
-  var updatedAt = moment().format('YYYY-MM-DD HH:mm:ss');
+  // 入力値
+  const userId = req.body.user_id;
+  const password = req.body.password;
+  const createdAt = moment().format('YYYY-MM-DD HH:mm:ss');
+  const updatedAt = moment().format('YYYY-MM-DD HH:mm:ss');
 
-  //入力内容チェック
-  if (0 === userId.length || 12 < userId.length) {
-    alert("ユーザーIDの文字数は1〜20字にしてください");
-    return false;
+  // 入力内容チェック
+  if (userId.length === 0 || userId.length > 12) {
+    res.render('_template/message', {
+      title: ' - エラー',
+      message: 'ユーザーIDの文字数は1〜20字にしてください',
+    });
+  }
+
+  str = 'INSERT INTO users (user_id, password, created_at, updated_at)';
+  const values = [userId, password, createdAt, updatedAt];
+  str += ` VALUES ("${values.join('", "')}")`;
+
+  const sql = {
+    query: str,
+    user_id_chk: `SELECT * FROM users WHERE user_id = "${userId}" LIMIT 1`,
   };
+  console.log(sql);
 
-  var userIdExistsQuery = 'SELECT * FROM users WHERE user_id = "' + userId + '" LIMIT 1';
-
-  var registerQuery = 'INSERT INTO users (user_id, password, created_at, updated_at) VALUES ("' + userId + '", "' + password + '", "' + createdAt + '", "' + updatedAt + '")';
-  console.log(registerQuery);
-
-  //user_idすでに登録されてないかチェック
-  connection.query(userIdExistsQuery, function(err, user_id) {
-    var userIdExists = user_id.length === 1;
-    if (userIdExists) {
+  // user_idすでに登録されてないかチェック
+  connection.query(sql.user_id_chk, (err, rows) => {
+    const uid = rows.length === 1;
+    if (uid) {
       res.render('user/create', {
         title: 'cololo',
         ErrorMessage: 'そのユーザーIDは既に使用されています。'
       });
     } else {
-      //登録
-      connection.query(registerQuery, function(err, rows) {
-        if(!err){
-          res.render('_template/message',{
+      // 登録
+      connection.query(sql.query, (err) => {
+        if (!err) {
+          res.render('_template/message', {
             title: ' - 登録完了',
-            message:'登録が完了しました！',
-            link:{to:'/login',text:'ログインページへ'},
+            message: '登録が完了しました！',
+            link: { to: '/login', text: 'ログインページへ' },
           });
-        }else{
-          res.render('_template/message',{
+        } else {
+          res.render('_template/message', {
             title: ' - エラー',
-            message:err,
+            message: err,
           });
         }
       });
     }
   });
-
+  return false;
 });
 
 module.exports = router;

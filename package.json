@@ -20,9 +20,6 @@
     "moment": "^2.14.1"
   },
   "devDependencies": {
-    "eslint": "^3.8.1",
-    "eslint-config-airbnb": "^12.0.0",
-    "eslint-plugin-react": "^6.4.1",
     "db-migrate": "^0.10.0-beta.15"
   }
 }

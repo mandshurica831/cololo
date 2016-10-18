@@ -4,11 +4,11 @@ var connection = require('mysql/pool');
 var moment = require('moment');
 
 /* GET users listing. */
-router.get('/', function(req, res, next) {
+router.get('/create', function(req, res, next) {
   if (req.session.user_id) {
     res.redirect('/');
   } else {
-    res.render('user_create/index', {
+    res.render('user/create', {
       title: ' - 新規登録',
     });
   }
@@ -38,7 +38,7 @@ router.post('/', function(req, res, next) {
   connection.query(userIdExistsQuery, function(err, user_id) {
     var userIdExists = user_id.length === 1;
     if (userIdExists) {
-      res.render('user_create/index', {
+      res.render('user/create', {
         title: 'cololo',
         ErrorMessage: 'そのユーザーIDは既に使用されています。'
       });

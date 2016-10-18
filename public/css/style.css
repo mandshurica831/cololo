@@ -665,9 +665,9 @@ footer {
   info
 *****************************************/
 /*****************************************
-  user__create
+  userCreate
 *****************************************/
-.views.user_create input[type=email] {
+.views.userCreate input[type=email] {
   width: 300px; }
 
 /*# sourceMappingURL=style.css.map */

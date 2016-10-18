@@ -1,18 +1,18 @@
-var express = require('express');
-var engine = require('ejs-locals');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
-var session = require('express-session');
+const express = require('express');
+const engine = require('ejs-locals');
+const path = require('path');
+const serveFavicon = require('serve-favicon');
+const logger = require('morgan');
+const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
+const session = require('express-session');
 
 // my_apps
-var debug_logs_set = require('_debug_logs_set');
-var get_user = require('mysql/get_user');
+const debugLogsSet = require('_debug_logs_set');
+const getUser = require('mysql/get_user');
 
 
-var app = express();
+const app = express();
 
 // view engine setup
 app.engine('ejs', engine);
@@ -20,7 +20,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 // uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+//app.use(serveFavicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -34,23 +34,23 @@ app.use(session({
 
 // debug
 //=======================
-app.use(function(req,res,next){
+app.use(function(req, res, next){
   res.locals.nande = "nande";
   next();
 });
 
 // routes
 //=======================
-var routes = require('./routes/index');
-var _logout = require('./routes/_logout');
-var user_create = require('./routes/user_create');
-var login = require('./routes/login');
-var mypage = require('./routes/mypage');
-var info = require('./routes/info');
+const routes = require('./routes/index');
+const _logout = require('./routes/_logout');
+const user = require('./routes/user');
+const login = require('./routes/login');
+const mypage = require('./routes/mypage');
+const info = require('./routes/info');
 //=======================
-app.use('/', get_user, debug_logs_set, routes);
+app.use('/', getUser, debugLogsSet, routes);
 app.use('/logout', _logout);
-app.use('/user_create', user_create);
+app.use('/user', user);
 app.use('/login', login);
 app.use('/mypage', mypage);
 app.use('/info', info);

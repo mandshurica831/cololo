@@ -1,10 +1,10 @@
 <% layout('/_layouts/main') %>
-<article class="views user__create">
+<article class="views login">
 
   <h3>ログイン</h3>
 
   <section>
-    <form action="/login" method="post" class="form-normal user_create-form">
+    <form action="/login" method="post" class="form-normal login-form">
       <% //エラーメッセージ %>
       <% if (typeof noUser !== 'undefined') { %>
           <p class="error"><%= noUser %></p>
@@ -26,7 +26,7 @@
   </section>
 
   <section class="text t_right">
-    <a href="/user_create">新規会員登録ページはこちら</a>
+    <a href="/user/create">新規会員登録ページはこちら</a>
   </section>
 
 </article>

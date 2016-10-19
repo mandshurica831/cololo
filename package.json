@@ -21,7 +21,12 @@
     "moment": "^2.14.1"
   },
   "devDependencies": {
+    "css-loader": "^0.25.0",
     "db-migrate": "^0.10.0-beta.15",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "node-sass": "^3.10.1",
+    "sass-loader": "^4.0.2",
+    "style-loader": "^0.13.1",
     "webpack": "^1.13.2"
   }
 }

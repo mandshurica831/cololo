@@ -1,10 +1,26 @@
-const pathModules = './public/js/modules';
-module.exports = {
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const fs = require('fs');
+const pathDevModules = './src/js/modules';
+const pathPubModules = './public/js/modules/';
+
+module.exports = [{
   // メインとなるJavaScriptファイル
-  entry: `${pathModules}/test/index.js`,
+  entry: `${pathDevModules}/test/index.js`,
   // ファイルの出力設定
   output: {
-    path: `${pathModules}/test/`,
-    filename: 'app.js'
+    path: `${pathPubModules}`,
+    filename: 'test.js'
+  },
+  modules: {
+    loaders: [
+      {
+        test: /\.css$/,
+        loader: ExtractTextPlugin.extract("style-loader", "css-loader")
+      },
+      {
+        test: /\.scss$/,
+        loader: ExtractTextPlugin.extract("style-loader", "css-loader!sass-loader")
+      }
+    ]
   }
-};
+}];

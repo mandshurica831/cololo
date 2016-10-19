@@ -17,7 +17,7 @@ router.get('/create', (req, res) => {
 
 router.post('/', (req, res) => {
   // 定数
-  let str;
+  var str;
 
   // 入力値
   const userId = req.body.user_id;

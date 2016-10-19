@@ -492,6 +492,9 @@ footer {
   color: #a73db6; }
 
 .t_gray {
+  color: #aaa; }
+
+.t_light_gray {
   color: #ccc; }
 
 /* ======================================
@@ -542,6 +545,10 @@ footer {
     box-shadow: 0px 2px 0 rgba(50, 20, 0, 0.2), 0px 2px 0 #a73db6, 0 0 0 1px #333, 0 2px 0 1px #333, inset 0 0 0 rgba(0, 0, 0, 0.1), 0 0 0 2px #fff, 0 2px 0 2px #fff;
     text-shadow: -1px -1px 1px rgba(50, 20, 0, 0.3), 0px 0px 3px rgba(50, 20, 0, 0.3); }
   .btn-normal.gray, a.btn-normal.gray {
+    background: #aaa;
+    box-shadow: 0px 2px 0 rgba(50, 20, 0, 0.2), 0px 2px 0 #aaa, 0 0 0 1px #333, 0 2px 0 1px #333, inset 0 0 0 rgba(0, 0, 0, 0.1), 0 0 0 2px #fff, 0 2px 0 2px #fff;
+    text-shadow: -1px -1px 1px rgba(50, 20, 0, 0.3), 0px 0px 3px rgba(50, 20, 0, 0.3); }
+  .btn-normal.light_gray, a.btn-normal.light_gray {
     background: #ccc;
     box-shadow: 0px 2px 0 rgba(50, 20, 0, 0.2), 0px 2px 0 #ccc, 0 0 0 1px #333, 0 2px 0 1px #333, inset 0 0 0 rgba(0, 0, 0, 0.1), 0 0 0 2px #fff, 0 2px 0 2px #fff;
     text-shadow: -1px -1px 1px rgba(50, 20, 0, 0.3), 0px 0px 3px rgba(50, 20, 0, 0.3); }
@@ -574,6 +581,9 @@ footer {
       box-shadow: 0 0 0 rgba(50, 20, 0, 0.2), 0 0 0 #a73db6, 0 0 0 1px #333, 0 0 0 1px #333, inset 0px 1px 0px rgba(0, 0, 0, 0.1), 0 0 0 2px #fff, 0 0 0 2px #fff;
       background: #a73db6; }
     .btn-normal:hover.gray, .btn-normal:active.gray, a.btn-normal:hover.gray, a.btn-normal:active.gray {
+      box-shadow: 0 0 0 rgba(50, 20, 0, 0.2), 0 0 0 #aaa, 0 0 0 1px #333, 0 0 0 1px #333, inset 0px 1px 0px rgba(0, 0, 0, 0.1), 0 0 0 2px #fff, 0 0 0 2px #fff;
+      background: #aaa; }
+    .btn-normal:hover.light_gray, .btn-normal:active.light_gray, a.btn-normal:hover.light_gray, a.btn-normal:active.light_gray {
       box-shadow: 0 0 0 rgba(50, 20, 0, 0.2), 0 0 0 #ccc, 0 0 0 1px #333, 0 0 0 1px #333, inset 0px 1px 0px rgba(0, 0, 0, 0.1), 0 0 0 2px #fff, 0 0 0 2px #fff;
       background: #ccc; }
 .btn-solid, a.btn-solid {
@@ -632,6 +642,30 @@ footer {
 
 .t_center {
   text-align: center; }
+
+.t_10 {
+  font-size: 10px; }
+
+.t_12 {
+  font-size: 12px; }
+
+.t_14 {
+  font-size: 14px; }
+
+.t_16 {
+  font-size: 16px; }
+
+.t_18 {
+  font-size: 18px; }
+
+.t_20 {
+  font-size: 20px; }
+
+.t_22 {
+  font-size: 22px; }
+
+.t_24 {
+  font-size: 24px; }
 
 .tbl {
   display: table; }

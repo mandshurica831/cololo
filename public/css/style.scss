@@ -1,19 +1,19 @@
 @charset "utf-8";
 
 //初期化
-@import "commons/_mixin";
-@import "commons/_reset";
-@import "commons/_var";
-@import "commons/Common";
+@import "../../src/scss/commons/_mixin";
+@import "../../src/scss/commons/_reset";
+@import "../../src/scss/commons/_var";
+@import "../../src/scss/commons/Common";
 
 //800px以下
 //@import "_scss/max800";
 
 //汎用クラス
-@import "commons/Partial";
-@import "commons/General";
+@import "../../src/scss/commons/Partial";
+@import "../../src/scss/commons/General";
 
 //views
-@import "views/index";
-@import "views/info/index";
-@import "views/user/create";
+@import "../../src/scss/views/index";
+@import "../../src/scss/views/info/index";
+@import "../../src/scss/views/user/create";

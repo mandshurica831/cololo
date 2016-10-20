@@ -46,7 +46,7 @@ $(function(){
   <% if (login) { %>
       <div class="states-line login">
         <div class="btns_area">
-          <div class="item"><a href="/logout" class="btn-normal blue logout">ログアウト</a></div>
+          <div class="item"><a href="/logout" class="btn-normal blue" data-btnName="logout">ログアウト</a></div>
         </div>
         <div class="user_data_area">
           <%= user.user_id %>さん
@@ -54,8 +54,8 @@ $(function(){
       </div>
   <% }else{ %>
       <div class="states-line">
-        <div class="user_data_area">
-          <a href="/login">ログイン</a>
+        <div class="btns_area">
+          <div class="item"><a href="/login" class="btn-normal blue" data-btnName="login">ログイン</a></div>
         </div>
       </div>
   <% } %>

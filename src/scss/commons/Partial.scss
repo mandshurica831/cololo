@@ -117,3 +117,72 @@
 
 
 }
+
+
+/* ======================================
++ story
+======================================*/
+.story_box{
+
+  &.solo{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    box-shadow: 0 0 3px rgba(0,0,0,.1);
+    .speak .text{
+    }
+  }
+  &:first-child{
+    margin-top:0;
+  }
+
+  &__item{
+
+    margin:25px 0;
+    position:relative;
+
+    .text{
+      margin:0 10px;
+      padding:10px 15px;
+      p{
+        margin:10px 0;
+        &:first-child{
+          margin-top:0;
+        }
+      }
+    }
+
+    // 画像
+    &.image{
+      img{
+        max-width:100%;
+        height:auto;
+      }
+      position:relative;
+    }
+
+    // セリフ
+    &.speak{
+      display:flex;
+      margin:15px 10px;
+      &>*{
+        display:flex-item;
+      }
+      .text{
+        position:relative;
+        background:#fafafa;
+        background: rgba(200,200,200,.15);
+        border-radius:10px;
+      }
+    }
+
+    // モノローグ
+    &.monologue{
+    }
+
+  }
+
+
+
+
+
+}

@@ -46,6 +46,8 @@ const _logout = require('./routes/_logout');
 const user = require('./routes/user');
 const login = require('./routes/login');
 const mypage = require('./routes/mypage');
+const battle = require('./routes/battle');
+const tutorial = require('./routes/tutorial');
 const info = require('./routes/info');
 //=======================
 app.use('/', getUser, debugLogsSet, routes);
@@ -53,6 +55,8 @@ app.use('/logout', _logout);
 app.use('/user', user);
 app.use('/login', login);
 app.use('/mypage', mypage);
+app.use('/battle', battle);
+app.use('/tutorial', tutorial);
 app.use('/info', info);
 
 

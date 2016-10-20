@@ -1,0 +1,1 @@
+mysqldump -d cololo_develop -u root -p > 10201553.sql

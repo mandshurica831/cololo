@@ -8,16 +8,16 @@
 <link rel='stylesheet' href='/css/style.css'>
 <link rel="stylesheet" href="/css/font-awesome.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
-<!--<script src="/js/common.js"></script>-->
-<script src="/js/modules/test/app.js"></script>
-
-            <script type='text/javascript'>
-            <% PageJSName = "xxx" %>
-            var <%= PageJSName%> = function(){
-              console.log("xxx",this);
-            }
-            </script>
-
+<script src="/js/common.js"></script>
+<script src="/js/views/index.js"></script>
+<script src="/js/modules/test.js"></script>
+<% console.log(title); %>
+    <script type='text/javascript'>
+    <% PageJSName = "xxx" %>
+    var <%= PageJSName%> = function(){
+      console.log("xxx",this);
+    }
+    </script>
 <script type='text/javascript'>
 <%// クラスがなかった場合も動くように %>
 $(function(){

@@ -43,6 +43,7 @@ app.use(function(req, res, next) {
 //=======================
 const routes = require('./routes/index');
 const _logout = require('./routes/_logout');
+const config = require('./routes/config');
 const user = require('./routes/user');
 const login = require('./routes/login');
 const mypage = require('./routes/mypage');
@@ -52,6 +53,7 @@ const info = require('./routes/info');
 //=======================
 app.use('/', getUser, debugLogsSet, routes);
 app.use('/logout', _logout);
+app.use('/config', config);
 app.use('/user', user);
 app.use('/login', login);
 app.use('/mypage', mypage);

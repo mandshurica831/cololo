@@ -144,7 +144,8 @@
       margin:0 10px;
       padding:10px 15px;
       p{
-        margin:10px 0;
+        margin:10px 0 0;
+        white-space:pre-wrap;
         &:first-child{
           margin-top:0;
         }

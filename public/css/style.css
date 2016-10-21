@@ -12,7 +12,6 @@ $W:200; $H:24; $Wn:3; $Hn:2;
 */
 /*! sanitize.css v3.0.0 | CC0 1.0 Public Domain | github.com/10up/sanitize.css */
 /** Normalization*/
-@import "https://fonts.googleapis.com/css?family=Titillium+Web:200,200i,300,300i,400i,600,600i,700,700i,900";
 @import "https://fonts.googleapis.com/earlyaccess/roundedmplus1c.css";
 audio:not([controls]) {
   display: none;
@@ -220,7 +219,7 @@ textarea {
 + body
 ======================================*/
 body {
-  font-family: Titillium Web, "Rounded Mplus 1c", "Meiryo UI", "メイリオ", Meiryo, Avenir, "Open Sans", "Helvetica Neue", Helvetica, Verdana, Arial, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro',  sans-serif; }
+  font-family: "Rounded Mplus 1c", "Meiryo UI", "メイリオ", Meiryo, Avenir, "Open Sans", "Helvetica Neue", Helvetica, Verdana, Arial, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro',  sans-serif; }
 
 body {
   font-size: 15px;
@@ -439,7 +438,7 @@ footer {
       box-shadow: 0 0 3px rgba(0, 0, 0, 0.3); }
   .views h3 {
     font-size: 20px;
-    font-weight: 300;
+    font-weight: 400;
     margin: 10px 0;
     padding: 5px 0;
     border-bottom: 1px dotted #333;
@@ -661,7 +660,8 @@ footer {
     margin: 0 10px;
     padding: 10px 15px; }
     .story_box__item .text p {
-      margin: 10px 0; }
+      margin: 10px 0 0;
+      white-space: pre-wrap; }
       .story_box__item .text p:first-child {
         margin-top: 0; }
   .story_box__item.image {

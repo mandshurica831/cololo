@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "start": "NODE_PATH=lib node ./bin/www",
+    "stop": "pkill myApp",
     "watch-css": "nodemon -e src/scss -x \"npm run css\"",
     "build": "webpack & node-sass --include-path scss scss/style.scss css/style.css",
     "webpack": "webpack",

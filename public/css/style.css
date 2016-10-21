@@ -12,7 +12,7 @@ $W:200; $H:24; $Wn:3; $Hn:2;
 */
 /*! sanitize.css v3.0.0 | CC0 1.0 Public Domain | github.com/10up/sanitize.css */
 /** Normalization*/
-@import "https://fonts.googleapis.com/earlyaccess/roundedmplus1c.css";
+@import 'https://fonts.googleapis.com/earlyaccess/roundedmplus1c.css';
 audio:not([controls]) {
   display: none;
   /* Chrome 44-, iOS 8+, Safari 9+ */ }
@@ -294,7 +294,7 @@ header {
     text-align: center;
     padding: 10px;
     font-size: 3em;
-    font-weight: 400;
+    font-weight: 500;
     font-smoothing: antialiased;
     -moz-font-smoothing: antialiased;
     -webkit-font-smoothing: antialiased;
@@ -418,7 +418,7 @@ footer {
     color: #fff;
     padding: 5px 100px 5px 0;
     line-height: 1.4em;
-    font-weight: 400;
+    font-weight: 500;
     display: inline-block; }
     .views h2:before {
       content: "";
@@ -438,7 +438,7 @@ footer {
       box-shadow: 0 0 3px rgba(0, 0, 0, 0.3); }
   .views h3 {
     font-size: 20px;
-    font-weight: 400;
+    font-weight: 500;
     margin: 10px 0;
     padding: 5px 0;
     border-bottom: 1px dotted #333;
@@ -599,6 +599,7 @@ footer {
     .btn-normal:hover.light_gray, .btn-normal:active.light_gray, a.btn-normal:hover.light_gray, a.btn-normal:active.light_gray {
       box-shadow: 0 0 0 rgba(50, 20, 0, 0.2), 0 0 0 #ccc, 0 0 0 1px #333, 0 0 0 1px #333, inset 0px 1px 0px rgba(0, 0, 0, 0.1), 0 0 0 2px #fff, 0 0 0 2px #fff;
       background: #ccc; }
+
 .btn-solid, a.btn-solid {
   color: #000;
   display: inline-block;
@@ -634,12 +635,15 @@ footer {
   padding: 10px;
   margin-right: 1em;
   background: #fafafa; }
+
 .form-normal .item small {
   padding-left: 10px; }
   .form-normal .item small:before {
     content: "※"; }
+
 .form-normal .item input {
   width: 160px; }
+
 .form-normal .error {
   color: red;
   margin: 20px 0; }
@@ -651,8 +655,10 @@ footer {
   padding-top: 10px;
   padding-bottom: 10px;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.1); }
+
 .story_box:first-child {
   margin-top: 0; }
+
 .story_box__item {
   margin: 25px 0;
   position: relative; }
@@ -727,6 +733,7 @@ footer {
 *****************************************/
 .views.index .text:first-child {
   margin-top: 0; }
+
 .views.index .start_btns {
   text-align: center;
   margin: 40px 0; }
@@ -738,9 +745,9 @@ footer {
     font-size: 14px;
     padding: 5px 10px;
     margin: 0 5px; }
+
 .views.index .text {
-  text-align: center;
-  font-size: 14px; }
+  text-align: center; }
   .views.index .text small {
     color: #777; }
 
@@ -752,5 +759,3 @@ footer {
 *****************************************/
 .views.userCreate input[type=email] {
   width: 300px; }
-
-/*# sourceMappingURL=style.css.map */

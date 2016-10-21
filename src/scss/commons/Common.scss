@@ -98,7 +98,7 @@ header{
     padding:10px;
     font-size:3em;
     //font-family:Titillium Web;
-    font-weight:400;
+    font-weight:500;
     @include set-prefix(font-smoothing,antialiased);
     a{
       color:inherit;
@@ -213,7 +213,7 @@ footer{
       color:#fff;
       padding:5px 100px 5px 0;
       line-height:1.4em;
-      font-weight:400;
+      font-weight:500;
       display:inline-block;
       &:before{
         content:"";
@@ -232,7 +232,7 @@ footer{
 
     h3{
       font-size:20px;
-      font-weight:400;
+      font-weight:500;
       margin: 10px 0;
       padding:5px 0;
       border-bottom:1px dotted #333;

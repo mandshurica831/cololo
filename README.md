@@ -2,6 +2,8 @@
 
 express-generator使用。
 
+#起動のまえに
+Package.jsonに更新あったらまず「$ npm install」してね。
 
 ##サーバーの起動と終了
 アプリのディレクトリ(Package.jsonのある階層)まで移動して、

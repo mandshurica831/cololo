@@ -1,0 +1,18 @@
+@charset "utf-8";
+
+/*
+#------------------------------------------------------------------------
+# License:commercial
+# Website: http://fontgraphic.jp
+# Support: ohtani@fontgraphic.jp
+*/
+
+@font-face {
+    font-family: 'fgflop';
+    src: url('../fonts/fgflop/fgflop.eot');
+    src: url('../fonts/fgflop/fgflop.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/fgflop/fgflop.woff') format('woff'),
+         url('../fonts/fgflop/fgflop.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}

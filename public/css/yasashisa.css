@@ -1,0 +1,9 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: 'yasashisa';
+    src: url('../fonts/yasashisa/ipag.ttf');
+    src: url('../fonts/yasashisa/ipag.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}

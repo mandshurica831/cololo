@@ -13,6 +13,7 @@ $W:200; $H:24; $Wn:3; $Hn:2;
 /*! sanitize.css v3.0.0 | CC0 1.0 Public Domain | github.com/10up/sanitize.css */
 /** Normalization*/
 @import "https://fonts.googleapis.com/css?family=Titillium+Web:200,200i,300,300i,400i,600,600i,700,700i,900";
+@import url(/css/yasashisa.css);
 audio:not([controls]) {
   display: none;
   /* Chrome 44-, iOS 8+, Safari 9+ */ }
@@ -219,7 +220,7 @@ textarea {
 + body
 ======================================*/
 body {
-  font-family: Titillium Web , "Meiryo UI" , "メイリオ" , Meiryo , Avenir , "Open Sans" , "Helvetica Neue" , Helvetica , Verdana , Arial , 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro',  sans-serif; }
+  font-family: Titillium Web, "yasashisa", 'Hiragino Kaku  Pro', "Meiryo UI", "メイリオ", Meiryo, Avenir, "Open Sans", "Helvetica Neue", Helvetica, Verdana, Arial, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro',  sans-serif; }
 
 body {
   font-size: 15px;

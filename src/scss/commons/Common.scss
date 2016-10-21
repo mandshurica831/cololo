@@ -98,18 +98,18 @@ header{
     padding:10px;
     font-size:3em;
     //font-family:Titillium Web;
-    font-weight:500;
+    font-weight:200;
     @include set-prefix(font-smoothing,antialiased);
     a{
       color:inherit;
       span{@include set-prefix(transition,color ease-in 300ms);}
       &:hover{
-        .B{color:$blue;}
-        .G{color:$green;}
-        .Y{color:$yellow;}
-        .O{color:$orange;}
-        .R{color:$red;}
-        .P{color:$purple;}
+        .blue{color:$blue;}
+        .green{color:$green;}
+        .yellow{color:$yellow;}
+        .orange{color:$orange;}
+        .red{color:$red;}
+        .purple{color:$purple;}
         span{@include set-prefix(transition,color ease-out 300ms);}
       }
     }

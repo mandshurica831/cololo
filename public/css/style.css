@@ -294,7 +294,7 @@ header {
     text-align: center;
     padding: 10px;
     font-size: 3em;
-    font-weight: 500;
+    font-weight: 200;
     font-smoothing: antialiased;
     -moz-font-smoothing: antialiased;
     -webkit-font-smoothing: antialiased;
@@ -308,17 +308,17 @@ header {
         -webkit-transition: color ease-in 300ms;
         -ms-transition: color ease-in 300ms;
         -o-transition: color ease-in 300ms; }
-      header h1 a:hover .B {
+      header h1 a:hover .blue {
         color: #11a4c4; }
-      header h1 a:hover .G {
+      header h1 a:hover .green {
         color: #54cc14; }
-      header h1 a:hover .Y {
+      header h1 a:hover .yellow {
         color: #f2cb00; }
-      header h1 a:hover .O {
+      header h1 a:hover .orange {
         color: #f57214; }
-      header h1 a:hover .R {
+      header h1 a:hover .red {
         color: #ff4747; }
-      header h1 a:hover .P {
+      header h1 a:hover .purple {
         color: #a73db6; }
       header h1 a:hover span {
         transition: color ease-out 300ms;

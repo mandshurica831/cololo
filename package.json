@@ -4,7 +4,10 @@
   "private": true,
   "scripts": {
     "start": "NODE_PATH=lib node ./bin/www",
-    "webpack": "webpack"
+    "watch-css": "nodemon -e src/scss -x \"npm run css\"",
+    "build": "webpack & node-sass --include-path scss scss/style.scss css/style.css",
+    "webpack": "webpack",
+    "css": "node-sass --include-path scss src/scss/style.scss public/css/style.css"
   },
   "dependencies": {
     "body-parser": "~1.15.1",
@@ -28,6 +31,7 @@
     "db-migrate": "^0.10.0-beta.15",
     "extract-text-webpack-plugin": "^1.0.1",
     "node-sass": "^3.10.1",
+    "nodemon": "^1.11.0",
     "sass-loader": "^4.0.2",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.2"

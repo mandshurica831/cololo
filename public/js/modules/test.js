@@ -45,14 +45,14 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	var cats = __webpack_require__(1);
-	console.log(cats);
+	console.log('cats',cats);
 
 
 /***/ },
 /* 1 */
 /***/ function(module, exports) {
 
-	
+
 	var cats = ['tama', 'kuro', 'tora']
 	module.exports = cats;
 

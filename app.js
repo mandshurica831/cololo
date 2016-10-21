@@ -48,6 +48,7 @@ const user = require('./routes/user');
 const login = require('./routes/login');
 const mypage = require('./routes/mypage');
 const battle = require('./routes/battle');
+const manual = require('./routes/manual');
 const tutorial = require('./routes/tutorial');
 const info = require('./routes/info');
 //=======================
@@ -58,6 +59,7 @@ app.use('/user', user);
 app.use('/login', login);
 app.use('/mypage', mypage);
 app.use('/battle', battle);
+app.use('/manual', manual);
 app.use('/tutorial', tutorial);
 app.use('/info', info);
 

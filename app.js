@@ -10,6 +10,7 @@ const session = require('express-session');
 // my_apps
 const debugLogsSet = require('_debug_logs_set');
 const getUser = require('mysql/get_user');
+const getViewsClass = require('get_views_class');
 
 
 const app = express();
@@ -52,7 +53,7 @@ const manual = require('./routes/manual');
 const tutorial = require('./routes/tutorial');
 const info = require('./routes/info');
 //=======================
-app.use('/', getUser, debugLogsSet, routes);
+app.use('/', getViewsClass, getUser, debugLogsSet, routes);
 app.use('/logout', _logout);
 app.use('/config', config);
 app.use('/user', user);

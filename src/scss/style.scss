@@ -1,22 +1,23 @@
 @charset "utf-8";
 
+// lib
+
 //初期化
-@import "../../src/scss/commons/_mixin";
-@import "../../src/scss/commons/_reset";
-@import "../../src/scss/commons/_var";
-@import "../../src/scss/commons/Common";
+@import "../../src/scss/_mixin";
+@import "../../src/scss/_reset";
+@import "../../src/scss/_var";
 
 //800px以下
 //@import "_scss/max800";
 
 //汎用クラス
+//@import "../../src/scss/commons/*.sass";
+@import "../../src/scss/commons/Common";
 @import "../../src/scss/commons/Partial";
 @import "../../src/scss/commons/General";
 
 //views
+//@import "../../src/scss/views/*.sass";
 @import "../../src/scss/views/index";
 @import "../../src/scss/views/info/index";
 @import "../../src/scss/views/user/create";
-
-// lib
-@import "../../src/scss/lib/font-awesome.min";

@@ -1,5 +1,5 @@
 const path = require('path');
-const pathDevModules = './modules';
+const pathDevModules = './webpack';
 const pathPubModules = './public/js/modules/';
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 

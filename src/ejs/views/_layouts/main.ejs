@@ -8,28 +8,8 @@
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/roundedmplus1c.css">
 <link rel='stylesheet' href='/css/style.css'>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="/js/common.js"></script>
-<script src="/js/views/index.js"></script>
-<script src="/js/modules/test.js"></script>
-    <script type='text/javascript'>
-    <% PageJSName = "xxx" %>
-    var <%= PageJSName%> = function(){
-      console.log("xxx",this);
-    }
-    </script>
-<script type='text/javascript'>
-<%// クラスがなかった場合も動くように %>
-$(function(){
-  if(window.hasOwnProperty("<%= PageJSName %>")){
-    <%= PageJSName %> = new <%= PageJSName %>();
-  }else{
-    GL.hide_loading();
-  }
-});
-//var log = new Log(環境変数);<%// log関数 productionでは出力しない %>
-</script>
-</head>
 <body>
 <div id="container">
 <%
@@ -77,7 +57,7 @@ $(function(){
 //========================
 %>
 <div id="contents">
-  <article class="views <%= views_class %>">
+  <article class="views <%= viewsClass %>">
   <%- body %>
   </article>
 </div>

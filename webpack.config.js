@@ -5,23 +5,23 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = [{
   //
-  // common.js
-  //
-  entry: `./src/js/common/index.js`,
-  output: {
-    path: `./public/js/`,
-    filename: 'common.js'
-  }
-},{
-  //
   // views js
   //
   entry: {
-    index: `./src/js/views/index.js`,
+    IndexController: './src/js/views/IndexController.js',
   },
   output: {
-    path: `./public/js/views/`,
+    path: './public/js/views/',
     filename: '[name].js'
+  }
+},{
+  //
+  // common.js
+  //
+  entry: `./src/js/common/Base.js`,
+  output: {
+    path: `./public/js/`,
+    filename: 'common.js'
   }
 },{
   //

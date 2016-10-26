@@ -52,7 +52,7 @@ header{
     box-shadow: 0 0 5px rgba(0,0,0,.2);
     position:absolute;
     top:0;
-    font-weight:100;
+    font-weight:300;
     color:#222;
     width: 100%;
     &.login{
@@ -93,7 +93,7 @@ header{
     padding:10px;
     font-size:3em;
     //font-family:Titillium Web;
-    font-weight:200;
+    font-weight:400;
     @include set-prefix(font-smoothing,antialiased);
     a{
       color:inherit;

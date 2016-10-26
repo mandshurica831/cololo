@@ -132,7 +132,7 @@ body.dark { background: #444; color: #fff; }
 ======================================*/
 header { padding-top: 40px; box-shadow: 0 3px 3px rgba(0, 0, 0, 0.03); border-bottom: 1px solid rgba(0, 0, 0, 0.08); /* タイトル ================ */ }
 
-header .states-line { text-align: right; background: rgba(240, 240, 240, 0.3); box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); position: absolute; top: 0; font-weight: 100; color: #222; width: 100%; }
+header .states-line { text-align: right; background: rgba(240, 240, 240, 0.3); box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); position: absolute; top: 0; font-weight: 300; color: #222; width: 100%; }
 
 header .states-line.login { margin-top: -45px; transition: margin-top ease-in 300ms; -moz-transition: margin-top ease-in 300ms; -webkit-transition: margin-top ease-in 300ms; -ms-transition: margin-top ease-in 300ms; -o-transition: margin-top ease-in 300ms; }
 
@@ -146,7 +146,7 @@ header .states-line .user_data_area { margin: 5px 10px; }
 
 header .states-line .btn-normal { padding: 0 10px; margin: 3px; font-size: 0.8em; line-height: 2em; }
 
-header h1 { text-align: center; padding: 10px; font-size: 3em; font-weight: 200; font-smoothing: antialiased; -moz-font-smoothing: antialiased; -webkit-font-smoothing: antialiased; -ms-font-smoothing: antialiased; -o-font-smoothing: antialiased; }
+header h1 { text-align: center; padding: 10px; font-size: 3em; font-weight: 400; font-smoothing: antialiased; -moz-font-smoothing: antialiased; -webkit-font-smoothing: antialiased; -ms-font-smoothing: antialiased; -o-font-smoothing: antialiased; }
 
 header h1 a { color: inherit; }
 

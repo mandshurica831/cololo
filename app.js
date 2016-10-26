@@ -44,25 +44,25 @@ app.use(function(req, res, next) {
 //=======================
 const routes = require('./routes/index');
 const _logout = require('./routes/_logout');
-const config = require('./routes/config');
-const user = require('./routes/user');
 const login = require('./routes/login');
+const tutorial = require('./routes/tutorial');
+const config = require('./routes/config');
+const manual = require('./routes/manual');
+const info = require('./routes/info');
+const user = require('./routes/user');
 const mypage = require('./routes/mypage');
 const battle = require('./routes/battle');
-const manual = require('./routes/manual');
-const tutorial = require('./routes/tutorial');
-const info = require('./routes/info');
 //=======================
 app.use('/', getViewsClass, getUser, debugLogsSet, routes);
 app.use('/logout', _logout);
-app.use('/config', config);
-app.use('/user', user);
 app.use('/login', login);
-app.use('/mypage', mypage);
-app.use('/battle', battle);
-app.use('/manual', manual);
-app.use('/tutorial', tutorial);
-app.use('/info', info);
+app.use('/tutorial', getUser, tutorial);
+app.use('/config', getUser, config);
+app.use('/manual', getUser, manual);
+app.use('/info', getUser, info);
+app.use('/user', getUser, user);
+app.use('/mypage', getUser, mypage);
+app.use('/battle', getUser, battle);
 
 
 

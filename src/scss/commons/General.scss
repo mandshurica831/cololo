@@ -19,3 +19,20 @@
 
 .tbl{display:table;}
 .tcl{display:table-cell;}
+
+
+
+.d_flex{
+  display: flex;
+  flex-flow: wrap row;
+  &.line{
+    .flex_box__item{ width:100%; }
+  }
+}
+.d_tbl{
+  display: table;
+  &__item{
+    display: table-cell;
+    vertical-align:middle;
+  }
+}

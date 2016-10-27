@@ -6,8 +6,52 @@
 .views.userCreate{
 
 
-  input[type=email]{
-    width:300px;
+  input{
+    &[type=email]{ width:300px; }
+  }
+
+  .d_tbl__item{
+    display:table-cell;
+  }
+
+
+  $size_h:26px;
+  $size_w:26px;
+
+  .user_color{
+
+    > .item{
+      display: inline-block;
+      position: relative;
+
+      @each $key in $colors_name {
+        $i: index($colors_name, $key);
+        &.#{$key} label{ background: nth($colors, $i); }
+      }
+    }
+
+    input[type=radio]{
+      position: absolute;
+
+      & + label{
+        position: relative;
+        width: 26px;
+        height: 26px;
+        border-radius: 3px;
+        display: block;
+        margin: 6px;
+        box-shadow: 0 0 0 2px #fff,0 0 0 3px #ddd;
+
+        &:before{
+          border: none;
+          left: 25%;
+          top: 25%;
+          margin-left:-1px;
+          color: #fff;
+        }
+      }
+    }
+
   }
 
 

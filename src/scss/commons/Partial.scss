@@ -85,40 +85,6 @@
 }
 
 
-
-/* ======================================
-+ .form
-======================================*/
-.form{
-
-  &-normal{
-
-    .item{
-      span{
-        width: 180px;
-        padding: 10px;
-        margin-right: 1em;
-        background: #fafafa;
-      }
-      small{
-        padding-left:10px;
-        &:before{content:"※";}
-      }
-      input{
-        width:160px;
-      }
-    }
-    .error{
-      color: red;
-      margin: 20px 0;
-    }
-
-  }
-
-
-}
-
-
 /* ======================================
 + story
 ======================================*/

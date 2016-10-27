@@ -22,6 +22,8 @@ router.post('/', (req, res) => {
   // 入力値
   const userId = req.body.user_id;
   const password = req.body.password;
+  const userName = req.body.user_name;
+  const userColor = req.body.user_color;
   const createdAt = moment().format('YYYY-MM-DD HH:mm:ss');
   const updatedAt = moment().format('YYYY-MM-DD HH:mm:ss');
 
@@ -33,8 +35,8 @@ router.post('/', (req, res) => {
     });
   }
 
-  str = 'INSERT INTO users (user_id, password, created_at, updated_at)';
-  const values = [userId, password, createdAt, updatedAt];
+  str = 'INSERT INTO users (user_id, password, user_name, user_color, created_at, updated_at)';
+  const values = [userId, password, userName, userColor, createdAt, updatedAt];
   str += ` VALUES ("${values.join('", "')}")`;
 
   const sql = {

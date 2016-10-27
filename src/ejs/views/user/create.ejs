@@ -1,5 +1,4 @@
 <% layout('/_layouts/main') %>
-<article class="views userCreate">
 
   <h3>新規会員登録</h3>
 
@@ -10,15 +9,65 @@
           <p class="error"><%= ErrorMessage %></p>
       <% } %>
 
-      <div class="item tbl">
+      <div class="form-normal__item">
         <span class="label">ユーザーID</span>
-        <input type="text" name="user_id" class="input" maxlength="12" required>
-        <small>半角英数、12文字まで</small>
+        <div class="data">
+          <input type="text" name="user_id" class="input" maxlength="12" required>
+          <small>半角英数のみ、12文字まで</small>
+        </div>
       </div>
-      <div class="item tbl">
+      <div class="form-normal__item">
         <span class="label">パスワード</span>
-        <input type="password" name="password" class="input" maxlength="12" required>
-        <small>半角英数、12文字まで</small>
+        <div class="data">
+          <input type="password" name="password" class="input" maxlength="12" required>
+          <small>半角英数のみ、12文字まで</small>
+        </div>
+      </div>
+      <div class="form-normal__item">
+        <span class="label">ユーザー名</span>
+        <div class="data">
+          <input type="text" name="user_name" class="input" maxlength="24" required>
+          <small>全角24文字まで（あとから編集可能です）</small>
+        </div>
+      </div>
+      <div class="form-normal__item">
+        <span class="label">好きな色</span>
+        <div class="data">
+          <div class="random">
+            <input type="radio" name="user_color" id="u_color_random" value="random" checked="">
+            <label for="u_color_random">ランダム</label>
+          </div>
+          <ul class="user_color">
+            <li class="item blue">
+              <input type="radio" name="user_color" id="u_color_blue" value="blue">
+              <label for="u_color_blue"></label>
+            </li>
+            <li class="item green">
+              <input type="radio" name="user_color" id="u_color_green" value="green">
+              <label for="u_color_green"></label>
+            </li>
+            <li class="item yellow">
+              <input type="radio" name="user_color" id="u_color_yellow" value="yellow">
+              <label for="u_color_yellow"></label>
+            </li>
+            <li class="item orange">
+              <input type="radio" name="user_color" id="u_color_orange" value="orange">
+              <label for="u_color_orange"></label>
+            </li>
+            <li class="item red">
+              <input type="radio" name="user_color" id="u_color_red" value="red">
+              <label for="u_color_red"></label>
+            </li>
+            <li class="item purple">
+              <input type="radio" name="user_color" id="u_color_purple" value="purple">
+              <label for="u_color_purple"></label>
+            </li>
+            <li class="item light_gray">
+              <input type="radio" name="user_color" id="u_color_gray" value="gray">
+              <label for="u_color_gray"></label>
+            </li>
+          </ul>
+        </div>
       </div>
 
       <div class="t_right">
@@ -30,5 +79,3 @@
   <section class="text t_right">
     <a href="/login">ログインページはこちら</a>
   </section>
-
-</article>

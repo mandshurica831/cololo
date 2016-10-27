@@ -214,17 +214,38 @@ footer a:hover { color: #f2cb00; transition: color ease-out 300ms; -moz-transiti
 
 .views h3:before { font: normal normal normal 14px/1 FontAwesome; content: "\f138"; font-size: 22px; margin-right: 10px; }
 
-.views form input { border-radius: 3px; margin: 5px; outline: 0px; border: 1px solid #dadada; box-shadow: none; transition: border-color ease-out 100ms, box-shadow ease-out 100ms; -moz-transition: border-color ease-out 100ms, box-shadow ease-out 100ms; -webkit-transition: border-color ease-out 100ms, box-shadow ease-out 100ms; -ms-transition: border-color ease-out 100ms, box-shadow ease-out 100ms; -o-transition: border-color ease-out 100ms, box-shadow ease-out 100ms; }
+/* ======================================
++ form
+======================================*/
+form input { border-radius: 3px; margin: 5px; outline: 0px; border: 1px solid #dadada; box-shadow: none; transition: border-color ease-out 100ms, box-shadow ease-out 100ms; -moz-transition: border-color ease-out 100ms, box-shadow ease-out 100ms; -webkit-transition: border-color ease-out 100ms, box-shadow ease-out 100ms; -ms-transition: border-color ease-out 100ms, box-shadow ease-out 100ms; -o-transition: border-color ease-out 100ms, box-shadow ease-out 100ms; }
 
-.views form input:focus { border-color: #f2cb00; box-shadow: 0 0 3px #f2cb00; transition: border-color ease-in 100ms, box-shadow ease-in 100ms; -moz-transition: border-color ease-in 100ms, box-shadow ease-in 100ms; -webkit-transition: border-color ease-in 100ms, box-shadow ease-in 100ms; -ms-transition: border-color ease-in 100ms, box-shadow ease-in 100ms; -o-transition: border-color ease-in 100ms, box-shadow ease-in 100ms; }
+form input:focus { border-color: #f2cb00; box-shadow: 0 0 3px #f2cb00; transition: border-color ease-in 100ms, box-shadow ease-in 100ms; -moz-transition: border-color ease-in 100ms, box-shadow ease-in 100ms; -webkit-transition: border-color ease-in 100ms, box-shadow ease-in 100ms; -ms-transition: border-color ease-in 100ms, box-shadow ease-in 100ms; -o-transition: border-color ease-in 100ms, box-shadow ease-in 100ms; }
 
-.views form button { padding: 5px 10px; }
+form button { padding: 5px 10px; }
 
-.views form .item { margin: 10px 0; }
+.form-normal__item { display: table; margin: 10px 0; }
 
-.views form .item span { display: inline-block; }
+.form-normal__item > .label { display: table-cell; vertical-align: middle; width: 180px; padding: 10px; background: #fafafa; margin-right: 1em; }
 
-.views form .item small { color: #aaa; }
+.form-normal__item > .data { padding: 5px 15px; display: table-cell; }
+
+.form-normal__item > .data small { color: #aaa; padding-left: 10px; }
+
+.form-normal__item > .data small:before { content: "※"; }
+
+.form-normal__item > .data input { width: 160px; }
+
+.form-normal__item > .data input[type=radio] { width: auto; }
+
+.form-normal__item > .data input[type=radio] { position: relative; opacity: 0; }
+
+.form-normal__item > .data input[type=radio] + label { cursor: pointer; position: relative; }
+
+.form-normal__item > .data input[type=radio] + label:before { content: ""; display: inline-block; text-align: center; z-index: 10; border-radius: 3px; border: 2px solid #ccc; text-align: center; line-height: 12px; width: 16px; height: 16px; position: absolute; left: -20px; top: 2px; color: #555; font-weight: bold; transition: all 100ms; -moz-transition: all 100ms; -webkit-transition: all 100ms; -ms-transition: all 100ms; -o-transition: all 100ms; }
+
+.form-normal__item > .data input[type=radio]:checked + label:before { content: "✓"; transition: all 100ms; -moz-transition: all 100ms; -webkit-transition: all 100ms; -ms-transition: all 100ms; -o-transition: all 100ms; }
+
+.form-normal .error { color: red; margin: 20px 0; }
 
 /***************************************** Partial */
 /*
@@ -290,19 +311,6 @@ footer a:hover { color: #f2cb00; transition: color ease-out 300ms; -moz-transiti
 .btn-solid:hover, a.btn-solid:hover { box-shadow: none; margin: 2px -2px -2px 2px; transition: box-shadow ease-in 100ms, margin ease-in 100ms; -moz-transition: box-shadow ease-in 100ms, margin ease-in 100ms; -webkit-transition: box-shadow ease-in 100ms, margin ease-in 100ms; -ms-transition: box-shadow ease-in 100ms, margin ease-in 100ms; -o-transition: box-shadow ease-in 100ms, margin ease-in 100ms; }
 
 /* ======================================
-+ .form
-======================================*/
-.form-normal .item span { width: 180px; padding: 10px; margin-right: 1em; background: #fafafa; }
-
-.form-normal .item small { padding-left: 10px; }
-
-.form-normal .item small:before { content: "※"; }
-
-.form-normal .item input { width: 160px; }
-
-.form-normal .error { color: red; margin: 20px 0; }
-
-/* ======================================
 + story
 ======================================*/
 .story_box.solo { padding-top: 10px; padding-bottom: 10px; box-shadow: 0 0 3px rgba(0, 0, 0, 0.1); }
@@ -354,6 +362,14 @@ footer a:hover { color: #f2cb00; transition: color ease-out 300ms; -moz-transiti
 
 .tcl { display: table-cell; }
 
+.d_flex { display: flex; flex-flow: wrap row; }
+
+.d_flex.line .flex_box__item { width: 100%; }
+
+.d_tbl { display: table; }
+
+.d_tbl__item { display: table-cell; vertical-align: middle; }
+
 /***************************************** index */
 .views.index .text:first-child { margin-top: 0; }
 
@@ -370,3 +386,29 @@ footer a:hover { color: #f2cb00; transition: color ease-out 300ms; -moz-transiti
 /***************************************** info */
 /***************************************** userCreate */
 .views.userCreate input[type=email] { width: 300px; }
+
+.views.userCreate .d_tbl__item { display: table-cell; }
+
+.views.userCreate .user_color > .item { display: inline-block; position: relative; }
+
+.views.userCreate .user_color > .item.blue label { background: #11a4c4; }
+
+.views.userCreate .user_color > .item.green label { background: #54cc14; }
+
+.views.userCreate .user_color > .item.yellow label { background: #f2cb00; }
+
+.views.userCreate .user_color > .item.orange label { background: #f57214; }
+
+.views.userCreate .user_color > .item.red label { background: #ff4747; }
+
+.views.userCreate .user_color > .item.purple label { background: #a73db6; }
+
+.views.userCreate .user_color > .item.gray label { background: #aaa; }
+
+.views.userCreate .user_color > .item.light_gray label { background: #ccc; }
+
+.views.userCreate .user_color input[type=radio] { position: absolute; }
+
+.views.userCreate .user_color input[type=radio] + label { position: relative; width: 26px; height: 26px; border-radius: 3px; display: block; margin: 6px; box-shadow: 0 0 0 2px #fff,0 0 0 3px #ddd; }
+
+.views.userCreate .user_color input[type=radio] + label:before { border: none; left: 25%; top: 25%; margin-left: -1px; color: #fff; }

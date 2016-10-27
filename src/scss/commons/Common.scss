@@ -239,37 +239,97 @@ footer{
         margin-right:10px;
       }
     }
+}
 
-    form{
-      input{
-        border-radius:3px;
-        margin:5px;
-        outline: 0px;
 
-        border:1px solid #dadada;
-        box-shadow: none;
-        @include set-prefix(transition,border-color ease-out 100ms,box-shadow ease-out 100ms);
 
-        &:focus{
-          border-color:$yellow;
-          box-shadow: 0 0 3px $yellow;
-          @include set-prefix(transition,border-color ease-in 100ms,box-shadow ease-in 100ms);
-        }
+
+/* ======================================
++ form
+======================================*/
+form{
+  input{
+    border-radius:3px;
+    margin:5px;
+    outline: 0px;
+
+    border:1px solid #dadada;
+    box-shadow: none;
+    @include set-prefix(transition,border-color ease-out 100ms,box-shadow ease-out 100ms);
+
+    &:focus{
+      border-color:$yellow;
+      box-shadow: 0 0 3px $yellow;
+      @include set-prefix(transition,border-color ease-in 100ms,box-shadow ease-in 100ms);
+    }
+  }
+  button{
+    padding:5px 10px;
+  }
+}
+.form-normal{
+
+    &__item{
+      display:table;
+      margin:10px 0;
+      > .label{
+        display:table-cell;
+        vertical-align:middle;
+        width: 180px;
+        padding: 10px;
+        background: #fafafa;
+        margin-right: 1em;
       }
-      button{
-        padding:5px 10px;
-      }
-
-      .item{
-        margin:10px 0;
-        span{
-          display:inline-block;
-        }
+      > .data{
+        padding:5px 15px;
+        display:table-cell;
         small{
           color:#aaa;
+          &:before{content:"※";}
+          padding-left:10px;
+        }
+        input{
+          width:160px;
+          &[type=radio]{
+            width:auto;
+          }
+        }
+        input[type=radio]{
+          position: relative;
+          opacity:0;
+
+          & + label{
+            cursor: pointer;
+            position: relative;
+          }
+          & + label:before{
+            content:"";
+            display: inline-block;
+            text-align: center;
+            z-index:10;
+            border-radius:3px;
+            border:2px solid #ccc;
+            text-align:center;
+            line-height:12px;
+            width:16px;
+            height:16px;
+            position:absolute;
+            left:-20px;
+            top:2px;
+            color: #555;
+            font-weight: bold;
+            @include set-prefix(transition,all 100ms);
+          }
+          &:checked + label:before{
+            content:"✓";
+            @include set-prefix(transition,all 100ms);
+          }
         }
       }
-
+    }
+    .error{
+      color: red;
+      margin: 20px 0;
     }
 
 }

@@ -9,13 +9,17 @@
           <p class="error"><%= noUser %></p>
       <% } %>
 
-      <div class="item">
+      <div class="form-normal__item">
         <span class="label">ユーザーID</span>
-        <input type="text" name="user_id" class="input" required>
+        <div class="data">
+          <input type="text" name="user_id" class="input" required>
+        </div>
       </div>
-      <div class="item">
+      <div class="form-normal__item">
         <span class="label">パスワード</span>
-        <input type="password" name="password" class="input" required>
+        <div class="data">
+          <input type="password" name="password" class="input" required>
+        </div>
       </div>
 
       <div class="t_right">

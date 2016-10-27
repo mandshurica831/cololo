@@ -5,7 +5,7 @@
   "scripts": {
     "start": "NODE_PATH=lib node ./bin/www",
     "stop": "pkill myApp",
-    "watch-css": "nodemon -e src/scss -x \"npm run css\"",
+    "watch-css": "nodemon -e src/scss/*.scss -x \"npm run css\"",
     "build": "webpack & node-sass --include-path scss scss/style.scss css/style.css",
     "webpack": "webpack",
     "css": "node-sass --output-style compact src/scss/style.scss public/css/style.css --importer ./node_modules/node-sass-globbing/index.js"

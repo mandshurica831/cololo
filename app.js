@@ -45,6 +45,7 @@ app.use(function(req, res, next) {
 const routes = require('./routes/index');
 const _logout = require('./routes/_logout');
 const login = require('./routes/login');
+const create = require('./routes/create');
 const tutorial = require('./routes/tutorial');
 const config = require('./routes/config');
 const manual = require('./routes/manual');
@@ -56,6 +57,7 @@ const battle = require('./routes/battle');
 app.use('/', getViewsClass, getUser, debugLogsSet, routes);
 app.use('/logout', _logout);
 app.use('/login', login);
+app.use('/create', create);
 app.use('/tutorial', getUser, tutorial);
 app.use('/config', getUser, config);
 app.use('/manual', getUser, manual);

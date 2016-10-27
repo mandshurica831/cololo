@@ -384,31 +384,31 @@ form button { padding: 5px 10px; }
 .views.index .text small { color: #777; }
 
 /***************************************** info */
-/***************************************** userCreate */
-.views.userCreate input[type=email] { width: 300px; }
+/***************************************** createUser */
+.views.createUser input[type=email] { width: 300px; }
 
-.views.userCreate .d_tbl__item { display: table-cell; }
+.views.createUser .d_tbl__item { display: table-cell; }
 
-.views.userCreate .user_color > .item { display: inline-block; position: relative; }
+.views.createUser .user_color > .item { display: inline-block; position: relative; }
 
-.views.userCreate .user_color > .item.blue label { background: #11a4c4; }
+.views.createUser .user_color > .item.blue label { background: #11a4c4; }
 
-.views.userCreate .user_color > .item.green label { background: #54cc14; }
+.views.createUser .user_color > .item.green label { background: #54cc14; }
 
-.views.userCreate .user_color > .item.yellow label { background: #f2cb00; }
+.views.createUser .user_color > .item.yellow label { background: #f2cb00; }
 
-.views.userCreate .user_color > .item.orange label { background: #f57214; }
+.views.createUser .user_color > .item.orange label { background: #f57214; }
 
-.views.userCreate .user_color > .item.red label { background: #ff4747; }
+.views.createUser .user_color > .item.red label { background: #ff4747; }
 
-.views.userCreate .user_color > .item.purple label { background: #a73db6; }
+.views.createUser .user_color > .item.purple label { background: #a73db6; }
 
-.views.userCreate .user_color > .item.gray label { background: #aaa; }
+.views.createUser .user_color > .item.gray label { background: #aaa; }
 
-.views.userCreate .user_color > .item.light_gray label { background: #ccc; }
+.views.createUser .user_color > .item.light_gray label { background: #ccc; }
 
-.views.userCreate .user_color input[type=radio] { position: absolute; }
+.views.createUser .user_color input[type=radio] { position: absolute; }
 
-.views.userCreate .user_color input[type=radio] + label { position: relative; width: 26px; height: 26px; border-radius: 3px; display: block; margin: 6px; box-shadow: 0 0 0 2px #fff,0 0 0 3px #ddd; }
+.views.createUser .user_color input[type=radio] + label { position: relative; width: 26px; height: 26px; border-radius: 3px; display: block; margin: 6px; box-shadow: 0 0 0 2px #fff,0 0 0 3px #ddd; }
 
-.views.userCreate .user_color input[type=radio] + label:before { border: none; left: 25%; top: 25%; margin-left: -1px; color: #fff; }
+.views.createUser .user_color input[type=radio] + label:before { border: none; left: 25%; top: 25%; margin-left: -1px; color: #fff; }

@@ -3,7 +3,7 @@
   <h3>新規会員登録</h3>
 
   <section>
-    <form action="/user" method="post" class="form-normal userCreate-form">
+    <form action="/create/user" method="post" class="form-normal userCreate-form">
       <% //エラーメッセージ %>
       <% if (typeof ErrorMessage !== 'undefined') { %>
           <p class="error"><%= ErrorMessage %></p>

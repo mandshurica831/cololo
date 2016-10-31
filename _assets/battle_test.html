@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>battle_test</title>
+<meta charset="utf-8">
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+  var cololo = {};
+
+  var DB = {
+    cha: [
+      {id:0 , name: 'ぽち', hp: 100, sp: 50, atk: 10, def: 50, },
+      {id:1 , name: 'たま', hp: 50, sp: 100, atk: 50, def: 10, }
+    ],
+    mo: [
+      {id:0 , name: 'スライム',hp: 10,sp: 10,atk: 5,def: 5,},
+      {id:1 , name: 'カタツムリ',hp: 10,sp: 15,atk: 5,def: 15,},
+      {id:1 , name: 'ナメクジ',hp: 15,sp: 10,atk: 15,def: 5,},
+    ],
+  };
+  var Data = {
+    u: [],
+  };
+
+  (function(){
+
+  $(document).ready(function(){
+
+
+
+      //ステータスを取得する関数
+      var stat_bar = $('.stat_bar').clone().show();
+      var get_statbar = function(obj){
+        item = stat_bar.clone();
+        item.find('.stat_var__name strong').html(obj.name);
+        item.find('.stat_var__hp .per').html(obj.hp);
+        item.find('.stat_var__hp .max').html('/'+obj.hp);
+        item.find('.stat_var__sp .per').html(obj.sp);
+        item.find('.stat_var__sp .max').html('/'+obj.sp);
+        return item;
+      };
+
+
+      // ランダムで敵キャラを出す
+      var max_num = DB.mo.length
+      var na = Math.floor( Math.random() * max_num ) ;
+      var Da = DB.mo[na];
+      var item = $('<div>').html(Da.name+'が現れた！')
+      $('#enemy').append(item);
+      $('#enemy').prepend(get_statbar(Da));
+
+
+      // 味方分の処理
+      for(k in DB.cha){
+        var Da = DB.cha[k];
+        var item = $('<div>');
+        item.addClass('submit_btn').html(Da.name+'で戦う').attr('data-charaId',Da.id)
+        .on('click',function(){
+          alert('まだ戦えんのや、すまんな')
+        });
+        $('#action').append(item);
+        $('#member').append(get_statbar(Da));
+      };
+
+
+  });
+
+  })();
+
+</script>
+<style>
+  *{
+    margin:0;padding:0;
+  }
+
+  body{
+    width:400px;
+    margin:100px auto;
+    position:relative;
+  }
+
+  .enemy{
+    border:1px solid #eee;
+    padding:20px;
+    margin:10px 0;
+    width:auto;
+  }
+
+  .submit_btn{
+    display:inline-block;
+    box-sizing:border-box;
+    padding:10px;
+    margin:5px;
+    border-radius:3px;
+    border:1px solid rgba(0,0,0,.1);
+    cursor:pointer;
+
+    text-shadow: 0 0 0 rgba(255,255,255,0);
+    box-shadow:inset 0 -5px 0 rgba(0,0,0,.1);
+    color:#333;
+    background:#eee;
+    padding-top:10px;
+    padding-bottom:15px;
+    -webkit-transition:all 100ms;
+  }
+  .submit_btn:hover{
+
+    text-shadow: 0 4px 0 rgba(255,255,255,.8);
+    box-shadow:inset 0 5px 0 0 rgba(0,0,0,.1);
+    color:transparent;
+    background:#aaa;
+    -webkit-transition:all 100ms;
+  }
+
+  .stat_bar{
+    background:#fafafa;
+    padding:1px;
+    box-sizing:border-box;
+  }
+  .stat_bar span{
+    position:relative;
+    z-index:1;
+    color: rgba(0,0,0,.7);
+    font-weight: bold;
+  }
+  .stat_bar .max{
+    padding-left:2px;
+    color: rgba(0,0,0,.3);
+  }
+  .stat_var__hp,.stat_var__sp{
+    font-size:10px;
+    position:relative;
+    background:#eee;
+    border-radius:5px;
+    margin:5px;
+    box-sizing:border-box;
+    text-align:center;
+  }
+  .stat_var__hp{
+  }
+  .stat_var__sp{
+  }
+  .stat_var__hp .bg,
+  .stat_var__sp .bg{
+    position:absolute;
+    height:100%;
+    z-index:0;
+    border-radius:5px;
+
+    right:0;
+    width:100%;
+  }
+  .stat_var__hp .bg{
+    background:#ff4747;
+  }
+  .stat_var__sp .bg{
+    background:#11a4c4;
+  }
+
+  .member{
+    display:flex;
+  }
+  .member > * {
+    flex-grow: 1;
+    margin:10px;
+  }
+</style>
+</head>
+<body>
+
+<div id="enemy" class="enemy">
+<!-- -->
+
+</div>
+
+<div id="action">
+<!-- -->
+</div>
+
+<div id="member" class="member">
+<!-- -->
+</div>
+
+
+<div class="stat_bar" style="display:none;">
+  <p class="stat_var__name"><strong>名前</strong></p>
+  <p class="stat_var__hp"><span class="per">100</span><span class="max">/100</span><span class="bg"></span></p>
+  <p class="stat_var__sp"><span class="per">100</span><span class="max">/100</span><span class="bg"></span></p>
+</div>
+</body>
+</html>

@@ -46,8 +46,7 @@
 
 	//
 	// 開始
-	//
-	this.start = function(){
+	this.nekochan = function(){
 	console.log("%cIndexController - start",'color:orange;',this);
 
 	  // 定数とか変数とか
@@ -60,19 +59,17 @@
 
 	//
 	// 初期化
-	//
 	this.init = function(){
 	  console.log('initだよ');
 	}
 
-	// start
-	this.start();
+	this.nekochan();
 
 
 	// windowで処理できるけどどうしたらええんや
-	(function(IndexController){
+	(function(nekochan){
 
-	  this.mimimi = IndexController;
+	  this.nekochan = nekochan;
 
 	})(this);
 

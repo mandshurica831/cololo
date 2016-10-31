@@ -25,16 +25,18 @@
 <header>
   <% if (login) { %>
       <div class="states-line login">
-        <div class="btns_area">
-          <div class="item"><a href="/logout" class="btn-normal blue" data-btnName="logout">ログアウト</a></div>
-        </div>
-        <div class="user_data_area">
-          <%= user.user_name %>さん
+        <div class="items_area">
+          <div class="items left">
+            <a href="/logout">ログアウト</a>
+          </div>
+          <div class="items">
+            <a href="/mypage" class="btn-normal yellow" data-btnName="mypage">マイページ</a>
+          </div>
         </div>
       </div>
   <% }else{ %>
       <div class="states-line">
-        <div class="btns_area">
+        <div class="items_area">
           <div class="item"><a href="/login" class="btn-normal blue" data-btnName="login">ログイン</a></div>
         </div>
       </div>

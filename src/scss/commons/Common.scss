@@ -26,6 +26,15 @@ body.dark{
   background:#444;
   color:#fff;
 }
+body a{
+  color:$blue;
+  @include set-prefix(transition,color ease-in 100ms);
+  &:hover{
+    cursor:pointer;
+    color:$yellow;
+    @include set-prefix(transition,color ease-out 100ms);
+  }
+}
 
 /* ======================================
 + #container
@@ -55,6 +64,7 @@ header{
     font-weight:300;
     color:#222;
     width: 100%;
+    /*
     &.login{
       margin-top:-45px;
       @include set-prefix(transition,margin-top ease-in 300ms);
@@ -63,20 +73,27 @@ header{
         @include set-prefix(transition,margin-top ease-out 300ms);
       }
     }
-    .btns_area{
+    */
+    .items_area{
       padding: 5px;
       height:45px;
       box-sizing:border-box;
-      display:table;
       width:100%;
-      .item{
-        display:table-cell;
-        vertical-align:middle;
+      display: flex;
+      justify-content: flex-end;
+      .items{
         padding: 0 1px;
+        &>*{
+          display:inline-block;
+        }
+        &.left{
+          > * { margin: 5px; }
+          margin-right:auto;
+        }
+        .user_name{
+          margin-right:10px;
+        }
       }
-    }
-    .user_data_area{
-      margin: 5px 10px;
     }
     .btn-normal{
       padding: 0 10px;
@@ -187,16 +204,6 @@ footer{
     p{
       font-weight:350;
       @include set-prefix(font-smoothing,antialiased);
-    }
-
-    a{
-      color:$blue;
-      @include set-prefix(transition,color ease-in 100ms);
-      &:hover{
-        cursor:pointer;
-        color:$yellow;
-        @include set-prefix(transition,color ease-out 100ms);
-      }
     }
 
     h2{

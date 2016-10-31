@@ -47,7 +47,7 @@ router.post('/user', (req, res) => {
   connection.query(sql.user_id_chk, (err, rows) => {
     const uid = rows.length === 1;
     if (uid) {
-      res.render('user/create', {
+      res.render('create/user/', {
         title: 'cololo',
         ErrorMessage: 'そのユーザーIDは既に使用されています。'
       });

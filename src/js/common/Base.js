@@ -3,6 +3,6 @@
 // window
 (function(){
 
-  this.GL = {};
+  this.cololo = {};
 
 })(this);

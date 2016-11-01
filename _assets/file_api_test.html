@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>file_api_test</title>
+<meta charset="utf-8">
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script>
+$(window).on('load',function(){
+
+  $part = $('.js-part[data-partName=disp_item]');
+  var readerArray= {};
+  var fileData = {};
+  var cnt = 0;
+
+  $('#drop').on('dragover',function(e){
+    e.originalEvent.preventDefault();
+    return false;
+  });
+
+  $('#drop').on('drop',function(e){
+    e.originalEvent.preventDefault();
+    var data = e.originalEvent.dataTransfer;
+    if(!data.files) return false;
+    var $disp = $('#disp');
+
+    $disp.html('');
+    var i;
+    if(data.files.length = 0) return false
+    for(i=0;data.files.length;i++){
+      var $item = $part.clone();
+      var tmp = data.files[i];
+
+      $item.find('.name').html(tmp.name);
+      $item.find('.type').html(tmp.type);
+      $item.find('.size').html(tmp.size / 1000 + 'KB');
+      $item.find('.img').addClass(`img_${i}`);
+      $disp.append($item);
+/*
+      readerArray[i] = new FileReader();
+      readerArray[i].readAsDataURL(tmp);
+      readerArray[i].onload = function(event){
+        $(`.img_${cnt}`).attr('src',this.result);
+        cnt++;
+        console.log(name)
+      };
+      console.log(readerArray)
+*/
+    }
+    return false;
+  });
+
+  if (window.File) {
+    $('#env').html("File APIを使用できます");
+  } else {
+    $('#env').addClass('else').html("本ブラウザではFile APIが使えません");
+    $('#drop').addClass('else')
+  }
+
+
+});
+</script>
+
+<style>
+  *{
+    margin:0;padding:0;
+  }
+
+  body{
+    width:400px;
+    margin:50px auto;
+    position:relative;
+  }
+  #drop{
+    text-align:center;
+    padding:100px 0;
+    width:100%;
+    border:2px dashed #ccc;
+    color:#ccc;
+    display:inline-block;
+  }
+  #drop:before{
+    content:"画像をここにドラッグ＆ドロップ";
+  }
+  #part{
+    display:none;
+  }
+  .disp_item{
+    border-bottom:1px dotted #ccc;
+    border-top:1px dotted #ccc;
+    margin:10px 0;
+    padding:10px 0;
+  }
+  .disp_item dl {
+    font-size:13px;
+    display:flex;
+    flex-wrap:wrap;
+  }
+  #disp .disp_item:last-child{
+    border-top:none;
+  }
+  #disp .disp_item:last-child:first-child{
+    border-bottom:1px dotted #ccc;
+    border-top:1px dotted #ccc;
+  }
+  .disp_item dl dt{
+    text-align: center;
+    width: 35%;
+    background: #fafafa;
+    padding:2px 0;
+    margin: 2px 0;
+  }
+  .disp_item dl dd{
+    width: 57%;
+    //border-left: 1px solid #eee;
+    padding-left: 3%;
+    margin: 2px;
+    border-bottom: 1px dotted #eee;
+  }
+  .disp_item dl dd:last-child{
+    border:none;
+  }
+  #env{
+    padding: 10px;
+    margin: 10px 0;
+    background:#fafafa;
+    border: 1px solid #f0f0f0;
+    text-align: center;
+    font-size: 12px;
+    color:#555;
+  }
+  #env.else{
+    background:rgba(255,0,0,0.1);
+    border-color:rgba(255,0,0,0.2);
+    color:rgba(255,0,0,0.7);
+    font-weight:bold;
+  }
+  #part.else{
+    background:#eee;
+    opacity: 0.3;
+  }
+  .img{
+    width:100%;
+    height:auto;
+  }
+</style>
+
+</head>
+<body>
+<div id="part">
+
+  <div class="disp_item js-part" data-partName="disp_item">
+    <!--<img class="img" src="" alt="">-->
+    <dl>
+      <dt>ファイル名</dt>
+        <dd class="name"></dd>
+      <dt>ファイルの型</dt>
+        <dd class="type"></dd>
+      <dt>ファイルサイズ</dt>
+        <dd class="size"></dd>
+    </dl>
+  </div>
+
+</div>
+
+  <div id="env">
+    対応状況
+  </div>
+  <div id="drop">
+  </div>
+  <div id="disp">
+  </div>
+
+</body>
+</html>

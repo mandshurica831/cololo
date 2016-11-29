@@ -1,17 +1,54 @@
 <% layout('/_layouts/main') %>
 
-  <h2>クリエイト</h2>
-
-  <section class="story_box solo">
-    <div class="story_box__item speak">
-      <img class="chara_image" src="/images/common/icon.png" alt="icon" width="64" height="64">
-      <div class="text">
-        <p>「まずはあなたのことをおしえてもらえるかな？」</p>
-      </div>
-    </div>
-  </section>
+  <h2>キャラクター作成</h2>
 
   <section>
-    <h3>キャラクター</h3>
-    <p>キャラクターを作成するよ。</p>
+    <form action="/create/user" method="post" class="form-normal userCreate-form">
+      <% //エラーメッセージ %>
+      <% if (typeof ErrorMessage !== 'undefined') { %>
+          <p class="error"><%= ErrorMessage %></p>
+      <% } %>
+
+      <div class="form-normal__item">
+        <span class="label">キャラクター名</span>
+        <div class="data">
+          <input type="text" name="chara_name" class="input" maxlength="24" required>
+          <small>半角英数のみ、24文字まで</small>
+        </div>
+      </div>
+
+      <div class="form-normal__item">
+        <span class="label">戦闘タイプ</span>
+        <div class="data">
+          <input type="radio" name="fighter_type" id="f_type_atk" value="blue">
+          <label for="f_type_atk">アタッカー</label>
+          <input type="radio" name="fighter_type" id="f_type_green" value="green">
+          <label for="f_type_green">ディフェンダー</label>
+          <input type="radio" name="fighter_type" id="f_type_yellow" value="yellow">
+          <label for="f_type_yellow">ヒーラー</label>
+          <input type="radio" name="fighter_type" id="f_type_orange" value="orange">
+          <label for="f_type_orange">サポーター</label>
+        </div>
+      </div>
+
+      <div class="form-normal__item">
+        <span class="label">能力タイプ</span>
+        <div class="data">
+            <input type="checkbox" name="performance_type" id="p_type_str" value="blue">
+            <label for="p_type_str">筋力</label>
+            <input type="checkbox" name="performance_type" id="p_type_con" value="yellow">
+            <label for="p_type_con">体力</label>
+            <input type="checkbox" name="performance_type" id="p_type_pow" value="orange">
+            <label for="p_type_pow">精神</label>
+            <input type="checkbox" name="performance_type" id="p_type_dex" value="green">
+            <label for="p_type_dex">敏捷</label>
+            <small>2つまで</small>
+        </div>
+      </div>
+
+
+      <div class="t_right">
+        <button type="submit" class="submit btn-normal green">決定！</button>
+      </div>
+    </form>
   </section>

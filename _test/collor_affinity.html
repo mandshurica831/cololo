@@ -8,28 +8,31 @@
 <script>
   // script
   $(function(){
-
+  console.log(this)
   //宣言
-  var colors = {r:"R", g:"G", b:"B"},
-  At_colors = {}, At_colors16 = {},
-  Df_colors = {}, Df_colors16 = {},
-  c16 = {};
+  var colors = {r:"R", g:"G", b:"B"};
+  window.CL = {
+    'At_colors' : {},
+    'At_colors16' : {},
+    'Df_colors' : {},
+    'Df_colors16' : {},
+  };
 
   //攻撃側の色の表示の初期化
   init_colors();
 
-  //両側色の初期化
+  //各色の初期化
   function init_colors(){
     for(k in colors){
       var Col = colors[k];
-      At_colors[Col] = 0;
-      At_colors16[Col] = '00';
+      CL.At_colors[Col] = 0;
+      CL.At_colors16[Col] = '00';
       $('#At_' + Col).val(0);
       $('#At_' + Col + '_num').text('0');
-      Df_colors[Col] = 255;
-      Df_colors16[Col] = 'ff';
+      CL.Df_colors[Col] = 255;
+      CL.Df_colors16[Col] = 'ff';
       $('#Df_' + Col).val(255);
-      $('#Df_' + Col + '_num').text('0');
+      $('#Df_' + Col + '_num').text('255');
       _init_colors__bar(Col);
     }
   }
@@ -41,30 +44,34 @@
   function _init_colors__bar_fnk(Col,Type){
     var name = Type + '_' + Col;
 
-    $('#' + name).change(function(){
-      var val = $(this).val();
-      $('#' + name + '_num').text(val);
-      _input_colors(Col,val,Type);
-    })
     $('#' + name).on('input', function () {
+      //変更中の数字表示
       var val = $('#' + name).val();
       $('#' + name + '_num').text(val);
+    }).change(function(){
+      //変更後の処理
+      var val = $(this).val();
       _input_colors(Col,val,Type);
-    });
+    })
   }
   function _input_colors(Col,val,Type){
     if(Type == 'At'){
-      At_colors[Col] = val;
-      At_colors16[Col] = get_color16(val);
-      set_color(At_colors,'#At_color');
-      set_color16(At_colors16,'#At_color16');
+      CL.At_colors[Col] = val*1;
+      CL.At_colors16[Col] = get_color16(val);
+      set_color(CL.At_colors,'#At_color');
+      set_color16(CL.At_colors16,'#At_color16');
+      get_affinity('At');
+
     } else {
-      Df_colors[Col] = val;
-      Df_colors16[Col] = get_color16(val);
-      set_color(Df_colors,'#Df_color');
-      set_color16(Df_colors16,'#Df_color16');
+      CL.Df_colors[Col] = val*1;
+      CL.Df_colors16[Col] = get_color16(val);
+      set_color(CL.Df_colors,'#Df_color');
+      set_color16(CL.Df_colors16,'#Df_color16');
+      get_affinity('Df');
     }
   }
+
+
   //防御側の色をランダムで決定する
   function get_Df_color_rdm(){
     for(k in colors){
@@ -73,12 +80,12 @@
       var random_val = Math.round( Math.random()*255 );
       $('#Df_' + Col + '_num').text(random_val);
       $('#Df_' + Col).val(random_val);
-      Df_colors[Col] = random_val;
-      Df_colors16[Col] = get_color16(random_val);
+      CL.Df_colors[Col] = random_val;
+      CL.Df_colors16[Col] = get_color16(random_val);
     }
   }
 
-  //set
+  // set
   function set_color(c,target){
     var rgb = 'rgb('+c.R+','+c.G+','+c.B+')';
     $(target).css({'background':rgb});
@@ -96,12 +103,34 @@
     return tmp;
   }
 
-  //実行
-  set_color(Df_colors,'#Df_color');
-  set_color(At_colors,'#At_color');
-  set_color16(At_colors16,'#At_color16');
-  set_color16(Df_colors16,'#Df_color16');
+  // 属性チェック
+  function get_affinity(Type){
+    var tmp, i, c;
+    if(Type == 'At') c = CL.At_colors;
+    if(Type == 'Df') c = CL.Df_colors;
+    //無彩色
+    i = 15;
+    if(c.R-c.G < i && c.R-c.G > - i && c.B-c.G < i && c.B-c.G > - i){
+      $('#' + Type + '_color_type').text('無');
+    } else if(c.R >= c.G && c.R >= c.B){
+      $('#' + Type + '_color_type').text('赤');
+    } else if(c.B >= c.G && c.B >= c.R){
+      $('#' + Type + '_color_type').text('青');
+    } else if(c.G >= c.B && c.G >= c.R){
+      $('#' + Type + '_color_type').text('緑');
+    } else {
+      $('#' + Type + '_color_type').text('---');
+      console.log(c)
+    }
+  }
 
+  //初回実行
+  set_color(CL.Df_colors,'#Df_color');
+  set_color(CL.At_colors,'#At_color');
+  set_color16(CL.At_colors16,'#At_color16');
+  set_color16(CL.Df_colors16,'#Df_color16');
+  get_affinity('Df');
+  get_affinity('At');
 
   ////
   //// 読み込み後
@@ -111,8 +140,8 @@
     //ボタン設定
     $('#change_enemy_btn').on('click',function(){
       get_Df_color_rdm();
-      set_color(Df_colors,'#Df_color');
-      set_color16(Df_colors16,'#Df_color16');
+      set_color(CL.Df_colors,'#Df_color');
+      set_color16(CL.Df_colors16,'#Df_color16');
     });
 
   })
@@ -146,6 +175,11 @@ form{
   border:1px solid #f3f3f3;
   margin-right: 5px;
 }
+.color_type{
+  color: #aaa;
+  margin:0 10px;
+  font-weight: 100;
+}
 .rgb_area{
   margin: 10px 0;
 }
@@ -160,6 +194,7 @@ form{
   <p class="caption">
     <span id="At_color" class="color_chip"></span>
     <span>攻撃側</span>
+    <span id="At_color_type" class="color_type"></span>
   </p>
 
   <div class="rgb_area">
@@ -192,6 +227,7 @@ form{
   <p class="caption">
     <span id="Df_color" class="color_chip"></span>
     <span>防御側</span>
+    <span id="Df_color_type" class="color_type"></span>
   </p>
 
   <div class="rgb_area">

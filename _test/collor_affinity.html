@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>file_api_test</title>
+<meta charset="utf-8">
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script>
+  // script
+  $(function(){
+
+  //宣言
+  var colors = {r:"R", g:"G", b:"B"},
+  At_colors = {}, At_colors16 = {},
+  Df_colors = {}, Df_colors16 = {},
+  c16 = {};
+
+  //攻撃側の色の表示の初期化
+  init_colors();
+
+  //両側色の初期化
+  function init_colors(){
+    for(k in colors){
+      var Col = colors[k];
+      At_colors[Col] = 0;
+      At_colors16[Col] = '00';
+      $('#At_' + Col).val(0);
+      $('#At_' + Col + '_num').text('0');
+      Df_colors[Col] = 255;
+      Df_colors16[Col] = 'ff';
+      $('#Df_' + Col).val(255);
+      $('#Df_' + Col + '_num').text('0');
+      _init_colors__bar(Col);
+    }
+  }
+  //バーを反応するように初期化
+  function _init_colors__bar(Col){
+    _init_colors__bar_fnk(Col,'At')
+    _init_colors__bar_fnk(Col,'Df')
+  }
+  function _init_colors__bar_fnk(Col,Type){
+    var name = Type + '_' + Col;
+
+    $('#' + name).change(function(){
+      var val = $(this).val();
+      $('#' + name + '_num').text(val);
+      _input_colors(Col,val,Type);
+    })
+    $('#' + name).on('input', function () {
+      var val = $('#' + name).val();
+      $('#' + name + '_num').text(val);
+      _input_colors(Col,val,Type);
+    });
+  }
+  function _input_colors(Col,val,Type){
+    if(Type == 'At'){
+      At_colors[Col] = val;
+      At_colors16[Col] = get_color16(val);
+      set_color(At_colors,'#At_color');
+      set_color16(At_colors16,'#At_color16');
+    } else {
+      Df_colors[Col] = val;
+      Df_colors16[Col] = get_color16(val);
+      set_color(Df_colors,'#Df_color');
+      set_color16(Df_colors16,'#Df_color16');
+    }
+  }
+  //防御側の色をランダムで決定する
+  function get_Df_color_rdm(){
+    for(k in colors){
+      var Col = colors[k];
+
+      var random_val = Math.round( Math.random()*255 );
+      $('#Df_' + Col + '_num').text(random_val);
+      $('#Df_' + Col).val(random_val);
+      Df_colors[Col] = random_val;
+      Df_colors16[Col] = get_color16(random_val);
+    }
+  }
+
+  //set
+  function set_color(c,target){
+    var rgb = 'rgb('+c.R+','+c.G+','+c.B+')';
+    $(target).css({'background':rgb});
+  }
+  function set_color16(c,target){
+    if(c.R.length == 1) c.R += c.R
+    if(c.G.length == 1) c.G += c.G
+    if(c.B.length == 1) c.B += c.B
+    var color16 = '#'+ c.R + c.G + c.B
+    $(target).val(color16);
+  }
+  function get_color16(c){
+    c = c*1
+    var tmp = c.toString(16);
+    return tmp;
+  }
+
+  //実行
+  set_color(Df_colors,'#Df_color');
+  set_color(At_colors,'#At_color');
+  set_color16(At_colors16,'#At_color16');
+  set_color16(Df_colors16,'#Df_color16');
+
+
+  ////
+  //// 読み込み後
+  ////
+  $(document).ready(function(){
+
+    //ボタン設定
+    $('#change_enemy_btn').on('click',function(){
+      get_Df_color_rdm();
+      set_color(Df_colors,'#Df_color');
+      set_color16(Df_colors16,'#Df_color16');
+    });
+
+  })
+
+})
+</script>
+
+<style>
+  *{
+    margin:0;padding:0;
+    font-size: 13px;
+  }
+form{
+  display:inline-block;
+  margin:10px 20px;
+  padding: 20px 25px;
+  border:1px solid #eee;
+  width:190px;
+}
+.caption{
+  font-weight:bold;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.color_chip{
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+  background: rgb(255,255,255) ;
+  border:1px solid #f3f3f3;
+  margin-right: 5px;
+}
+.rgb_area{
+  margin: 10px 0;
+}
+</style>
+
+</head>
+<body>
+
+
+
+<form id="At" class="At">
+  <p class="caption">
+    <span id="At_color" class="color_chip"></span>
+    <span>攻撃側</span>
+  </p>
+
+  <div class="rgb_area">
+    <div id="At_R_area">
+      <label for="At_R">R</label>
+      <input type="range" name="At_R" id="At_R" min="0" max="255">
+      <span id="At_R_num"></span>
+    </div>
+    <div id="At_G_area">
+      <label for="At_G">G</label>
+      <input type="range" name="At_G" id="At_G" min="0" max="255">
+      <span id="At_G_num"></span>
+    </div>
+    <div id="At_B_area">
+      <label for="At_B">B</label>
+      <input type="range" name="At_B" id="At_B" min="0" max="255">
+      <span id="At_B_num"></span>
+    </div>
+  </div>
+
+  <div>
+    <label for="At_color16">code:</label>
+    <input type="text" size="10" minlength="10" name="At_color16" id="At_color16">
+  </div>
+</form>
+
+
+
+<form id="Df" class="Df">
+  <p class="caption">
+    <span id="Df_color" class="color_chip"></span>
+    <span>防御側</span>
+  </p>
+
+  <div class="rgb_area">
+    <div id="Df_R_area">
+      <label for="Df_R">R</label>
+      <input type="range" name="Df_R" id="Df_R" min="0" max="255">
+      <span id="Df_R_num"></span>
+    </div>
+    <div id="Df_G_area">
+      <label for="Df_G">G</label>
+      <input type="range" name="Df_G" id="Df_G" min="0" max="255">
+      <span id="Df_G_num"></span>
+    </div>
+    <div id="Df_B_area">
+      <label for="Df_B">B</label>
+      <input type="range" name="Df_B" id="Df_B" min="0" max="255">
+      <span id="Df_B_num"></span>
+    </div>
+  </div>
+
+  <div>
+    <label for="Df_color16">code:</label>
+    <input type="text" size="10" minlength="10" name="Df_color16" id="Df_color16">
+  </div>
+</form>
+
+<div id="change_enemy_btn" style="background:#ddd;display:inline-block;padding:10px;cursor:pointer;">敵を変更（ランダム）</div>
+
+
+</body>
+</html>

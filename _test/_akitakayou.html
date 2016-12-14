@@ -42,7 +42,7 @@
     </div>
 
     <p class="h">▼ 結果</p>
-    <textarea type="textarea" id="result" class="result" rows=”10″>ここに記入してください</textarea>
+    <textarea type="textarea" id="result" class="result" rows="10"></textarea>
 
     <div id="submit_btn" class="submit_btn">出力</div>
 
@@ -58,7 +58,9 @@
 $(function(){
   $(document).ready(function(){
 
-    //タグ
+    /*
+    * タグ
+    */
     var get_img_tag = function(img_url, width, height){
       var tmp = `<img src="${img_url}" width="${width}" height="${height}" border="0" />`;
       return tmp;
@@ -68,9 +70,10 @@ $(function(){
       return tmp;
     }
 
-
-    // 定義
-    var $result, $add_target, $set_item;
+    /*
+    * 宣言
+    */
+    var num, urls, f_color;
 
     $height = $('#height');
     $width = $('#width');
@@ -85,8 +88,11 @@ $(function(){
 
     $result = $('#result');
 
-    var num, urls, f_color;
-
+    /*
+    * 関数
+    */
+    
+    //初期化やつ
     var init = function(){
       num = 1, urls = [], f_color = true
       tate = $tate.val();
@@ -98,7 +104,7 @@ $(function(){
       }
       row_setting();
     }
-
+    //追加やつ
     var add = function(){
       $tmp = $set_item.clone();
       $tmp.attr('data-num',num);
@@ -110,6 +116,7 @@ $(function(){
       $add_target.append($tmp);
       num ++;
     }
+    //取得やつ
     var get_urls = function(){
       $inputs = $add_target.find('input');
       $inputs.each(function(i){
@@ -118,6 +125,7 @@ $(function(){
       })
       result();
     }
+    //結果出力やつ
     var result = function(){
       height = $height.val();
       width = $width.val();
@@ -137,8 +145,7 @@ $(function(){
       }
       $result.val(result);
     }
-
-
+    //行の調整やつ
     var row_setting = function(){
       var num = 1, row = 1 , yoko = $yoko.val();
       $('.set_item').each(function(i){
@@ -154,8 +161,9 @@ $(function(){
       });
     }
 
-
-    // ボタン
+    /*
+    * ボタン設定
+    */
     $submit_btn.on('click',function(){
       get_urls();
     });
@@ -164,7 +172,9 @@ $(function(){
       init();
     });
 
-    // 初回実行
+    /*
+    * 初回実行
+    */
     init();
 
   });

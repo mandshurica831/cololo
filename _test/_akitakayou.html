@@ -8,25 +8,6 @@
 <body>
   <form>
 
-    <p class="h">▼ 画像</p>
-
-    <div id="add_target">
-      <div class="set_item" data-num="0">
-        <p class="num"><span class="total">0</span><span class="position">0-0</span></p>
-        <div class="item">
-          <input placeholder="画像URL" name="imgUrl" class="imgUrl line"  type="text" data-type="img">
-        </div>
-        <div class="item">
-          <input placeholder="リンクURL" name="linkUrl" class="linkUrl line"  type="text" data-type="url">
-        </div>
-      </div>
-    </div>
-
-    <p class="h">▼ 結果</p>
-    <textarea type="textarea" id="result" class="result" rows=”10″>ここに記入してください</textarea>
-
-    <div id="submit_btn" class="submit_btn">出力</div>
-
 
     <p class="h">▼ オプション</p>
 
@@ -45,6 +26,25 @@
       <label class="">縦: </label>
       <input placeholder="縦" id="tate" name="tate" class="tate viewnum" size="10" type="number" value="2"> 個
     </div>
+
+    <p class="h">▼ 画像</p>
+
+    <div id="add_target">
+      <div class="set_item" data-num="0">
+        <p class="num"><span class="total">0</span><span class="position">0-0</span></p>
+        <div class="item">
+          <input placeholder="画像URL" name="imgUrl" class="imgUrl line"  type="text" data-type="img">
+        </div>
+        <div class="item">
+          <input placeholder="リンクURL" name="linkUrl" class="linkUrl line"  type="text" data-type="url">
+        </div>
+      </div>
+    </div>
+
+    <p class="h">▼ 結果</p>
+    <textarea type="textarea" id="result" class="result" rows=”10″>ここに記入してください</textarea>
+
+    <div id="submit_btn" class="submit_btn">出力</div>
 
   </form>
 
@@ -160,7 +160,7 @@ $(function(){
       get_urls();
     });
 
-    $viewnum.change('',function(){
+    $viewnum.change(function(){
       init();
     });
 
@@ -177,123 +177,7 @@ $(function(){
 
 
 <style>
-  *{
-    margin:0;padding:0;
-  }
-  body{
-    font-size: 14px;
-    width: 800px;
-    margin: 0 auto;
-    padding-bottom: 100px;
-  }
-  label{
-    font-weight: bold;
-  }
-  input[type="text"].line{
-    padding: 3px;
-    margin: 5px 0;
-    width: 100%;
-    padding: 5px;
-    box-sizing: border-box;
-  }
-  input[type="number"]{
-    padding: 3px;
-    margin: 5px 0;
-  }
-  .submit_btn{
-    height: 50px;
-    line-height: 50px;
-    width: 80%;
-    display: block;
-    border: 1px solid #ddd;
-    background: #333;
-    color:#fff;
-    margin: 50px auto;
-    border-radius: 3px;
-    border: 2px solid #111;
-    box-shadow: 0 3px 0 #111;
-    font-size: 14px;
-    cursor: pointer;
-    text-align: center;
-  }
-  .h{
-    font-weight: bold;
-    font-size: 14px;
-    border-bottom: 3px solid #eee;
-    margin: 40px 0 10px;
-    box-shadow: 0 1px 0 #fff,0 4px 0 #eee;
-  }
-  .h2{
-    font-weight: bold;
-    font-size: 13px;
-    border-bottom: 2px dotted #eee;
-    margin: 40px 0 10px;
-  }
-  .set_item{
-    border-bottom: 1px dotted #ccc;
-    padding-bottom: 5px;
-    margin: 5px 0;
-    position: relative;
-  }
-  .set_item:last-child{
-    border: none;
-  }
-  .set_item[data-num="0"]{
-    display: none;
-  }
-  .num{
-    margin-top: 10px;
-    position: absolute;
-    margin-left: -40px;
-    width: 105%;
-    height: 60%;
-    z-index: -1;
-    border-radius: 5px;
-    font-size: 10px;
-    border-width: 3px;
-    border-style: solid;
-  }
-  .num .total{
-    padding: 5px;
-    width: 14px;
-    height: 14px;
-    border-radius: 0 0 5px 0;
-    text-align: center;
-    display:inline-block;
-    position: relative;
-  }
-  .num .position{
-    display: block;
-    font-weight: bold;
-    letter-spacing: 0.04em;
-    margin: -40px 2px;
-  }
-  .num {
-    background: #f3ffff;
-    border-color: #d2f7f9;
-  }
-  .num .total{
-    background: #d2f7f9;
-  }
-  .num .position{
-    color: #83e0ff;
-  }
-  .num.row{
-    background: #fffff6;
-    border-color: #fbf2cb;
-  }
-  .num.row .total{
-    background: #fbf2cb;
-  }
-  .num.row .position{
-    color: #ffd963;
-  }
-  .result{
-    width: 100%;
-    box-sizing: border-box;
-    border-color: #ddd;
-    min-height: 80px;
-  }
+ *{margin:0;padding:0;}body{font-size: 14px;width: 800px;margin: 0 auto;padding-bottom: 100px;}label{font-weight: bold;}input[type="text"].line{padding: 3px;margin: 5px 0;width: 100%;padding: 5px;box-sizing: border-box;}input[type="number"]{padding: 3px;margin: 5px 0;}.submit_btn{height: 50px;line-height: 50px;width: 80%;display: block;border: 1px solid #ddd;background: #333;color:#fff;margin: 50px auto;border-radius: 3px;border: 2px solid #111;box-shadow: 0 3px 0 #111;font-size: 14px;cursor: pointer;text-align: center;}.h{font-weight: bold;font-size: 14px;border-bottom: 3px solid #eee;margin: 40px 0 10px;box-shadow: 0 1px 0 #fff,0 4px 0 #eee;}.h2{font-weight: bold;font-size: 13px;border-bottom: 2px dotted #eee;margin: 30px 0 10px;}.set_item{border-bottom: 1px dotted #ccc;padding-bottom: 5px;margin: 5px 0;position: relative;}.set_item:last-child{border: none;}.set_item[data-num="0"]{display: none;}.num{margin-top: 10px;position: absolute;margin-left: -40px;width: 105%;height: 60%;z-index: -1;border-radius: 5px;font-size: 10px;border-width: 3px;border-style: solid;}.num .total{padding: 5px;width: 14px;height: 14px;border-radius: 0 0 5px 0;text-align: center;display:inline-block;position: relative;}.num .position{display: block;font-weight: bold;letter-spacing: 0.04em;margin: -40px 2px;}.num {background: #f3ffff;border-color: #d2f7f9;}.num .total{background: #d2f7f9;}.num .position{color: #83e0ff;}.num.row{background: #fffff6;border-color: #fbf2cb;}.num.row .total{background: #fbf2cb;}.num.row .position{color: #ffd963;}.result{width: 100%;box-sizing: border-box;border-color: #ddd;min-height: 80px;}
 </style>
 </body>
 </html>

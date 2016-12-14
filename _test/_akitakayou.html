@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>util</title>
+<meta charset="utf-8">
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+</head>
+<body>
+  <form>
+
+    <p class="h">▼ 画像</p>
+
+    <div id="add_target">
+      <div class="set_item" data-num="0">
+        <p class="num"><span class="total">0</span><span class="position">0-0</span></p>
+        <div class="item">
+          <input placeholder="画像URL" name="imgUrl" class="imgUrl line"  type="text" data-type="img">
+        </div>
+        <div class="item">
+          <input placeholder="リンクURL" name="linkUrl" class="linkUrl line"  type="text" data-type="url">
+        </div>
+      </div>
+    </div>
+
+    <p class="h">▼ 結果</p>
+    <textarea type="textarea" id="result" class="result" rows=”10″>ここに記入してください</textarea>
+
+    <div id="submit_btn" class="submit_btn">出力</div>
+
+
+    <p class="h">▼ オプション</p>
+
+    <p class="h2">画像サイズ</p>
+    <div class="item">
+      <label class="">height: </label>
+      <input placeholder="高さ" id="height" name="height" class="height" size="10" type="number" value="200"> px,　
+      <label class="">width: </label>
+      <input placeholder="横幅" id="width" name="width" class="width" size="10" type="number" value="200"> px
+    </div>
+
+    <p class="h2">表示数</p>
+    <div class="item">
+      <label class="">横: </label>
+      <input placeholder="横" id="yoko" name="yoko" class="yoko viewnum" size="10" type="number" value="3"> 個,　
+      <label class="">縦: </label>
+      <input placeholder="縦" id="tate" name="tate" class="tate viewnum" size="10" type="number" value="2"> 個
+    </div>
+
+  </form>
+
+
+
+
+
+
+<script>
+  // script
+$(function(){
+  $(document).ready(function(){
+
+    //タグ
+    var get_img_tag = function(img_url, width, height){
+      var tmp = `<img src="${img_url}" width="${width}" height="${height}" border="0" />`;
+      return tmp;
+    }
+    var get_a_tag = function(link_url, img_tag){
+      var tmp = `<a href="${link_url}">${img_tag}</a>`;
+      return tmp;
+    }
+
+
+    // 定義
+    var $result, $add_target, $set_item;
+
+    $height = $('#height');
+    $width = $('#width');
+    $tate = $('#tate');
+    $yoko = $('#yoko');
+    $viewnum = $('.viewnum');
+
+    $add_target = $('#add_target');
+    $set_item = $('.set_item');
+
+    $submit_btn = $('#submit_btn');
+
+    $result = $('#result');
+
+    var num, urls, f_color;
+
+    var init = function(){
+      num = 1, urls = [], f_color = true
+      tate = $tate.val();
+      yoko = $yoko.val();
+      $add_target.text('');
+      $result.val('');
+      for(i = 0; i < tate * yoko; i ++){
+        add();
+      }
+      row_setting();
+    }
+
+    var add = function(){
+      $tmp = $set_item.clone();
+      $tmp.attr('data-num',num);
+      $tmp.find('.num .total').text(num);
+      $tmp.find('input').each(function(){
+        $(this).attr('name', $(this).attr('name') + '--' + num)
+        $(this).attr('data-num',num)
+      });
+      $add_target.append($tmp);
+      num ++;
+    }
+    var get_urls = function(){
+      $inputs = $add_target.find('input');
+      $inputs.each(function(i){
+        if(!urls[$(this).attr('data-num')]) urls[$(this).attr('data-num')] = {};
+        urls[$(this).attr('data-num')][$(this).attr('data-type')] = $(this).val();
+      })
+      result();
+    }
+    var result = function(){
+      height = $height.val();
+      width = $width.val();
+      tate = $tate.val();
+      yoko = $yoko.val();
+
+      var result = '';
+
+      for(k in urls){
+        console.log()
+        var img_tag = get_img_tag(urls[k].img, width, height);
+        var a_tag = get_a_tag(urls[k].url, img_tag);
+        result += a_tag
+        if(k%yoko == 0){
+          result += '<br>';
+        }
+      }
+      $result.val(result);
+    }
+
+
+    var row_setting = function(){
+      var num = 1, row = 1 , yoko = $yoko.val();
+      $('.set_item').each(function(i){
+        var c = num % yoko;
+        if(c == 0) c = yoko;
+        $(this).find('.num .position').text(row + '-' + c);
+        if(f_color == false) $(this).find('.num').addClass('row')
+        if(num % yoko == 0){
+          f_color = (f_color == true) ? false : true;
+          row ++;
+        }
+        num ++;
+      });
+    }
+
+
+    // ボタン
+    $submit_btn.on('click',function(){
+      get_urls();
+    });
+
+    $viewnum.change('',function(){
+      init();
+    });
+
+    // 初回実行
+    init();
+
+  });
+}(jQuery));
+</script>
+
+
+
+
+
+
+<style>
+  *{
+    margin:0;padding:0;
+  }
+  body{
+    font-size: 14px;
+    width: 800px;
+    margin: 0 auto;
+    padding-bottom: 100px;
+  }
+  label{
+    font-weight: bold;
+  }
+  input[type="text"].line{
+    padding: 3px;
+    margin: 5px 0;
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+  }
+  input[type="number"]{
+    padding: 3px;
+    margin: 5px 0;
+  }
+  .submit_btn{
+    height: 50px;
+    line-height: 50px;
+    width: 80%;
+    display: block;
+    border: 1px solid #ddd;
+    background: #333;
+    color:#fff;
+    margin: 50px auto;
+    border-radius: 3px;
+    border: 2px solid #111;
+    box-shadow: 0 3px 0 #111;
+    font-size: 14px;
+    cursor: pointer;
+    text-align: center;
+  }
+  .h{
+    font-weight: bold;
+    font-size: 14px;
+    border-bottom: 3px solid #eee;
+    margin: 40px 0 10px;
+    box-shadow: 0 1px 0 #fff,0 4px 0 #eee;
+  }
+  .h2{
+    font-weight: bold;
+    font-size: 13px;
+    border-bottom: 2px dotted #eee;
+    margin: 40px 0 10px;
+  }
+  .set_item{
+    border-bottom: 1px dotted #ccc;
+    padding-bottom: 5px;
+    margin: 5px 0;
+    position: relative;
+  }
+  .set_item:last-child{
+    border: none;
+  }
+  .set_item[data-num="0"]{
+    display: none;
+  }
+  .num{
+    margin-top: 10px;
+    position: absolute;
+    margin-left: -40px;
+    width: 105%;
+    height: 60%;
+    z-index: -1;
+    border-radius: 5px;
+    font-size: 10px;
+    border-width: 3px;
+    border-style: solid;
+  }
+  .num .total{
+    padding: 5px;
+    width: 14px;
+    height: 14px;
+    border-radius: 0 0 5px 0;
+    text-align: center;
+    display:inline-block;
+    position: relative;
+  }
+  .num .position{
+    display: block;
+    font-weight: bold;
+    letter-spacing: 0.04em;
+    margin: -40px 2px;
+  }
+  .num {
+    background: #f3ffff;
+    border-color: #d2f7f9;
+  }
+  .num .total{
+    background: #d2f7f9;
+  }
+  .num .position{
+    color: #83e0ff;
+  }
+  .num.row{
+    background: #fffff6;
+    border-color: #fbf2cb;
+  }
+  .num.row .total{
+    background: #fbf2cb;
+  }
+  .num.row .position{
+    color: #ffd963;
+  }
+  .result{
+    width: 100%;
+    box-sizing: border-box;
+    border-color: #ddd;
+    min-height: 80px;
+  }
+</style>
+</body>
+</html>

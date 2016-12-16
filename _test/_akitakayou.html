@@ -59,20 +59,15 @@ $(function(){
   $(document).ready(function(){
 
     /*
-    * タグ
-    */
-    var get_img_tag = function(img_url, width, height){
-      var tmp = `<img src="${img_url}" width="${width}" height="${height}" border="0" />`;
-      return tmp;
-    }
-    var get_a_tag = function(link_url, img_tag){
-      var tmp = `<a href="${link_url}">${img_tag}</a>`;
-      return tmp;
-    }
-
-    /*
     * 宣言
     */
+    var get_img_tag = function(img_url, width, height){
+      return `<img src="${img_url}" width="${width}" height="${height}" border="0" />`;
+    }
+    var get_a_tag = function(link_url, img_tag){
+      return `<a href="${link_url}">${img_tag}</a>`;
+    }
+
     var num, urls, f_color;
 
     $height = $('#height');
@@ -116,6 +111,22 @@ $(function(){
       $add_target.append($tmp);
       num ++;
     }
+    //行の初期化やつ
+    var row_setting = function(){
+      var num = 1, row = 1 , yoko = $yoko.val();
+      $('.set_item').each(function(i){
+        var c = num % yoko;
+        if(c == 0) c = yoko;
+        $(this).find('.num .position').text(row + '-' + c);
+        if(f_color == false) $(this).find('.num').addClass('row')
+        if(num % yoko == 0){
+          f_color = (f_color == true) ? false : true;
+          row ++;
+        }
+        num ++;
+      });
+    }
+
     //取得やつ
     var get_urls = function(){
       $inputs = $add_target.find('input');
@@ -123,7 +134,6 @@ $(function(){
         if(!urls[$(this).attr('data-num')]) urls[$(this).attr('data-num')] = {};
         urls[$(this).attr('data-num')][$(this).attr('data-type')] = $(this).val();
       })
-      result();
     }
     //結果出力やつ
     var result = function(){
@@ -145,29 +155,17 @@ $(function(){
       }
       $result.val(result);
     }
-    //行の調整やつ
-    var row_setting = function(){
-      var num = 1, row = 1 , yoko = $yoko.val();
-      $('.set_item').each(function(i){
-        var c = num % yoko;
-        if(c == 0) c = yoko;
-        $(this).find('.num .position').text(row + '-' + c);
-        if(f_color == false) $(this).find('.num').addClass('row')
-        if(num % yoko == 0){
-          f_color = (f_color == true) ? false : true;
-          row ++;
-        }
-        num ++;
-      });
-    }
 
     /*
     * ボタン設定
     */
+    //出力ボタン
     $submit_btn.on('click',function(){
       get_urls();
+      result();
     });
 
+    //出力ボタン
     $viewnum.change(function(){
       init();
     });

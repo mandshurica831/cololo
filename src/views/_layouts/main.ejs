@@ -8,8 +8,14 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/roundedmplus1c.css">
 <link rel="stylesheet" href="/css/font-awesome.min.css">
 <link rel='stylesheet' href='/css/style.css'>
-<script src="/js/jquery.1.10.2.min.js"></script>
+<script src="/js/lib/jquery.1.10.2.min.js"></script>
 <script src="/js/common.js"></script>
+<script src="/js/views.js"></script>
+<script>
+try{
+  var _<%= pageJsName %>Controller = new <%= pageJsName %>Controller();
+} catch(e){}
+</script>
 <body>
 <div id="container">
 <%

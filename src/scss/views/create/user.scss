@@ -50,6 +50,14 @@
           color: #fff;
         }
       }
+      &:checked + label:before{
+        content:"✓";
+        @include set-prefix(transition,all 100ms);
+      }
+      &:checked + label:after{
+        display: none;
+        @include set-prefix(transition,all 100ms);
+      }
     }
 
   }

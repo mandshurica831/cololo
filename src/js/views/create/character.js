@@ -1,15 +1,22 @@
 var CreateCharacterController = function(){
 
-  console.log($('#fight_type_detail_area').find('.default'))
+  this.fight_type_detail_area = $('[data-name=fight_type_detail_area]');
   $('#f_type_atk');
   $('#f_type_def');
   $('#f_type_sup');
   $('#f_type_manual');
-  $('#fight_type_detail_area').find('.default').show();
-  $('#fight_type_detail_area').find('.fighter').hide();
-  $('#fight_type_detail_area').find('.defender').hide();
-  $('#fight_type_detail_area').find('.supporter').hide();
-  $('#fight_type_detail_area').find('.manual').hide();
+  this.fight_type_detail_area.find('.default').show();
+  this.fight_type_detail_area.find('.fighter').hide();
+  this.fight_type_detail_area.find('.defender').hide();
+  this.fight_type_detail_area.find('.supporter').hide();
+  this.fight_type_detail_area.find('.manual').hide();
+
+  $('[data-name=detail_settings_area]').hide();
+
+  $('[data-name=open_detail_area_btn]').on('click',function(){
+    $('[data-name=detail_settings_area]').toggle();
+  }.bind(this));
+
 
 };
 inherits(CreateCharacterController,Base);//継承

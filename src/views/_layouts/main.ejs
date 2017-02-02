@@ -12,9 +12,13 @@
 <script src="/js/common.js"></script>
 <script src="/js/views.js"></script>
 <script>
-try{
-  var _<%= pageJsName %>Controller = new <%= pageJsName %>Controller();
-} catch(e){}
+$(function(){
+  if(window.hasOwnProperty("<%= pageJsName %>Controller")){
+    _<%= pageJsName %>Controller = new <%= pageJsName %>Controller();
+  }else{
+    COLOLO.hide_loading();
+  }
+});
 </script>
 <body>
 <div id="container">

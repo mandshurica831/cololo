@@ -308,6 +308,8 @@ form button { padding: 5px 10px; }
 
 .btn-normal:hover.light_gray, .btn-normal:active.light_gray, a.btn-normal:hover.light_gray, a.btn-normal:active.light_gray { box-shadow: 0 0 0 rgba(50, 20, 0, 0.2), 0 0 0 #ccc, 0 0 0 1px #333, 0 0 0 1px #333, inset 0px 1px 0px rgba(0, 0, 0, 0.1), 0 0 0 2px #fff, 0 0 0 2px #fff; background: #ccc; }
 
+.btn-normal .middle, a.btn-normal .middle { width: 120px; height: 36px; }
+
 .btn-solid, a.btn-solid { color: #000; display: inline-block; background: #fff; border: 1px solid #333; position: relative; letter-spacing: 0.05em; text-align: center; font-weight: 600; padding: 5px; margin: 0; border-radius: 3px; box-shadow: 2px 2px 0 #000; transition: box-shadow ease-in 100ms, margin ease-in 100ms; -moz-transition: box-shadow ease-in 100ms, margin ease-in 100ms; -webkit-transition: box-shadow ease-in 100ms, margin ease-in 100ms; -ms-transition: box-shadow ease-in 100ms, margin ease-in 100ms; -o-transition: box-shadow ease-in 100ms, margin ease-in 100ms; }
 
 .btn-solid:hover, a.btn-solid:hover { box-shadow: none; margin: 2px -2px -2px 2px; transition: box-shadow ease-in 100ms, margin ease-in 100ms; -moz-transition: box-shadow ease-in 100ms, margin ease-in 100ms; -webkit-transition: box-shadow ease-in 100ms, margin ease-in 100ms; -ms-transition: box-shadow ease-in 100ms, margin ease-in 100ms; -o-transition: box-shadow ease-in 100ms, margin ease-in 100ms; }
@@ -360,13 +362,19 @@ form button { padding: 5px 10px; }
 
 .t_24 { font-size: 24px; }
 
-.tbl { display: table; }
+.mt10 { margin-top: 10px; }
 
-.tcl { display: table-cell; }
+.mt20 { margin-top: 20px; }
 
-.d_flex { display: flex; flex-flow: wrap row; }
+.mt30 { margin-top: 30px; }
 
-.d_flex.line .flex_box__item { width: 100%; }
+.mb10 { margin-bottom: 10px; }
+
+.mb20 { margin-bottom: 20px; }
+
+.mb30 { margin-bottom: 30px; }
+
+.b_flex { display: flex; flex-flow: wrap row; }
 
 .d_tbl { display: table; }
 

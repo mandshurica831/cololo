@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta charset="utf-8">
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript" src="http://code.createjs.com/createjs-2015.11.26.min.js"></script>
+<script type="text/javascript" src="http://code.createjs.com/easeljs-0.5.0.min.js"></script>
+<script type="text/javascript" src="http://code.createjs.com/preloadjs-0.1.0.min.js"></script>
+
+<script>
+// script
+$(function(){
+$(document).ready(function(){
+
+  var images = {};
+
+  // preloadjsを使って画像を読み込む。
+  var loadManifest = [{id:"icon_member", src:"icon_member.png"}];
+  var loader = new PreloadJS(false);
+  loader.onFileLoad = function(event) {
+    images[event.id] = event.result;
+  }
+  loader.onComplete = function(){
+    console.log(images)
+    draw_cvs();
+  }
+  loader.loadManifest(loadManifest);
+
+  var draw_cvs = function(){
+    var stage = new createjs.Stage('cvs_test');
+    //図
+    var bmp = new createjs.Bitmap("icon_member.png");
+    bmp.scaleX = 0.5;
+    bmp.scaleY = 0.5;
+
+    var bmp2 = new createjs.Bitmap("icon_member.png");
+    bmp2.x = 5;
+    bmp2.y = 5;
+
+    // 円
+    // var shape = new createjs.Shape();
+    // shape.graphics.beginFill("DarkRed");
+    // shape.graphics.drawCircle(100, 100, 10);
+    // stage.addChild(shape);
+
+    stage.addChild(bmp);
+    stage.addChild(bmp2);
+    stage.update();
+  }
+
+  draw_cvs();
+
+});
+}(jQuery));
+
+//すごくざっくりいうと、preloadJSでロードして、それのオンロードのところでcreateJSもといEaselJSで出す感じだろうか
+</script>
+
+<style>
+  *{
+    margin:0;padding:0;
+  }
+</style>
+
+</head>
+<body>
+
+<canvas id="cvs_test" width="200" height="200" style="background:rgba(0,0,0,.1);"></canvas>
+
+</body>
+</html>

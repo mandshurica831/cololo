@@ -16,18 +16,16 @@
 .t_22{ font-size: 22px; }
 .t_24{ font-size: 24px; }
 
+.mt10{ margin-top:10px; }
+.mt20{ margin-top:20px; }
+.mt30{ margin-top:30px; }
+.mb10{ margin-bottom:10px; }
+.mb20{ margin-bottom:20px; }
+.mb30{ margin-bottom:30px; }
 
-.tbl{display:table;}
-.tcl{display:table-cell;}
-
-
-
-.d_flex{
+.b_flex{
   display: flex;
   flex-flow: wrap row;
-  &.line{
-    .flex_box__item{ width:100%; }
-  }
 }
 .d_tbl{
   display: table;

@@ -1,0 +1,67 @@
+  <h2>キャラクター作成</h2>
+
+  <section>
+    <form action="/create/user" method="post" class="form-normal userCreate-form">
+      <% //エラーメッセージ %>
+      <% if (typeof ErrorMessage !== 'undefined') { %>
+          <p class="error"><%= ErrorMessage %></p>
+      <% } %>
+
+  <h3>基本設定</h3>
+      <div class="form-normal__item mt30">
+        <span class="label">キャラクター名</span>
+        <div class="data">
+          <input type="text" name="chara_name" class="input" maxlength="24" required>
+          <small>半角英数のみ、24文字まで</small>
+        </div>
+      </div>
+
+      <div class="form-normal__item">
+        <span class="label">戦闘タイプ</span>
+        <div class="data">
+          <p>キャラクターの戦闘タイプを設定します（あとから変更できます）</p>
+          <div class="detail">
+            <p class="default">選択、もしくはマウスオーバーでここに各タイプの説明が表示されます</p>
+            <p class="fighter">攻撃に特化した能力（筋力）が割り振られるタイプです。</p>
+            <p class="defender">防御に特化した能力（体力）が割り振られるタイプです。</p>
+            <p class="supporter">サポートに特化した能力（精神）が割り振られるタイプです。</p>
+            <p class="manual">手動でステータスを割り振ります。タイプはステータスから自動で割り当てられます</p>
+          </div>
+          <div class="b_flex">
+            <input type="radio" name="fight_type" id="f_type_atk" value="fighter">
+            <label for="f_type_atk">攻撃タイプ</label>
+            <input type="radio" name="fight_type" id="f_type_def" value="defender">
+            <label for="f_type_def">防御タイプ</label>
+            <input type="radio" name="fight_type" id="f_type_sup" value="supporter">
+            <label for="f_type_sup">サポートタイプ</label>
+            <input type="radio" name="fight_type" id="f_type_manual" value="manual">
+            <label for="f_type_manual">手動</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-normal__item">
+        <span class="label">能力</span>
+        <div class="data">
+            <input type="checkbox" name="performance_type" id="p_type_str" value="str">
+            <label for="p_type_str">筋力</label>
+            <input type="checkbox" name="performance_type" id="p_type_con" value="con">
+            <label for="p_type_con">体力</label>
+            <input type="checkbox" name="performance_type" id="p_type_int" value="int">
+            <label for="p_type_pow">知力</label>
+            <input type="checkbox" name="performance_type" id="p_type_dex" value="dex">
+            <label for="p_type_dex">敏捷</label>
+        </div>
+      </div>
+
+    <h3>詳細設定</h3>
+
+    <div class="t_center">
+      <button type="submit" class="submit btn-normal green">決定</button>
+    </div>
+
+
+
+
+    </form>
+  </section>

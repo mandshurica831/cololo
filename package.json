@@ -5,9 +5,10 @@
   "scripts": {
     "start": "NODE_PATH=lib node ./bin/www",
     "stop": "pkill myApp",
-    "watch-css": "nodemon -e ./src/scss/*.scss --ignore public/ -x \"npm run css\"",
+    "watch": "npm-run-all -p watch:*",
+    "watch:js": "nodemon -e ./src/js/*.js --ignore public/ -x \"npm run gulp\"",
+    "watch:css": "nodemon -e ./src/scss/*.scss --ignore public/ -x \"npm run css\"",
     "css": "node-sass --output-style compact src/scss/style.scss public/css/style.css --importer ./node_modules/node-sass-globbing/index.js",
-    "watch-js": "nodemon -e ./src/js/*.js --ignore public/ -x \"npm run gulp\"",
     "gulp": "gulp",
     "webpack": "webpack",
     "build": "webpack & node-sass --include-path scss scss/style.scss css/style.css"
@@ -38,6 +39,7 @@
     "gulp-concat": "^2.6.1",
     "node-sass": "^3.13.1",
     "nodemon": "^1.11.0",
+    "npm-run-all": "^4.0.1",
     "sass-glob-importer": "^1.0.1",
     "sass-loader": "^4.1.1",
     "style-loader": "^0.13.1",

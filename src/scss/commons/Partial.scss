@@ -98,19 +98,13 @@
   }
 
   &-flat{
-    &.black{
-      background: $black;
-    }
-    &.dark_gray{
-      background: $dark_gray;
-    }
+    background: #e5e5e5;
     display:inline-block;
-    color:#fff;
-    padding: 3px 10px;
+    padding: 5px 10px;
     text-align:center;
     position: relative;
     letter-spacing:0.05em;
-    @include set-prefix(border-radius,3px);
+    @include set-prefix(border-radius,30px);
     @include set-prefix(transition,all ease-out 150ms);
     &:hover{
       cursor: pointer;

@@ -27,7 +27,7 @@ router.post('/user', (req, res) => {
 
   // 入力内容チェック
   if (userId.length === 0 || userId.length > 12) {
-    res.render('_template/message', {
+    res.render('_partial/message', {
       title: ' - エラー',
       message: 'ユーザーIDの文字数は1〜20字にしてください',
     });
@@ -55,13 +55,13 @@ router.post('/user', (req, res) => {
       // 登録
       connection.query(sql.query, (err) => {
         if (!err) {
-          res.render('_template/message', {
+          res.render('_partial/message', {
             title: ' - 登録完了',
             message: '登録が完了しました！',
             link: { to: '/login', text: 'ログインページへ' },
           });
         } else {
-          res.render('_template/message', {
+          res.render('_partial/message', {
             title: ' - エラー',
             message: err,
           });
@@ -70,6 +70,18 @@ router.post('/user', (req, res) => {
     }
   });
   return false;
+});
+
+
+
+router.get('/character', (req, res) => {
+  if (req.session.user_id) {
+    res.redirect('/');
+  } else {
+    res.render('create/character', {
+      title: ' - キャラクター作成',
+    });
+  }
 });
 
 module.exports = router;

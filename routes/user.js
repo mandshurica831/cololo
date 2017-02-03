@@ -17,7 +17,7 @@ router.get('/:id', (req, res) => {
         rows: rows[0],
       });
     }else{
-      res.render('_template/message', {
+      res.render('_partial/message', {
         title: ' - エラー',
         message: `" ${userId} " というIDのユーザーは存在しません`,
       });

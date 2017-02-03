@@ -338,11 +338,7 @@ form button { padding: 5px 10px; }
 
 .btn-solid:hover, a.btn-solid:hover { box-shadow: none; margin: 2px -2px -2px 2px; transition: box-shadow ease-in 100ms, margin ease-in 100ms; -moz-transition: box-shadow ease-in 100ms, margin ease-in 100ms; -webkit-transition: box-shadow ease-in 100ms, margin ease-in 100ms; -ms-transition: box-shadow ease-in 100ms, margin ease-in 100ms; -o-transition: box-shadow ease-in 100ms, margin ease-in 100ms; }
 
-.btn-flat, a.btn-flat { display: inline-block; color: #fff; padding: 3px 10px; text-align: center; position: relative; letter-spacing: 0.05em; border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px; -ms-border-radius: 3px; -o-border-radius: 3px; transition: all ease-out 150ms; -moz-transition: all ease-out 150ms; -webkit-transition: all ease-out 150ms; -ms-transition: all ease-out 150ms; -o-transition: all ease-out 150ms; }
-
-.btn-flat.black, a.btn-flat.black { background: #373737; }
-
-.btn-flat.dark_gray, a.btn-flat.dark_gray { background: #555; }
+.btn-flat, a.btn-flat { background: #e5e5e5; display: inline-block; padding: 5px 10px; text-align: center; position: relative; letter-spacing: 0.05em; border-radius: 30px; -moz-border-radius: 30px; -webkit-border-radius: 30px; -ms-border-radius: 30px; -o-border-radius: 30px; transition: all ease-out 150ms; -moz-transition: all ease-out 150ms; -webkit-transition: all ease-out 150ms; -ms-transition: all ease-out 150ms; -o-transition: all ease-out 150ms; }
 
 .btn-flat:hover, a.btn-flat:hover { cursor: pointer; background: #f2cb00; transition: all ease-out 150ms; -moz-transition: all ease-out 150ms; -webkit-transition: all ease-out 150ms; -ms-transition: all ease-out 150ms; -o-transition: all ease-out 150ms; }
 

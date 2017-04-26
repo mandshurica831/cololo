@@ -172,6 +172,11 @@ section {
       &>*{
         display:flex-item;
       }
+      .chara_image{
+        width: 64px;
+        height: 64px;
+        flex-grow: 0;
+      }
       .text{
         position:relative;
         background:#fafafa;

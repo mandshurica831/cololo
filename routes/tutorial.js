@@ -13,9 +13,9 @@ router.get('/', (req, res) => {
 });
 
 // create
-router.get('/p01', (req, res) => {
+router.get('/p-01', (req, res) => {
   connection.query('', () => {
-    res.render('tutorial/p01', {
+    res.render('tutorial/p-01', {
       title: ' - くりえーと',
     });
   });

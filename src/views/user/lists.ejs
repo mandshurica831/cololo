@@ -1,0 +1,26 @@
+<% layout('/_layouts/main') %>
+
+
+  <section>
+
+    <h2>ユーザーリスト</h2>
+    <section>
+      <%
+      if (typeof rows !='undefined'){
+        for(var i in rows){
+      %>
+        <p>
+          <a href="/user/<%= rows[i].user_id %>">
+            <span><%= rows[i].user_name %></span>
+            <span>(<%= rows[i].user_id %>)</span>
+          </a>
+        </p>
+      <%
+        }
+      }
+      %>
+    TODO: 10件ずつのページャーにする（今は最初の10件表示になってる）
+    </section>
+
+
+  </section>

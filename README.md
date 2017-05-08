@@ -1,6 +1,13 @@
 # cololo
-
 express-generator使用。
+
+##追加したディレクトリ
+###db
+dbのバックアップ
+###lib
+ここにつくったモジュール入れる
+###src
+ソースはここ
 
 #起動のまえに
 Package.jsonに更新あったらまず「$ npm install」してね。
@@ -11,16 +18,11 @@ Package.jsonに更新あったらまず「$ npm install」してね。
 起動しっぱなしになっちゃったときは「$ npm stop」で止められる。
 
 ##cssとJSのコンパイル
-「$ npm run watch」で監視出来るようにしてるよ。
+「$ npm run watch」で監視出来るようにしてるよ。Ctrl+Cで終了。
 publicの中身が実際に出来上がったやつなので、srcの中身をいじってね。
 
 ##Procfile
 heroku用
 
-##追加したディレクトリ
-###db
-dbのバックアップ
-###lib
-ここにつくったモジュール入れる
-###src
-ソースはここ
+#命名規則
+とりあえずRailsの命名規則になんとなく則ってみるよ。

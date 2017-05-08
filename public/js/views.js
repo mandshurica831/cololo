@@ -24,16 +24,22 @@ var IndexController = function(){
 
 var CreateCharacterController = function(){
 
-  this.fight_type_detail_area = $('[data-name=fight_type_detail_area]');
-  $('#f_type_atk');
-  $('#f_type_def');
-  $('#f_type_sup');
-  $('#f_type_manual');
-  this.fight_type_detail_area.find('.default').show();
-  this.fight_type_detail_area.find('.fighter').hide();
-  this.fight_type_detail_area.find('.defender').hide();
-  this.fight_type_detail_area.find('.supporter').hide();
-  this.fight_type_detail_area.find('.manual').hide();
+  this.type_detail = $('[data-name=fight_type_detail_area]');
+  this.type_detail.find('.default').show();
+  this.type_detail.find('.f_type_atk').hide();
+  this.type_detail.find('.f_type_def').hide();
+  this.type_detail.find('.f_type_sup').hide();
+  this.type_detail.find('.f_type_manual').hide();
+
+  this.type_detail.parent().find('label')
+  .mouseover(function(e){
+    this.type_detail.children().stop().fadeOut(0);
+    this.type_detail.find(`.${$(e.currentTarget).attr('for')}`).fadeIn(100);
+  }.bind(this)).mouseout(function(){
+    this.type_detail.children().stop().fadeOut(0);
+    this.type_detail.find('.default').fadeIn(100);
+  }.bind(this));
+
 
   $('[data-name=detail_settings_area]').hide();
 
@@ -48,9 +54,6 @@ p = CreateCharacterController.prototype;
 
 
 var TutorialP01Controller = function(){
-
-console.log('hoihoi!')
-
 
 };
 inherits(TutorialP01Controller,Base);//継承

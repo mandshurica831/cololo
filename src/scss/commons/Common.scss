@@ -391,7 +391,7 @@ form{
 
     .description_area{
       font-size: 12px;
-      color: #888;
+      color: $black;
       background: #fafafa;
       border: 1px solid #eee;
       margin: 5px 0 0;
@@ -399,6 +399,9 @@ form{
       position: relative;
       width: 100%;
       @include set-prefix(border-radius, 3px);
+      .default{
+        color: $gray;
+      }
     }
 
     .btns_area{

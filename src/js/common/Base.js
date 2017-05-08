@@ -22,13 +22,13 @@ p = Base.prototype;
 /* イベントターゲットの設定
 -------------------------------------------------- */
 p.set_observer_target = function(){
-  COLOLO.observer.set_target(this);
+  CLL.observer.set_target(this);
 };
 /* イベントの追加
 -------------------------------------------------- */
 p.add_observer = function(){
   for(var index in this.observer_list){
-    COLOLO.observer.add(this.observer_list[index]);
+    CLL.observer.add(this.observer_list[index]);
   }
 };
 /* イベントリストの作成
@@ -39,7 +39,7 @@ p.create_observer_list = function(){
 -------------------------------------------------- */
 p.remove_observer = function(){
   for(var index in this.observer_list){
-    COLOLO.observer.remove(this.observer_list[index].event_type, this.observer_list[index].callback, this);
+    CLL.observer.remove(this.observer_list[index].event_type, this.observer_list[index].callback, this);
   }
 }
 
@@ -48,12 +48,12 @@ p.remove_observer = function(){
 p.add_service = function(){
   if(this.service_list.length<=0) return false;
   for(var index in this.service_list){
-    COLOLO.service.add(this.service_list[index]);
+    CLL.service.add(this.service_list[index]);
   }
   var params={
     "event_type":SERVICE_ADD_END
   }
-  COLOLO.observer.notify(params);
+  CLL.observer.notify(params);
 };
 /* サービスリストの作成
 -------------------------------------------------- */
@@ -63,7 +63,7 @@ p.create_service_list = function(){
 -------------------------------------------------- */
 p.remove_service = function(){
   for(var index in this.service_list){
-    COLOLO.service.remove(this.service_list[index]);
+    CLL.service.remove(this.service_list[index]);
   }
 }
 

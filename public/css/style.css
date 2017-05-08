@@ -367,6 +367,8 @@ section .btn-normal, section a.btn-normal { font-weight: 500; }
 
 .story_box__item.speak > * { display: flex-item; }
 
+.story_box__item.speak .chara_image { width: 64px; height: 64px; flex-grow: 0; }
+
 .story_box__item.speak .text { position: relative; background: #fafafa; background: rgba(200, 200, 200, 0.15); border-radius: 10px; -moz-border-radius: 10px; -webkit-border-radius: 10px; -ms-border-radius: 10px; -o-border-radius: 10px; }
 
 /***************************************** General */

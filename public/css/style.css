@@ -198,13 +198,13 @@ footer a:hover { color: #f2cb00; transition: color ease-out 300ms; -moz-transiti
 
 .views.bg_black { background: rgba(0, 0, 0, 0.5); box-shadow: inset 0 0 100px black; }
 
-.views section { padding: 0 20px; margin: 60px 0; }
+.views > section { padding: 0 20px; margin: 60px 0; }
 
-.views section.text p { margin: 10px 0; }
+.views > section > p { margin: 10px 0; }
 
-.views section.text p:last-child { padding-bottom: 20px; }
+.views > section > p:last-child { padding-bottom: 20px; }
 
-.views section.message_box { border: 1px solid #EAEAEA; padding: 60px 35px; margin: 30px 80px; box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1); }
+.views > section.message_box { border: 1px solid #EAEAEA; padding: 60px 35px; margin: 30px 80px; box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1); }
 
 .views p { font-weight: 350; font-smoothing: antialiased; -moz-font-smoothing: antialiased; -webkit-font-smoothing: antialiased; -ms-font-smoothing: antialiased; -o-font-smoothing: antialiased; }
 
@@ -263,7 +263,7 @@ form button { padding: 5px 10px; }
 
 .form-normal .description_area { font-size: 12px; color: #373737; background: #fafafa; border: 1px solid #eee; margin: 5px 0 0; padding: 10px; position: relative; width: 100%; border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px; -ms-border-radius: 3px; -o-border-radius: 3px; }
 
-.form-normal .description_area .default { color: #555; }
+.form-normal .description_area .default { color: #aaa; }
 
 .form-normal .btns_area [type=submit] { width: 200px; height: 40px; }
 
@@ -355,11 +355,11 @@ section .btn-normal, section a.btn-normal { font-weight: 500; }
 
 .story_box__item { margin: 25px 0; position: relative; }
 
-.story_box__item .text { margin: 0 10px; padding: 10px 15px; }
+.story_box__item .content { margin: 0 10px; padding: 10px 15px; }
 
-.story_box__item .text p { margin: 10px 0 0; white-space: pre-wrap; }
+.story_box__item .content p { margin: 10px 0 0; white-space: pre-wrap; }
 
-.story_box__item .text p:first-child { margin-top: 0; }
+.story_box__item .content p:first-child { margin-top: 0; }
 
 .story_box__item.image { position: relative; }
 
@@ -371,7 +371,7 @@ section .btn-normal, section a.btn-normal { font-weight: 500; }
 
 .story_box__item.speak .chara_image { width: 64px; height: 64px; flex-grow: 0; }
 
-.story_box__item.speak .text { position: relative; background: #fafafa; background: rgba(200, 200, 200, 0.15); border-radius: 10px; -moz-border-radius: 10px; -webkit-border-radius: 10px; -ms-border-radius: 10px; -o-border-radius: 10px; }
+.story_box__item.speak .content { position: relative; background: #fafafa; background: rgba(200, 200, 200, 0.15); border-radius: 10px; -moz-border-radius: 10px; -webkit-border-radius: 10px; -ms-border-radius: 10px; -o-border-radius: 10px; }
 
 /***************************************** General */
 .t_right { text-align: right; }
@@ -423,9 +423,9 @@ section .btn-normal, section a.btn-normal { font-weight: 500; }
 
 .views.index .start_btns .false .btn-normal { font-size: 14px; padding: 5px 10px; margin: 0 5px; }
 
-.views.index .text { text-align: center; }
+.views.index section { text-align: center; }
 
-.views.index .text small { color: #777; }
+.views.index section small { color: #777; }
 
 /***************************************** info */
 /***************************************** createUser */

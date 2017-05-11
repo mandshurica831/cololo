@@ -132,7 +132,7 @@ section {
     padding-top: 10px;
     padding-bottom: 10px;
     box-shadow: 0 0 3px rgba(0,0,0,.1);
-    .speak .text{
+    .speak .content{
     }
   }
   &:first-child{
@@ -144,7 +144,7 @@ section {
     margin:25px 0;
     position:relative;
 
-    .text{
+    .content{
       margin:0 10px;
       padding:10px 15px;
       p{
@@ -177,7 +177,7 @@ section {
         height: 64px;
         flex-grow: 0;
       }
-      .text{
+      .content{
         position:relative;
         background:#fafafa;
         background: rgba(200,200,200,.15);

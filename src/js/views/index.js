@@ -1,7 +1,7 @@
 var IndexController = function(){
   console.log("%cIndexController - start",'color:orange;',this);
 
-  //
+  //test
   // 開始
   this.nekochan = function(){
 
